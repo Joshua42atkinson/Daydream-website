@@ -38,7 +38,7 @@ cargo run --release
 
 ```
 ltdatkinson/
-├── static/              # Frontend files
+├── docs/                # Frontend files (renamed from static for GitHub Pages)
 │   ├── css/
 │   │   ├── design-system.css  # Design tokens and utilities
 │   │   └── main.css           # Main styles
@@ -82,12 +82,12 @@ The website uses a comprehensive design system with:
 This website is ready to deploy to **ltdatkinson.com**. Deployment options:
 
 1. **Static Hosting** (Netlify, Vercel, GitHub Pages)
-   - Deploy the `static/` folder directly
-   
+   - Deploy the `docs/` folder directly (configured for GitHub Pages)
+
 2. **VPS/Cloud** (DigitalOcean, AWS, Azure)
    - Run the Rust server or Node.js server
    - Configure reverse proxy (nginx/caddy)
-   
+
 3. **Rust Deployment**
    - Build release binary: `cargo build --release`
    - Deploy binary and static files to server
@@ -107,7 +107,7 @@ Portfolio projects are based on your LTD portfolio documents:
 ## 🎯 Next Steps
 
 1. **Add Content**: Update project descriptions with detailed content from your Word documents
-2. **Add Images**: Place project screenshots in `static/images/`
+2. **Add Images**: Place project screenshots in `docs/images/`
 3. **Customize**: Adjust colors, fonts, or content to match your preferences
 4. **Deploy**: Choose a hosting provider and deploy to ltdatkinson.com
 
