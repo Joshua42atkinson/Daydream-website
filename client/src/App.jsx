@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -24,6 +24,7 @@ export default function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
             <Route path="/daydream" element={<Daydream />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </div>
