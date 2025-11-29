@@ -37,7 +37,7 @@ export default function Daydream() {
                             View on GitHub
                         </a>
                         <a
-                            href="https://youtu.be/dYxmWd50xgs"
+                            href="https://youtu.be/kI6MjF9M2HE?si=lXsLBdp2vKhTra_h"
                             target="_blank"
                             rel="noreferrer"
                             className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-xl shadow-lg shadow-purple-500/25 transition-all"
