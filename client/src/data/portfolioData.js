@@ -24,25 +24,131 @@ export const portfolioData = {
         }
     ],
     "badges": [
+        // --- SUPRA-BADGE I: PROFESSIONAL FOUNDATIONS ---
         {
             "id": "id_research_theory",
-            "categoryId": "foundations", // MOVED to Foundations per feedback
+            "categoryId": "foundations",
             "title": "Applying ID Research and Theory",
-            "image": "/assets/badges/research_theory.png", // Placeholder
+            "image": "/assets/badges/research_theory.png",
             "artifacts": [
-                {
-                    "title": "Design Document: Ask Pete",
-                    "origin": "Design Document created for EDCI 572", // Added origin per feedback
-                    "summary": "This artifact is a comprehensive design document for Ask Pete, a gamified learning platform. It demonstrates the application of constructivist learning theory and narrative psychology to educational design.",
-                    "reflection": {
-                        "challenge": "This challenge required the application of instructional design theory to a real-world problem.", // Added challenge statement per feedback
-                        "content": "In this project, I applied Joseph Campbell's Monomyth as a pedagogical scaffold. This approach aligns with situated learning theory by placing vocabulary acquisition in a narrative context.",
-                        "competency_alignment": "This aligns with my prior experience in game design, where narrative is used to drive engagement. However, applying it strictly to learning objectives required a deeper understanding of cognitive load theory." // Added competency alignment per feedback
-                    },
-                    "file_path": "/artifacts/Daydream_Design_Doc.docx"
-                }
+                { "artifactId": "cognitive-logistics" }
+            ]
+        },
+        {
+            "id": "id_communicator",
+            "categoryId": "foundations",
+            "title": "ID Professional Communicator",
+            "image": "/assets/badges/communicator.png",
+            "artifacts": [
+                { "artifactId": "narrative-pitch" }
+            ]
+        },
+        {
+            "id": "id_tech_skills",
+            "categoryId": "foundations",
+            "title": "ID Knowledge, Skills, and Attitudes",
+            "image": "/assets/badges/tech_skills.png",
+            "artifacts": [
+                { "artifactId": "field-manual" },
+                { "artifactId": "weigh-station" },
+                { "artifactId": "visual-design-system" }
+            ]
+        },
+        {
+            "id": "ethical_legal",
+            "categoryId": "foundations",
+            "title": "Ethical, Legal, and Political Implications",
+            "image": "/assets/badges/ethics.png",
+            "artifacts": [
+                { "artifactId": "apache-prime-directive" }
+            ]
+        },
+
+        // --- SUPRA-BADGE II: PLANNING AND ANALYSIS ---
+        {
+            "id": "gap_analysis",
+            "categoryId": "planning",
+            "title": "Gap Analysis",
+            "image": "/assets/badges/gap_analysis.png",
+            "artifacts": [
+                { "artifactId": "edutainment-gap" }
+            ]
+        },
+        {
+            "id": "target_population",
+            "categoryId": "planning",
+            "title": "Target Population and Environment",
+            "image": "/assets/badges/target_pop.png",
+            "artifacts": [
+                { "artifactId": "learner-persona" }
+            ]
+        },
+        {
+            "id": "analyze_tech",
+            "categoryId": "planning",
+            "title": "Analyze Technologies",
+            "image": "/assets/badges/analyze_tech.png",
+            "artifacts": [
+                { "artifactId": "trinity-architecture" }
+            ]
+        },
+
+        // --- SUPRA-BADGE III: DESIGN AND DEVELOPMENT ---
+        {
+            "id": "id_process",
+            "categoryId": "design",
+            "title": "Instructional Design and Development Process",
+            "image": "/assets/badges/id_process.png",
+            "artifacts": [
+                { "artifactId": "phoenix-project" }
+            ]
+        },
+        {
+            "id": "instructional_strategies",
+            "categoryId": "design",
+            "title": "Systematic Design & Instructional Strategies",
+            "image": "/assets/badges/strategies.png",
+            "artifacts": [
+                { "artifactId": "vaam-mechanic" }
+            ]
+        },
+        {
+            "id": "instructional_interventions",
+            "categoryId": "design",
+            "title": "Design Instructional Interventions",
+            "image": "/assets/badges/interventions.png",
+            "artifacts": [
+                { "artifactId": "socratic-guide" }
+            ]
+        },
+        {
+            "id": "instructional_materials",
+            "categoryId": "design",
+            "title": "Develop Instructional Materials",
+            "image": "/assets/badges/materials.png",
+            "artifacts": [
+                { "artifactId": "node-garden" }
+            ]
+        },
+
+        // --- SUPRA-BADGE IV: EVALUATION AND IMPLEMENTATION ---
+        {
+            "id": "evaluate_interventions",
+            "categoryId": "evaluation",
+            "title": "Evaluate Instructional and Non-Instructional Interventions",
+            "image": "/assets/badges/evaluation.png",
+            "artifacts": [
+                { "artifactId": "research-instrument-menu" }
+            ]
+        },
+        {
+            "id": "dissemination_plan",
+            "categoryId": "evaluation",
+            "title": "Design a Plan for Dissemination and Diffusion",
+            "image": "/assets/badges/dissemination.png",
+            "artifacts": [
+                { "artifactId": "recharge-center" }
             ]
         }
-        // More badges will be populated here
     ]
 };

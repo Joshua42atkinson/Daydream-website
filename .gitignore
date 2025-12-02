@@ -5,3 +5,15 @@ __pycache__/
 node_modules/
 .env
 .DS_Store
+
+# Cleanup
+*.py
+*.txt
+docs_backup/
+LTD portfolio/
+journey_of_water/
+*.zip
+review.html
+server.js
+generated_pdfs/
+docs/
