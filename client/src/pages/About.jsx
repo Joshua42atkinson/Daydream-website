@@ -20,19 +20,19 @@ import {
 
 const SectionHeader = ({ icon: Icon, title, subtitle }) => (
     <div className="flex flex-col items-center mb-12 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-widest text-indigo-400 uppercase rounded-full bg-indigo-950/50 border border-indigo-900 mb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-widest text-[#CFB991] uppercase rounded-full bg-[#CFB991]/10 border border-[#CFB991]/20 mb-4">
             <Icon size={14} />
             {subtitle}
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
             {title}
         </h2>
-        <div className="h-1 w-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+        <div className="h-1 w-20 bg-[#CFB991] rounded-full" />
     </div>
 );
 
 const SkillCard = ({ title, skills, colorClass, icon: Icon }) => (
-    <div className="group relative p-6 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-slate-600 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
+    <div className="group relative p-6 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-[#CFB991]/50 transition-all duration-300 hover:shadow-2xl hover:shadow-[#CFB991]/10">
         <div className={`absolute top-0 left-0 w-full h-1 ${colorClass} rounded-t-xl opacity-50 group-hover:opacity-100 transition-opacity`} />
         <div className="flex items-start justify-between mb-4">
             <h3 className="text-lg font-semibold text-slate-100 group-hover:text-white transition-colors">{title}</h3>
@@ -67,9 +67,9 @@ const ArchetypeCard = ({ title, role, desc, icon: Icon, color }) => (
 const Footer = () => (
     <footer className="mt-24 pt-12 border-t border-slate-800/50 text-center pb-12">
         <div className="flex items-center justify-center gap-6 mb-8">
-            <a href="#" className="text-slate-500 hover:text-indigo-400 transition-colors"><Code size={20} /></a>
-            <a href="#" className="text-slate-500 hover:text-purple-400 transition-colors"><Feather size={20} /></a>
-            <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors"><Users size={20} /></a>
+            <a href="#" className="text-slate-500 hover:text-[#CFB991] transition-colors"><Code size={20} /></a>
+            <a href="#" className="text-slate-500 hover:text-[#CFB991] transition-colors"><Feather size={20} /></a>
+            <a href="#" className="text-slate-500 hover:text-[#CFB991] transition-colors"><Users size={20} /></a>
         </div>
         <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} Joshua Atkinson. <span className="text-slate-600">Open Source Educational Systems.</span>
@@ -87,33 +87,32 @@ export default function About() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-indigo-500/30 selection:text-indigo-200">
+        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991]">
 
             {/* Ambient Background Effects */}
             <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
                 <div
-                    className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-900/10 blur-[120px] animate-pulse"
+                    className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#CFB991]/5 blur-[120px] animate-pulse"
                     style={{ transform: `translateY(${scrolled * 0.1}px)` }}
                 />
                 <div
-                    className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-900/10 blur-[120px] animate-pulse delay-1000"
+                    className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-slate-800/20 blur-[120px] animate-pulse delay-1000"
                     style={{ transform: `translateY(${-scrolled * 0.1}px)` }}
                 />
-                <div className="absolute top-[40%] left-[50%] w-[30%] h-[30%] rounded-full bg-cyan-900/5 blur-[100px] transform -translate-x-1/2" />
             </div>
 
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
                 {/* --- Hero Section --- */}
                 <header className="text-center mb-24 relative">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-bold tracking-widest text-indigo-300 uppercase rounded-full bg-indigo-950/30 border border-indigo-500/30 mb-8 animate-fade-in-up">
-                        <Terminal size={12} className="text-indigo-400" />
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-bold tracking-widest text-[#CFB991] uppercase rounded-full bg-[#CFB991]/10 border border-[#CFB991]/20 mb-8 animate-fade-in-up">
+                        <Terminal size={12} className="text-[#CFB991]" />
                         System Status: Online
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mb-8 tracking-tight">
                         Engineering Resilience.<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                        <span className="text-[#CFB991]">
                             Designing Consciousness.
                         </span>
                     </h1>
@@ -123,26 +122,49 @@ export default function About() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
 
                     {/* Bio Card */}
-                    <div className="md:col-span-7 p-8 bg-slate-900/50 border border-slate-800 rounded-2xl backdrop-blur-md hover:border-indigo-500/30 transition-colors">
-                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                            <Shield className="text-indigo-400" size={24} />
-                            Leadership Under Pressure
-                        </h3>
-                        <p className="text-slate-400 leading-relaxed mb-4">
-                            Former U.S. Marine Corps Gunnery Sergeant with over <strong className="text-white">17 years and 10 months</strong> of leadership experience in <strong className="text-white">Aircraft Rescue and Firefighting</strong>. Led diverse teams of up to 130+ personnel in high-stakes environments, managing multi-million dollar assets and serving as Incident Commander for 18+ tactical aircraft emergencies.
-                        </p>
-                        <p className="text-slate-400 leading-relaxed mb-4">
-                            Expertise spans <span className="text-indigo-300">fiscal management</span> (as certified Fiscal Chief overseeing annual budgets), <span className="text-purple-300">personnel development</span> (directing training and performance evaluations), and <span className="text-cyan-300">crisis management</span> (Fire Officer III, Fire Instructor III, Incident Safety Officer).
-                        </p>
-                        <p className="text-slate-400 leading-relaxed">
-                            Now pursuing a <strong className="text-white">Master's in Learning Design & Technology</strong> at Purdue University, applying military precision and systems thinking to educational innovation. Active in Houlton, Maine community as Board Member of the Unitarian Universalist Church and Program Coordinator for The Cup Cafe outreach program.
-                        </p>
+                    <div className="md:col-span-7 p-8 bg-slate-900/50 border border-slate-800 rounded-2xl backdrop-blur-md hover:border-[#CFB991]/30 transition-colors relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <Shield size={120} className="text-[#CFB991]" />
+                        </div>
+
+                        <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+                            <div className="flex-shrink-0">
+                                <div className="w-32 h-32 rounded-full border-4 border-[#CFB991]/20 overflow-hidden shadow-2xl">
+                                    <img
+                                        src="https://github.com/joshua42atkinson.png"
+                                        alt="Joshua Atkinson"
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => { e.target.src = 'https://ui-avatars.com/api/?name=Joshua+Atkinson&background=312e81&color=fff' }}
+                                    />
+                                </div>
+                                <div className="mt-4 flex justify-center gap-3">
+                                    <a href="https://github.com/joshua42atkinson" target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 rounded-full text-slate-400 hover:text-[#CFB991] hover:bg-slate-700 transition-all">
+                                        <Code size={18} />
+                                    </a>
+                                    <a href="#" className="p-2 bg-slate-800 rounded-full text-slate-400 hover:text-[#CFB991] hover:bg-slate-700 transition-all">
+                                        <Users size={18} />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 className="text-2xl font-bold text-white mb-2">Joshua Atkinson</h3>
+                                <p className="text-[#CFB991] font-mono text-sm mb-6">Learning Systems Architect // Marine Veteran</p>
+
+                                <p className="text-slate-400 leading-relaxed mb-4">
+                                    Former U.S. Marine Corps Gunnery Sergeant with over <strong className="text-white">17 years</strong> of leadership experience in <strong className="text-white">Aircraft Rescue and Firefighting</strong>. Led diverse teams of up to 130+ personnel in high-stakes environments.
+                                </p>
+                                <p className="text-slate-400 leading-relaxed">
+                                    Now pursuing a <strong className="text-white">Master's in Learning Design & Technology</strong> at Purdue University, applying military precision and systems thinking to educational innovation.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Stats/Quick Info */}
                     <div className="md:col-span-5 flex flex-col gap-6">
-                        <div className="flex-1 p-8 bg-gradient-to-br from-indigo-900/20 to-slate-900/50 border border-indigo-500/20 rounded-2xl flex flex-col justify-center">
-                            <h3 className="text-lg font-semibold text-indigo-300 mb-1">Current Focus</h3>
+                        <div className="flex-1 p-8 bg-gradient-to-br from-[#CFB991]/10 to-slate-900/50 border border-[#CFB991]/20 rounded-2xl flex flex-col justify-center">
+                            <h3 className="text-lg font-semibold text-[#CFB991] mb-1">Current Focus</h3>
                             <p className="text-2xl font-bold text-white">Ask Pete</p>
                             <p className="text-sm text-slate-400 mt-2">
                                 Building privacy-first, local-first educational infrastructure using Rust & WebAssembly.
@@ -152,15 +174,15 @@ export default function About() {
                             <h3 className="text-lg font-semibold text-slate-300 mb-3">Service Record</h3>
                             <div className="space-y-2 text-sm text-slate-400">
                                 <div className="flex items-center gap-2">
-                                    <Anchor size={14} className="text-indigo-400" />
+                                    <Anchor size={14} className="text-[#CFB991]" />
                                     <span>17+ Years USMC</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Shield size={14} className="text-purple-400" />
+                                    <Shield size={14} className="text-[#CFB991]" />
                                     <span>Honorable Discharge</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Zap size={14} className="text-cyan-400" />
+                                    <Zap size={14} className="text-[#CFB991]" />
                                     <span>Aircraft Rescue & Firefighting</span>
                                 </div>
                             </div>
@@ -179,24 +201,24 @@ export default function About() {
                 <SectionHeader icon={Lightbulb} title="Philosophy & Approach" subtitle="The Great Game" />
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
-                    <div className="p-1 rounded-2xl bg-gradient-to-b from-indigo-500/20 to-transparent">
-                        <div className="h-full p-6 bg-slate-950 rounded-xl border border-indigo-500/20">
+                    <div className="p-1 rounded-2xl bg-gradient-to-b from-[#CFB991]/20 to-transparent">
+                        <div className="h-full p-6 bg-slate-950 rounded-xl border border-[#CFB991]/20">
                             <h3 className="text-lg font-bold text-white mb-3">Gamified Consciousness</h3>
                             <p className="text-slate-400 text-sm leading-relaxed">
                                 The framework uses game design metaphors to bypass modern cynicism. By replacing charged terms with neutral mechanics (like "debuffs" or "stats"), we create a functional lexicon for self-mastery.
                             </p>
                         </div>
                     </div>
-                    <div className="p-1 rounded-2xl bg-gradient-to-b from-purple-500/20 to-transparent">
-                        <div className="h-full p-6 bg-slate-950 rounded-xl border border-purple-500/20">
+                    <div className="p-1 rounded-2xl bg-gradient-to-b from-slate-700/50 to-transparent">
+                        <div className="h-full p-6 bg-slate-950 rounded-xl border border-slate-700/50">
                             <h3 className="text-lg font-bold text-white mb-3">Privacy as Pedagogy</h3>
                             <p className="text-slate-400 text-sm leading-relaxed">
                                 Psychological safety is a prerequisite for deep learning. The Ask Pete architecture utilizes local-first tech (Rust/WASM) so learners can experiment without surveillance or data harvesting.
                             </p>
                         </div>
                     </div>
-                    <div className="p-1 rounded-2xl bg-gradient-to-b from-cyan-500/20 to-transparent">
-                        <div className="h-full p-6 bg-slate-950 rounded-xl border border-cyan-500/20">
+                    <div className="p-1 rounded-2xl bg-gradient-to-b from-[#CFB991]/20 to-transparent">
+                        <div className="h-full p-6 bg-slate-950 rounded-xl border border-[#CFB991]/20">
                             <h3 className="text-lg font-bold text-white mb-3">Narrative Scaffolding</h3>
                             <p className="text-slate-400 text-sm leading-relaxed">
                                 Stories are treated as cognitive tools. By using frameworks like the Hero's Journey and Jungian archetypes, the system reduces cognitive load and fosters intrinsic motivation through meaning.
@@ -216,28 +238,28 @@ export default function About() {
                             title="The Sage"
                             role="Path of Air"
                             icon={Feather}
-                            color="indigo"
+                            color="amber"
                             desc="Strategy, Intellect, and Clarity. The architecture of ideas and systems."
                         />
                         <ArchetypeCard
                             title="The Healer"
                             role="Path of Water"
                             icon={Heart}
-                            color="purple"
+                            color="slate"
                             desc="Empathy, Somatics, and Connection. Bridging the gap between self and other."
                         />
                         <ArchetypeCard
                             title="The Builder"
                             role="Path of Earth"
                             icon={Layout}
-                            color="cyan"
+                            color="amber"
                             desc="Action, Creation, and Tech. Turning abstract intent into tangible reality."
                         />
                         <ArchetypeCard
                             title="The Mystic"
                             role="Path of Fire"
                             icon={Zap}
-                            color="amber"
+                            color="slate"
                             desc="Will, Passion, and Spirit. The engine of transformation and drive."
                         />
                     </div>
@@ -248,7 +270,7 @@ export default function About() {
 
                 <div className="bg-slate-900/30 border border-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden mb-24">
                     {/* Decorative Code Background */}
-                    <div className="absolute right-0 top-0 opacity-5 text-indigo-300 font-mono text-xs p-4 hidden lg:block pointer-events-none select-none">
+                    <div className="absolute right-0 top-0 opacity-5 text-[#CFB991] font-mono text-xs p-4 hidden lg:block pointer-events-none select-none">
                         {`impl Architect for Technomancer {\n  fn build_system(&self) -> Result<Legacy, Error> {\n    let stack = Rust::new(Bevy, Axum);\n    stack.deploy(Learning::Deep);\n    Ok(Legacy::Created)\n  }\n}`}
                     </div>
 
@@ -256,19 +278,19 @@ export default function About() {
                         <SkillCard
                             title="Systems Engineering"
                             icon={Cpu}
-                            colorClass="bg-orange-500"
+                            colorClass="bg-[#CFB991]"
                             skills={['Rust', 'WebAssembly', 'Bevy ECS', 'Memory Safety', 'Systems Architecture']}
                         />
                         <SkillCard
                             title="Web Technologies"
                             icon={Layout}
-                            colorClass="bg-cyan-500"
+                            colorClass="bg-slate-500"
                             skills={['React', 'Tailwind CSS', 'Axum', 'Leptos', 'TypeScript']}
                         />
                         <SkillCard
                             title="Learning Science"
                             icon={BookOpen}
-                            colorClass="bg-indigo-500"
+                            colorClass="bg-[#CFB991]"
                             skills={['Instructional Design', 'Cognitive Load Theory', 'ADDIE / SAM', 'Psychometrics']}
                         />
                     </div>
@@ -293,16 +315,16 @@ export default function About() {
                 </div>
 
                 {/* --- Mission Statement --- */}
-                <section className="relative p-8 md:p-16 bg-gradient-to-br from-indigo-950 to-slate-900 border border-indigo-900/50 rounded-3xl text-center overflow-hidden">
+                <section className="relative p-8 md:p-16 bg-gradient-to-br from-slate-900 to-slate-950 border border-[#CFB991]/20 rounded-3xl text-center overflow-hidden">
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
                     <div className="relative z-10">
-                        <Heart className="text-pink-500 mx-auto mb-6 animate-pulse" size={48} />
+                        <Heart className="text-[#CFB991] mx-auto mb-6 animate-pulse" size={48} />
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">The Mission</h2>
                         <p className="text-xl text-slate-300 leading-relaxed max-w-4xl mx-auto">
                             "To democratize access to high-quality, narrative-driven learning experiences by building open-source tools that empower instructional designers to create complex, ethically sound educational systems."
                         </p>
                         <div className="mt-8 pt-8 border-t border-white/10">
-                            <p className="font-mono text-indigo-300 text-sm tracking-widest uppercase">
+                            <p className="font-mono text-[#CFB991] text-sm tracking-widest uppercase">
                                 Joshua Atkinson  //  The Great Game
                             </p>
                         </div>
