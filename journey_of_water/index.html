@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey of Water: From Source to Reef</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CRAP Principle: Contrast (High contrast overlay for attention) -->
+    <!-- Attract / Menu Screen -->
+    <div id="attract-screen" class="overlay">
+        <div class="attract-content">
+            <h1>The Journey of Water: From Source to Reef</h1>
+            <button id="start-btn" class="primary-btn">Start Experience</button>
+        </div>
+    </div>
+
+    <!-- Main Interface -->
+    <main id="main-interface" class="hidden">
+
+        <!-- Header: Audience & Perspective Toggles -->
+        <header class="top-bar">
+            <!-- CRAP Principle: Proximity (Controls grouped together) -->
+            <div class="toggle-group">
+                <span class="toggle-label">Mode:</span>
+                <button id="mode-toggle" class="toggle-btn" aria-pressed="false">
+                    <span class="mode-text">Professional</span>
+                </button>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">Perspective:</span>
+                <button id="indigenous-toggle" class="toggle-btn" aria-pressed="false">
+                    Dreamtime Connections
+                </button>
+            </div>
+        </header>
+
+        <!-- Landscape Container -->
+        <!-- CRAP Principle: Alignment (Hotspots aligned along a path) -->
+        <div class="landscape-container">
+            <div class="landscape-bg">
+                <!-- Visual representation of Mountains, Farm, Ocean via CSS/Images -->
+                <div class="zone mountain-zone"></div>
+                <div class="zone farm-zone"></div>
+                <div class="zone ocean-zone"></div>
+            </div>
+
+            <!-- Hotspots -->
+            <button class="hotspot" id="hotspot-source" data-target="source" aria-label="Source">
+                <div class="hotspot-icon"></div>
+                <span class="hotspot-label">Watershed Source</span>
+            </button>
+
+            <button class="hotspot" id="hotspot-runoff" data-target="runoff" aria-label="Runoff">
+                <div class="hotspot-icon"></div>
+                <span class="hotspot-label">Agricultural Runoff</span>
+            </button>
+
+            <button class="hotspot" id="hotspot-reef" data-target="reef" aria-label="Reef">
+                <div class="hotspot-icon"></div>
+                <span class="hotspot-label">Estuary Output</span>
+            </button>
+        </div>
+
+        <!-- Content Panel (Slide-in) -->
+        <aside id="content-panel" class="panel hidden">
+            <button id="close-panel" aria-label="Close Panel">&times;</button>
+            <div class="panel-content">
+                <h2 id="panel-title">Title</h2>
+                <p id="panel-text">Content goes here...</p>
+
+                <!-- Indigenous Perspective Layer -->
+                <div id="indigenous-note" class="indigenous-box hidden">
+                    <span class="badge">Indigenous Perspective</span>
+                    <p id="indigenous-text">Traditional knowledge text...</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Site Map Button -->
+        <!-- CRAP Principle: Repetition (Consistent button styling) -->
+        <button id="sitemap-btn" class="floating-btn">Site Map</button>
+
+    </main>
+
+    <!-- Site Map Modal -->
+    <div id="sitemap-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <h2>Navigation Layout</h2>
+            <div class="flow-diagram">
+                <div class="flow-step">Start Screen</div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">Main Map</div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">Pop-ups</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dreamtime Modal -->
+    <div id="dreamtime-modal" class="modal hidden">
+        <div class="modal-content dreamtime-content">
+            <button id="close-dreamtime" class="close-btn">&times;</button>
+            <h2>Dreamtime Connections</h2>
+            <p class="dreamtime-text">
+                "The Dreamtime: Local Aboriginal history teaches that the Reef and the Wetlands are one. Ancient stories
+                tell of the Rainbow Serpent carving the rivers that feed the reef, reminding us that if we poison the
+                water here, we poison the spirit of the sea."
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

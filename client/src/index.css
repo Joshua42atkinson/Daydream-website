@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --color-purdue-black: #000000;
+        --color-purdue-gold: #CFB991;
+        --color-purdue-aged: #A38A5F;
+        --color-slate-950: #020617;
+    }
+
+    body {
+        @apply bg-black text-slate-200;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply px-6 py-3 bg-[#CFB991] text-black font-bold rounded-lg hover:bg-[#bfa37a] transition-all shadow-lg shadow-[#CFB991]/20;
+    }
+
+    .card-base {
+        @apply bg-slate-900/50 border border-slate-800 rounded-xl backdrop-blur-sm;
+    }
+
+    .text-gold {
+        @apply text-[#CFB991];
+    }
+}

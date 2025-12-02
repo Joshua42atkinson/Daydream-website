@@ -143,7 +143,7 @@ export default function About() {
                     <div className="md:col-span-5 flex flex-col gap-6">
                         <div className="flex-1 p-8 bg-gradient-to-br from-indigo-900/20 to-slate-900/50 border border-indigo-500/20 rounded-2xl flex flex-col justify-center">
                             <h3 className="text-lg font-semibold text-indigo-300 mb-1">Current Focus</h3>
-                            <p className="text-2xl font-bold text-white">The Daydream Initiative</p>
+                            <p className="text-2xl font-bold text-white">Ask Pete</p>
                             <p className="text-sm text-slate-400 mt-2">
                                 Building privacy-first, local-first educational infrastructure using Rust & WebAssembly.
                             </p>
@@ -191,7 +191,7 @@ export default function About() {
                         <div className="h-full p-6 bg-slate-950 rounded-xl border border-purple-500/20">
                             <h3 className="text-lg font-bold text-white mb-3">Privacy as Pedagogy</h3>
                             <p className="text-slate-400 text-sm leading-relaxed">
-                                Psychological safety is a prerequisite for deep learning. The Daydream architecture utilizes local-first tech (Rust/WASM) so learners can experiment without surveillance or data harvesting.
+                                Psychological safety is a prerequisite for deep learning. The Ask Pete architecture utilizes local-first tech (Rust/WASM) so learners can experiment without surveillance or data harvesting.
                             </p>
                         </div>
                     </div>
@@ -277,7 +277,7 @@ export default function About() {
                         <div>
                             <h4 className="text-lg font-bold text-white mb-1">Why Rust?</h4>
                             <p className="text-slate-400 text-sm max-w-xl">
-                                Rust was chosen not just for performance, but for <strong>correctness</strong>. In educational technology, data integrity and privacy are paramount. This stack allows for "Daydream" to offer memory safety guarantees that other languages cannot, ensuring a stable foundation for human growth.
+                                Rust was chosen not just for performance, but for <strong>correctness</strong>. In educational technology, data integrity and privacy are paramount. This stack allows for "Ask Pete" to offer memory safety guarantees that other languages cannot, ensuring a stable foundation for human growth.
                             </p>
                         </div>
                         <div className="flex items-center gap-4">

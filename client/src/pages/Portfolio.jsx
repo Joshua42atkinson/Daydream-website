@@ -1,219 +1,156 @@
 import React, { useState } from 'react';
-import { Award, ExternalLink, X, ChevronRight, Menu } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ARTIFACTS, CATEGORIES } from '../data/artifacts';
-import Footer from '../components/Footer';
+import { X, ExternalLink, BookOpen, Filter } from 'lucide-react';
 
-// Icon Component
-const Icon = ({ path, className = "w-6 h-6" }) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className={className}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
-    >
-        <path strokeLinecap="round" strokeLinejoin="round" d={path} />
-    </svg>
-);
-
-// Modal Component
-const Modal = ({ artifact, onClose }) => {
-    if (!artifact) return null;
-
-    return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-slate-800/90 border border-slate-700 rounded-2xl shadow-2xl ring-1 ring-white/10">
-
-                <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b bg-slate-800/95 border-slate-700 backdrop-blur-md">
-                    <div className="flex items-center gap-3">
-                        <div className="p-2 rounded-lg bg-indigo-500/20 text-indigo-300">
-                            <Icon path={artifact.iconPath} />
-                        </div>
-                        <div>
-                            <h2 className="text-xl font-bold text-white">{artifact.title}</h2>
-                            <p className="text-sm text-slate-400">{artifact.challenge}</p>
-                        </div>
-                    </div>
-                    <button
-                        onClick={onClose}
-                        className="p-2 transition-colors rounded-full hover:bg-slate-700 text-slate-400 hover:text-white"
-                    >
-                        <X size={24} />
-                    </button>
-                </div>
-
-                <div className="p-8 space-y-8">
-                    <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-700/50">
-                        <h3 className="mb-3 text-sm font-semibold tracking-wider text-indigo-300 uppercase">Artifact Summary</h3>
-                        <div
-                            className="text-slate-300 leading-relaxed"
-                            dangerouslySetInnerHTML={{ __html: artifact.summary }}
-                        />
-                    </div>
-
-                    <div>
-                        <div className="flex items-center gap-2 mb-4">
-                            <Award className="w-5 h-5 text-purple-400" />
-                            <h3 className="text-lg font-bold text-white">Reflective Analysis</h3>
-                        </div>
-                        <div
-                            className="prose prose-invert prose-slate max-w-none prose-p:leading-loose prose-strong:text-white"
-                            dangerouslySetInnerHTML={{ __html: artifact.reflection }}
-                        />
-                    </div>
-                </div>
-
-                <div className="sticky bottom-0 p-6 border-t bg-slate-800/95 border-slate-700 backdrop-blur-md flex justify-end">
-                    <a
-                        href={artifact.linkUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-2 px-6 py-3 font-semibold text-white transition-all bg-indigo-600 rounded-lg hover:bg-indigo-500 hover:shadow-lg hover:shadow-indigo-500/20 active:scale-95"
-                    >
-                        {artifact.linkText}
-                        <ExternalLink size={18} />
-                    </a>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-// Artifact Card
-const ArtifactCard = ({ artifact, onClick }) => {
-    return (
-        <div
-            onClick={() => onClick(artifact)}
-            className="group relative flex flex-col h-full overflow-hidden transition-all duration-300 bg-slate-800/40 border border-slate-700/50 rounded-xl hover:bg-slate-800/60 hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer backdrop-blur-md"
-        >
-            <div className="absolute inset-0 transition-opacity opacity-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-purple-500/5 group-hover:opacity-100" />
-
-            <div className="p-6 flex-1 relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 transition-colors rounded-lg bg-slate-700/50 text-indigo-300 group-hover:bg-indigo-500/20 group-hover:text-indigo-200">
-                        <Icon path={artifact.iconPath} />
-                    </div>
-                    <div className="px-2 py-1 text-xs font-medium tracking-wide text-slate-400 uppercase bg-slate-900/50 rounded-full border border-slate-700/50">
-                        {artifact.category.split(' ')[0]}...
-                    </div>
-                </div>
-
-                <h3 className="mb-2 text-lg font-bold text-slate-100 group-hover:text-white transition-colors">
-                    {artifact.title}
-                </h3>
-                <p className="text-sm text-slate-400 line-clamp-3 mb-4 group-hover:text-slate-300">
-                    {artifact.summary.replace(/<[^>]*>?/gm, '')}
-                </p>
-            </div>
-
-            <div className="px-6 py-4 border-t border-slate-700/30 bg-slate-900/20 relative z-10 flex items-center justify-between group-hover:bg-indigo-900/10 transition-colors">
-                <span className="text-xs font-medium text-slate-500 group-hover:text-indigo-300 transition-colors">Read Reflection</span>
-                <ChevronRight size={16} className="text-slate-600 group-hover:text-indigo-300 transform group-hover:translate-x-1 transition-all" />
-            </div>
-        </div>
-    );
-};
-
-// Main Portfolio Page
 export default function Portfolio() {
-    const [selectedCategory, setSelectedCategory] = useState("All");
     const [selectedArtifact, setSelectedArtifact] = useState(null);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [filter, setFilter] = useState('All');
 
-    const filteredArtifacts = selectedCategory === "All"
-        ? ARTIFACTS
-        : ARTIFACTS.filter(a => a.category === selectedCategory);
+    // Filter for MAJOR artifacts only
+    const majorArtifacts = ARTIFACTS.filter(art => art.type === 'major');
+
+    const filteredArtifacts = filter === 'All'
+        ? majorArtifacts
+        : majorArtifacts.filter(a => a.category === filter);
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-indigo-500/30">
+        <div className="min-h-screen bg-slate-950 pt-24 px-6 pb-20">
+            <div className="container mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center mb-12"
+                >
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Portfolio Artifacts</h1>
 
-            <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-900/20 blur-[120px] animate-pulse" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-900/20 blur-[120px] animate-pulse delay-1000" />
-            </div>
-
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-                <header className="mb-16 text-center space-y-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-widest text-indigo-400 uppercase rounded-full bg-indigo-950/50 border border-indigo-900">
-                        <Award size={14} />
-                        Competency Portfolio
-                    </div>
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-                        Learning Design & Technology
-                    </h1>
-                    <p className="max-w-3xl mx-auto text-slate-400 leading-relaxed">
-                        23 artifacts demonstrating mastery across Professional Foundations, Planning & Analysis,
-                        Design & Development, Evaluation & Implementation, and Applying ID Research & Theory.
-                    </p>
-                </header>
-
-                <div className="sticky top-20 z-40 mb-12">
-                    <div className="md:hidden flex justify-center mb-4">
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="flex items-center gap-2 px-4 py-2 bg-slate-800/90 backdrop-blur-md border border-slate-700 rounded-full text-sm font-medium shadow-lg"
-                        >
-                            <Menu size={16} />
-                            Filter Competencies
-                        </button>
-                    </div>
-
-                    <div className={`
-            ${isMenuOpen ? 'flex' : 'hidden'} 
-            md:flex flex-wrap justify-center gap-2 p-2 
-            bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-2xl shadow-2xl
-            max-w-fit mx-auto transition-all
-          `}>
-                        {CATEGORIES.map(category => (
+                    {/* Filter Buttons */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {CATEGORIES.map(cat => (
                             <button
-                                key={category}
-                                onClick={() => {
-                                    setSelectedCategory(category);
-                                    setIsMenuOpen(false);
-                                }}
-                                className={`
-                  px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
-                  ${selectedCategory === category
-                                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 ring-1 ring-indigo-400'
-                                        : 'text-slate-400 hover:text-white hover:bg-slate-800'
-                                    }
-                `}
+                                key={cat}
+                                onClick={() => setFilter(cat)}
+                                className={`px-6 py-2 rounded-full text-sm font-bold transition-all border ${filter === cat
+                                    ? 'bg-[#CFB991] border-[#CFB991] text-slate-950 shadow-lg shadow-[#CFB991]/25'
+                                    : 'bg-slate-900/50 border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-white'
+                                    }`}
                             >
-                                {category}
+                                {cat}
                             </button>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredArtifacts.map((artifact) => (
-                        <ArtifactCard
+                        <motion.div
                             key={artifact.id}
-                            artifact={artifact}
-                            onClick={setSelectedArtifact}
-                        />
+                            layout
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            whileHover={{ y: -5 }}
+                            onClick={() => setSelectedArtifact(artifact)}
+                            className="bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden hover:border-[#CFB991]/50 transition-all cursor-pointer group flex flex-col h-full"
+                        >
+                            <div className="p-6 flex-1">
+                                <div className="flex items-start justify-between mb-4">
+                                    <div className="p-3 bg-slate-800 rounded-lg text-[#CFB991] group-hover:text-slate-950 group-hover:bg-[#CFB991] transition-colors">
+                                        {/* Render SVG path if available, else generic icon */}
+                                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={artifact.iconPath} />
+                                        </svg>
+                                    </div>
+                                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider border border-slate-700 px-2 py-1 rounded">
+                                        {artifact.category.split(' ')[0]}
+                                    </span>
+                                </div>
+
+                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#CFB991] transition-colors">
+                                    {artifact.title}
+                                </h3>
+                                <p className="text-slate-400 text-sm mb-4 line-clamp-3">
+                                    {artifact.summary}
+                                </p>
+                            </div>
+
+                            <div className="px-6 py-4 bg-slate-950/30 border-t border-slate-800 flex items-center justify-between">
+                                <span className="text-xs text-slate-500 font-mono">{artifact.challenge.split(':')[0]}</span>
+                                <div className="flex items-center gap-2 text-[#CFB991] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span>View Reflection</span>
+                                    <BookOpen className="w-4 h-4" />
+                                </div>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
-
-                {filteredArtifacts.length === 0 && (
-                    <div className="text-center py-20">
-                        <p className="text-slate-500 text-lg">No artifacts found in this category.</p>
-                    </div>
-                )}
-
-                <Footer />
-
             </div>
 
-            {selectedArtifact && (
-                <Modal
-                    artifact={selectedArtifact}
-                    onClose={() => setSelectedArtifact(null)}
-                />
-            )}
+            {/* Modal */}
+            <AnimatePresence>
+                {selectedArtifact && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+                        onClick={() => setSelectedArtifact(null)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                            className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl shadow-[#CFB991]/10"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <div className="p-6 border-b border-slate-800 flex justify-between items-start sticky top-0 bg-slate-900/95 backdrop-blur z-10">
+                                <div>
+                                    <h2 className="text-2xl font-bold text-white">{selectedArtifact.title}</h2>
+                                    <p className="text-[#CFB991] text-sm mt-1 font-mono">{selectedArtifact.challenge}</p>
+                                </div>
+                                <button
+                                    onClick={() => setSelectedArtifact(null)}
+                                    className="p-2 hover:bg-slate-800 rounded-full text-slate-400 hover:text-white transition-colors"
+                                >
+                                    <X className="w-6 h-6" />
+                                </button>
+                            </div>
 
+                            <div className="p-8">
+                                <div className="mb-8 p-6 bg-slate-950 rounded-xl border border-slate-800">
+                                    <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">Artifact Summary</h3>
+                                    <p className="text-slate-300 leading-relaxed">
+                                        {selectedArtifact.summary}
+                                    </p>
+                                </div>
+
+                                <div className="prose prose-invert prose-p:text-slate-300 prose-headings:text-white prose-a:text-[#CFB991] max-w-none">
+                                    <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                        <BookOpen className="text-[#CFB991]" />
+                                        Reflection & Competency Alignment
+                                    </h3>
+                                    <div dangerouslySetInnerHTML={{ __html: selectedArtifact.reflection }} />
+                                </div>
+
+                                {selectedArtifact.linkUrl && selectedArtifact.linkUrl !== '#' && (
+                                    <div className="mt-8 pt-8 border-t border-slate-800 flex justify-center">
+                                        <a
+                                            href={selectedArtifact.linkUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 px-8 py-3 bg-[#CFB991] hover:bg-[#bfa37a] text-slate-950 font-bold rounded-full transition-all shadow-lg shadow-[#CFB991]/25"
+                                        >
+                                            {selectedArtifact.linkText || "View Artifact"}
+                                            <ExternalLink className="w-4 h-4" />
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }

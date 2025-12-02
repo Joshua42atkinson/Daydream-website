@@ -4,11 +4,12 @@ import Navigation from './components/Navigation';
 
 const Home = lazy(() => import('./pages/Home'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Downloads = lazy(() => import('./pages/Downloads'));
 const About = lazy(() => import('./pages/About'));
-const Daydream = lazy(() => import('./pages/Daydream'));
+const AskPete = lazy(() => import('./pages/AskPete'));
 
 const PageLoader = () => (
-  <div className="flex h-screen items-center justify-center bg-slate-950 text-cyan-300">
+  <div className="flex h-screen items-center justify-center bg-slate-950 text-[#CFB991]">
     Loading...
   </div>
 );
@@ -22,8 +23,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/downloads" element={<Downloads />} />
             <Route path="/about" element={<About />} />
-            <Route path="/daydream" element={<Daydream />} />
+            <Route path="/ask-pete" element={<AskPete />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>

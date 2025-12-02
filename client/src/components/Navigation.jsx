@@ -14,8 +14,8 @@ export default function Navigation() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-2">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                            <span className="text-white font-bold text-xl">JA</span>
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#CFB991] to-[#8E6F3E] flex items-center justify-center">
+                            <span className="text-black font-bold text-xl">JA</span>
                         </div>
                         <span className="text-white font-bold text-lg hidden sm:block">Joshua Atkinson</span>
                     </Link>
@@ -25,8 +25,8 @@ export default function Navigation() {
                         <Link
                             to="/"
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/')
-                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
                             Home
@@ -34,36 +34,45 @@ export default function Navigation() {
                         <Link
                             to="/portfolio"
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/portfolio')
-                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
                             Portfolio
                         </Link>
                         <Link
+                            to="/downloads"
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/downloads')
+                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
+                                }`}
+                        >
+                            Evidence
+                        </Link>
+                        <Link
                             to="/about"
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/about')
-                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
                             About
                         </Link>
                         <Link
-                            to="/daydream"
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/daydream')
-                                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                            to="/ask-pete"
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/ask-pete')
+                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
-                            Daydream Project
+                            Ask Pete
                         </Link>
                     </div>
 
                     {/* Mobile menu button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800"
+                        className="md:hidden p-2 rounded-lg text-slate-300 hover:text-[#CFB991] hover:bg-slate-800"
                     >
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -76,8 +85,8 @@ export default function Navigation() {
                             to="/"
                             onClick={() => setIsMenuOpen(false)}
                             className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/')
-                                    ? 'bg-indigo-600 text-white'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                                ? 'bg-[#CFB991] text-black'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
                             Home
@@ -86,31 +95,41 @@ export default function Navigation() {
                             to="/portfolio"
                             onClick={() => setIsMenuOpen(false)}
                             className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/portfolio')
-                                    ? 'bg-indigo-600 text-white'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                                ? 'bg-[#CFB991] text-black'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
                             Portfolio
                         </Link>
                         <Link
+                            to="/downloads"
+                            onClick={() => setIsMenuOpen(false)}
+                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/downloads')
+                                ? 'bg-[#CFB991] text-black'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
+                                }`}
+                        >
+                            Evidence
+                        </Link>
+                        <Link
                             to="/about"
                             onClick={() => setIsMenuOpen(false)}
                             className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/about')
-                                    ? 'bg-indigo-600 text-white'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                                ? 'bg-[#CFB991] text-black'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
                             About
                         </Link>
                         <Link
-                            to="/daydream"
+                            to="/ask-pete"
                             onClick={() => setIsMenuOpen(false)}
-                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/daydream')
-                                    ? 'bg-indigo-600 text-white'
-                                    : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/ask-pete')
+                                ? 'bg-[#CFB991] text-black'
+                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
                                 }`}
                         >
-                            Daydream Project
+                            Ask Pete
                         </Link>
                     </div>
                 )}
