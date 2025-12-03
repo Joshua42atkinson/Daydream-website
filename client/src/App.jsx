@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navigation from './components/Navigation';
 
 const Home = lazy(() => import('./pages/Home'));
-const PortfolioHome = lazy(() => import('./pages/portfolio/PortfolioHome'));
-const SupraBadgePage = lazy(() => import('./pages/portfolio/SupraBadgePage'));
-const SubBadgePage = lazy(() => import('./pages/portfolio/SubBadgePage'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Downloads = lazy(() => import('./pages/Downloads'));
 const About = lazy(() => import('./pages/About'));
 const AskPete = lazy(() => import('./pages/AskPete'));
@@ -24,9 +22,7 @@ export default function App() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<PortfolioHome />} />
-            <Route path="/portfolio/:categoryId" element={<SupraBadgePage />} />
-            <Route path="/portfolio/:categoryId/:badgeId" element={<SubBadgePage />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/about" element={<About />} />
             <Route path="/ask-pete" element={<AskPete />} />
