@@ -1,146 +1,160 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { User, Terminal, Cpu, Database, Award } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import {
+    Award,
+    Code,
+    Users,
+    Shield,
+    Briefcase,
+    Landmark,
+    MapPin,
+    FileText
+} from 'lucide-react';
+
+const SectionHeader = ({ icon: Icon, title, subtitle }) => (
+    <div className="flex flex-col items-center mb-12 text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-widest text-[#CFB991] uppercase rounded-full bg-[#CFB991]/10 border border-[#CFB991]/20 mb-4">
+            <Icon size={14} />
+            {subtitle}
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            {title}
+        </h2>
+        <div className="h-1 w-20 bg-[#CFB991] rounded-full" />
+    </div>
+);
 
 export default function About() {
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991] pt-20">
+        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991]">
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
-            {/* 1. HERO SECTION: The "Instructional Systems Architect" Identity */}
-            <div className="max-w-4xl mx-auto px-6 mb-24">
-                <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="w-24 h-24 bg-[#CFB991] rounded-2xl flex items-center justify-center text-slate-900 mb-8 shadow-2xl shadow-[#CFB991]/20"
-                >
-                    <User size={48} strokeWidth={2.5} />
-                </motion.div>
+                {/* --- Bio Section --- */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24 items-center">
 
-                <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-                    Joshua Atkinson
-                </h1>
-                <h2 className="text-2xl md:text-3xl text-[#CFB991] font-mono mb-8 flex items-center gap-3">
-                    <Terminal size={28} />
-                    Instructional Systems Architect
-                </h2>
+                    {/* Image / Identity */}
+                    <div className="md:col-span-4 relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-[#CFB991] to-slate-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            {/* Replace with your actual photo URL or keep placeholder */}
+                            <img
+                                src="https://github.com/joshua42atkinson.png"
+                                alt="Joshua Atkinson"
+                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                            />
+                            <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-slate-950 to-transparent">
+                                <div className="flex items-center gap-2 text-[#CFB991] mb-1">
+                                    <MapPin size={16} />
+                                    <span className="text-sm font-mono tracking-wider">HOULTON, ME</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div className="prose prose-invert prose-lg text-slate-400 leading-relaxed border-l-4 border-slate-800 pl-6">
-                    <p>
-                        I am a Learning Design & Technology graduate student at Purdue University, focused on the intersection of
-                        <strong className="text-white"> Systems Engineering</strong> and <strong className="text-white">Cognitive Science</strong>.
-                    </p>
-                    <p>
-                        My work challenges the traditional LMS model by introducing "Local-First" AI architectures that prioritize
-                        student agency and data sovereignty. Through the <strong className="text-[#CFB991]">Ask Pete Initiative</strong>, I investigate how
-                        Generative AI can function not just as an oracle, but as a Socratic scaffold that increases—rather than
-                        bypasses—desirable difficulty.
-                    </p>
+                    {/* Narrative Bio */}
+                    <div className="md:col-span-8 space-y-6">
+                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                            Integrity. Strategy. <span className="text-[#CFB991]">Service.</span>
+                        </h1>
+                        <p className="text-xl text-slate-400 font-light leading-relaxed">
+                            Decorated U.S. Marine Corps Veteran (Gunnery Sergeant) with over 17 years of leadership in fiscal oversight, crisis management, and strategic operations.
+                        </p>
+
+                        <div className="prose prose-invert prose-lg text-slate-300">
+                            <p>
+                                My career has been defined by decisive problem-solving in high-stakes environments. From serving as <strong>Incident Commander</strong> for tactical aircraft emergencies to managing multi-million dollar assets as a <strong>Fiscal Chief</strong>, I have honed the ability to lead diverse teams with transparency and accountability.
+                            </p>
+                            <p>
+                                Now established in Houlton, Maine, I am pivoting my focus to <strong>Public Administration</strong> and <strong>Instructional Systems Design</strong>. I combine the discipline of military service with the innovation of the tech sector, serving on the board of the Unitarian Church of Houlton and coordinating vital community outreach programs like The Cup Cafe.
+                            </p>
+                        </div>
+
+                        {/* Resume Download / Contact */}
+                        <div className="flex gap-4 pt-4">
+                            <a href="mailto:joshua42atkinson@gmail.com" className="px-6 py-3 bg-[#CFB991] text-slate-950 font-bold rounded-lg hover:bg-amber-400 transition-colors flex items-center gap-2">
+                                <Briefcase size={18} />
+                                Contact for Opportunities
+                            </a>
+                            <button className="px-6 py-3 border border-slate-700 text-slate-300 font-bold rounded-lg hover:border-[#CFB991] hover:text-[#CFB991] transition-colors flex items-center gap-2">
+                                <FileText size={18} />
+                                Download Resume
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            {/* 2. PHILOSOPHY GRID: The "Ask Pete" Theory */}
-            <div className="max-w-7xl mx-auto px-6 pb-24">
-                <div className="flex items-center gap-4 mb-12">
-                    <div className="h-px flex-1 bg-slate-800" />
-                    <span className="text-slate-500 uppercase tracking-widest text-sm font-bold">The Daydream Philosophy</span>
-                    <div className="h-px flex-1 bg-slate-800" />
-                </div>
+                {/* --- Core Competencies (The Resume Logic) --- */}
+                <SectionHeader icon={Shield} title="Core Competencies" subtitle="Operational Readiness" />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <PhilosophyCard
-                        icon={Cpu}
-                        title="Cognitive Logistics"
-                        content="Learning is a supply chain problem. I model Intrinsic Load as 'Cargo Weight' and Working Memory as 'Engine Capacity,' using physics simulations to optimize information delivery."
-                        delay={0.1}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+                    <CompetencyCard
+                        title="Fiscal Management"
+                        icon={Landmark}
+                        desc="Managed annual operating budgets and procurement. Served as final authority on fiscal legality for detachment expenditures, ensuring 100% accountability of government funds."
                     />
-                    <PhilosophyCard
-                        icon={Terminal}
-                        title="Systems Isomorphism"
-                        content="The code structure should mirror the pedagogical structure. I use Rust and WebAssembly to ensure that the reliability of the software matches the rigor of the curriculum."
-                        delay={0.2}
+                    <CompetencyCard
+                        title="Crisis Leadership"
+                        icon={Shield}
+                        desc="Served as on-scene Incident Commander for 18+ tactical emergencies. Expertise in risk mitigation, safety compliance, and decisive action under extreme pressure."
                     />
-                    <PhilosophyCard
-                        icon={Database}
-                        title="Data Sovereignty"
-                        content="In an era of Surveillance Capitalism, I advocate for 'Privacy Moats.' Student data should be processed locally (on-device), ensuring that their thoughts remain their property."
-                        delay={0.3}
-                    />
-                </div>
-            </div>
-
-            {/* 3. TIMELINE: The Academic Journey */}
-            <div className="max-w-4xl mx-auto px-6 pb-32 pt-12">
-                <h3 className="text-2xl font-bold text-white mb-12 flex items-center gap-3">
-                    <Award className="text-[#CFB991]" />
-                    Academic Trajectory
-                </h3>
-
-                <div className="space-y-12 border-l-2 border-slate-800 ml-3 pl-10 relative">
-                    <TimelineItem
-                        year="2025"
-                        title="M.S. Learning Design & Technology"
-                        org="Purdue University"
-                        desc="Specialization in Educational Data Mining and AI-Augmented Scaffolding. Capstone: The 'Ask Pete' Living Laboratory."
-                    />
-                    <TimelineItem
-                        year="2024"
-                        title="The 'Hostile MVP' Pivot"
-                        org="Engineering Milestone"
-                        desc="Transitioned the Daydream platform from a Python/LangChain prototype to a high-performance Rust/Bevy architecture to solve latency and privacy constraints."
-                    />
-                    <TimelineItem
-                        year="Pre-2023"
-                        title="Professional Background"
-                        org="Industry Experience"
-                        desc="Brought extensive experience in UI/UX and commercial engagement to the academic sphere, translating 'User Retention' strategies into 'Learner Engagement' mechanics."
+                    <CompetencyCard
+                        title="Personnel Development"
+                        icon={Users}
+                        desc="Directed training and performance evaluations for units of 130+ personnel. Authored Standard Operating Procedures (SOPs) for Equal Opportunity and organizational climate."
                     />
                 </div>
+
+                {/* --- Education & Community --- */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="p-8 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                        <div className="flex items-center gap-3 mb-6">
+                            <Award className="text-[#CFB991]" size={24} />
+                            <h3 className="text-xl font-bold text-white">Education</h3>
+                        </div>
+                        <div className="space-y-6">
+                            <div>
+                                <h4 className="text-white font-bold">M.S. Learning Design & Technology</h4>
+                                <p className="text-slate-400 text-sm">Purdue University (In Progress)</p>
+                                <p className="text-slate-500 text-xs mt-1">Focus: Systems Architecture & Educational Infrastructure</p>
+                            </div>
+                            <div>
+                                <h4 className="text-white font-bold">B.A. English / Creative Writing</h4>
+                                <p className="text-slate-400 text-sm">Southern New Hampshire University</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="p-8 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                        <div className="flex items-center gap-3 mb-6">
+                            <Users className="text-[#CFB991]" size={24} />
+                            <h3 className="text-xl font-bold text-white">Community Impact</h3>
+                        </div>
+                        <div className="space-y-6">
+                            <div>
+                                <h4 className="text-white font-bold">Board Member</h4>
+                                <p className="text-slate-400 text-sm">Unitarian Universalist Church of Houlton</p>
+                                <p className="text-slate-500 text-xs mt-1">Strategic oversight of operations, finances, and growth initiatives.</p>
+                            </div>
+                            <div>
+                                <h4 className="text-white font-bold">Program Coordinator</h4>
+                                <p className="text-slate-400 text-sm">The Cup Cafe</p>
+                                <p className="text-slate-500 text-xs mt-1">Managing volunteers to provide free community meals and foster social connection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );
 }
 
-// --- Helper Components ---
-
-function PhilosophyCard({ icon: Icon, title, content, delay }) {
-    return (
-        <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay, duration: 0.5 }}
-            whileHover={{ y: -5 }}
-            className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-[#CFB991]/30 transition-all group"
-        >
-            <div className="w-12 h-12 bg-slate-950 rounded-lg flex items-center justify-center text-[#CFB991] mb-6 border border-slate-800 group-hover:scale-110 transition-transform">
-                <Icon size={24} />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#CFB991] transition-colors">{title}</h3>
-            <p className="text-slate-400 leading-relaxed text-sm">
-                {content}
-            </p>
-        </motion.div>
-    );
-}
-
-function TimelineItem({ year, title, org, desc }) {
-    return (
-        <div className="relative">
-            {/* Timeline Dot */}
-            <span className="absolute -left-[49px] top-1 w-5 h-5 rounded-full bg-slate-950 border-4 border-slate-800 shadow-[0_0_10px_rgba(0,0,0,0.5)]" />
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
-                <span className="text-[#CFB991] font-mono font-bold text-xs bg-[#CFB991]/10 px-2 py-1 rounded border border-[#CFB991]/20">
-                    {year}
-                </span>
-                <h4 className="text-xl font-bold text-white">{title}</h4>
-            </div>
-            <div className="text-sm text-slate-500 font-bold mb-3 uppercase tracking-wider flex items-center gap-2">
-                {org}
-            </div>
-            <p className="text-slate-400 max-w-2xl leading-relaxed">
-                {desc}
-            </p>
+// Helper Component
+const CompetencyCard = ({ title, desc, icon: Icon }) => (
+    <div className="p-6 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-[#CFB991]/30 transition-all duration-300">
+        <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-4 text-[#CFB991]">
+            <Icon size={24} />
         </div>
-    );
-}
+        <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
+        <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
+    </div>
+);

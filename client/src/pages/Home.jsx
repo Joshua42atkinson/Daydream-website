@@ -1,66 +1,51 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Hero from '../components/Hero';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, BookOpen, Cpu, Shield, Layers } from 'lucide-react';
+import { Layers, BrainCircuit, Shield, Cpu } from 'lucide-react';
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-200 overflow-hidden font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991]">
+        <div className="bg-slate-950 min-h-screen">
+            <Hero />
 
-            {/* Background Effects */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#CFB991]/5 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[120px]" />
-            </div>
+            {/* Professional Philosophy / Mission */}
+            <section className="py-24 px-6 border-b border-slate-900">
+                <div className="max-w-6xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">The Intersection of <span className="text-[#CFB991]">Pedagogy</span> & <span className="text-[#CFB991]">Code</span></h2>
+                        <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                            I build educational infrastructure that respects the physics of the mind. By combining <strong>Instructional Design</strong> principles with <strong>Systems Engineering</strong>, I create learning environments that are reliable, scalable, and psychologically safe.
+                        </p>
+                    </motion.div>
 
-            {/* Main Content Container */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 lg:pt-32 pb-20">
-
-                {/* Hero Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-4xl"
-                >
-                    <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-xs font-bold tracking-widest text-[#CFB991] uppercase rounded-full bg-[#CFB991]/10 border border-[#CFB991]/20">
-                        <span className="w-2 h-2 rounded-full bg-[#CFB991] animate-pulse" />
-                        Online Portfolio System
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <FeatureCard
+                            icon={BrainCircuit}
+                            title="Cognitive Engineering"
+                            desc="Applying Cognitive Load Theory to software architecture to prevent learner burnout."
+                        />
+                        <FeatureCard
+                            icon={Layers}
+                            title="Systems Isomorphism"
+                            desc="Ensuring the structural integrity of the code mirrors the psychological safety of the classroom."
+                        />
+                        <FeatureCard
+                            icon={Shield}
+                            title="Privacy-First Architecture"
+                            desc="Leveraging Local-First AI to protect learner sovereignty and data ethics."
+                        />
                     </div>
+                </div>
+            </section>
 
-                    <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tight leading-none">
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#CFB991] to-[#bfa37a]">Daydream</span> <br />
-                        Initiative.
-                    </h1>
-
-                    <p className="text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-12">
-                        A comprehensive <strong>Learning Design & Technology</strong> master's portfolio.
-                        Exploring the intersection of Cognitive Load Theory, Local-First AI, and Embodied Cognition.
-                    </p>
-
-                    {/* Primary Actions */}
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <Link
-                            to="/portfolio"
-                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-[#CFB991] hover:bg-[#bfa37a] text-slate-950 text-lg font-bold rounded-xl transition-all hover:scale-105 active:scale-95"
-                        >
-                            <BookOpen size={20} />
-                            View Competency Portfolio
-                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </Link>
-
-                        <Link
-                            to="/ask-pete"
-                            className="group flex items-center justify-center gap-3 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 hover:border-slate-600 text-lg font-bold rounded-xl transition-all"
-                        >
-                            <Terminal size={20} className="text-[#CFB991]" />
-                            Talk to Ask Pete
-                        </Link>
-                    </div>
-                </motion.div>
-
-                {/* Features / Quick Links Grid */}
-                <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Portfolio Grid (Existing but reframed) */}
+            <section className="py-20 px-6 container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <FeatureCard
                         icon={Layers}
                         title="Systematic Design"
@@ -80,25 +65,20 @@ export default function Home() {
                         delay={0.4}
                     />
                 </div>
-            </div>
+            </section>
         </div>
     );
 }
 
-// Helper Component for Feature Cards
+// Helper Component for the grid
 function FeatureCard({ icon: Icon, title, desc, delay }) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay, duration: 0.6 }}
-            className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm hover:border-[#CFB991]/30 transition-colors"
-        >
-            <div className="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center text-[#CFB991] mb-6">
+        <div className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-[#CFB991]/30 transition-all duration-300 group">
+            <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-[#CFB991] group-hover:scale-110 transition-transform">
                 <Icon size={24} />
             </div>
             <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-            <p className="text-slate-400 leading-relaxed">{desc}</p>
-        </motion.div>
+            <p className="text-slate-400 leading-relaxed text-sm">{desc}</p>
+        </div>
     );
 }
