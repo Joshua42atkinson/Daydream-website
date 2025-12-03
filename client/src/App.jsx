@@ -1,35 +1,43 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio'; // The new page we created in Step 2
+import Footer from './components/Footer';
 
-const Home = lazy(() => import('./pages/Home'));
-const Portfolio = lazy(() => import('./pages/Portfolio'));
-const Downloads = lazy(() => import('./pages/Downloads'));
-const About = lazy(() => import('./pages/About'));
-const AskPete = lazy(() => import('./pages/AskPete'));
+// Placeholder for other pages if you haven't created them yet
+const AskPete = () => <div className="p-20 text-white">Ask Pete Logic Integration Coming Soon...</div>;
+const Downloads = () => <div className="p-20 text-white">Downloads Section Coming Soon...</div>;
+const About = () => <div className="p-20 text-white">About Section Coming Soon...</div>;
 
-const PageLoader = () => (
-  <div className="flex h-screen items-center justify-center bg-slate-950 text-[#CFB991]">
-    Loading...
-  </div>
-);
-
-export default function App() {
+function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
-      <div className="min-h-screen bg-slate-950">
+    <Router>
+      <div className="flex flex-col min-h-screen bg-slate-950 text-slate-200">
+
+        {/* Global Navigation */}
         <Navigation />
-        <Suspense fallback={<PageLoader />}>
+
+        {/* Main Content Area */}
+        <main className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/ask-pete" element={<AskPete />} />
             <Route path="/downloads" element={<Downloads />} />
             <Route path="/about" element={<About />} />
-            <Route path="/ask-pete" element={<AskPete />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+
+            {/* Fallback for 404s */}
+            <Route path="*" element={<div className="p-20 text-center text-slate-400">404: Page Not Found</div>} />
           </Routes>
-        </Suspense>
+        </main>
+
+        {/* Global Footer */}
+        <Footer />
+
       </div>
     </Router>
   );
 }
+
+export default App;

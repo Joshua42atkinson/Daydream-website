@@ -1,139 +1,105 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Terminal, BookOpen } from 'lucide-react';
 
 export default function Navigation() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+
+    // Handle scroll effect for navbar
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'Competency Portfolio', path: '/portfolio', icon: BookOpen },
+        { name: 'Ask Pete', path: '/ask-pete', icon: Terminal },
+        { name: 'About', path: '/about' },
+    ];
 
     const isActive = (path) => location.pathname === path;
 
     return (
-        <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-slate-800 shadow-2xl">
+        <nav
+            className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${scrolled
+                    ? 'bg-slate-950/90 backdrop-blur-md border-slate-800 py-3 shadow-lg'
+                    : 'bg-transparent border-transparent py-5'
+                }`}
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
-                    <Link to="/" className="flex items-center space-x-2">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#CFB991] to-[#8E6F3E] flex items-center justify-center">
-                            <span className="text-black font-bold text-xl">JA</span>
+                <div className="flex justify-between items-center">
+
+                    {/* Logo Area */}
+                    <Link to="/" className="flex items-center gap-2 group">
+                        <div className="p-2 bg-[#CFB991] rounded-lg text-slate-900 group-hover:scale-110 transition-transform">
+                            <Terminal size={20} strokeWidth={3} />
                         </div>
-                        <span className="text-white font-bold text-lg hidden sm:block">Joshua Atkinson</span>
+                        <span className="text-xl font-bold text-white tracking-tight">
+                            Joshua<span className="text-[#CFB991]">Atkinson</span>
+                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-1">
-                        <Link
-                            to="/"
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/')
-                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
+                    <div className="hidden md:flex items-center gap-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                className={`flex items-center gap-2 text-sm font-medium transition-colors ${isActive(link.path)
+                                        ? 'text-[#CFB991]'
+                                        : 'text-slate-400 hover:text-white'
+                                    }`}
+                            >
+                                {link.icon && <link.icon size={16} />}
+                                {link.name}
+                            </Link>
+                        ))}
+
+                        {/* CTA Button */}
+                        <a
+                            href="https://github.com/joshua42atkinson/day_dream"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 text-sm font-bold bg-slate-800 hover:bg-slate-700 text-white rounded-lg border border-slate-700 transition-all"
                         >
-                            Home
-                        </Link>
-                        <Link
-                            to="/portfolio"
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/portfolio')
-                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            Portfolio
-                        </Link>
-                        <Link
-                            to="/downloads"
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/downloads')
-                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            Evidence
-                        </Link>
-                        <Link
-                            to="/about"
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/about')
-                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            About
-                        </Link>
-                        <Link
-                            to="/ask-pete"
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/ask-pete')
-                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/25'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            Ask Pete
-                        </Link>
+                            GitHub Repo
+                        </a>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-lg text-slate-300 hover:text-[#CFB991] hover:bg-slate-800"
-                    >
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                    {/* Mobile Menu Button */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="text-slate-300 hover:text-white transition-colors"
+                        >
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
                 </div>
-
-                {/* Mobile Navigation */}
-                {isMenuOpen && (
-                    <div className="md:hidden py-4 space-y-2">
-                        <Link
-                            to="/"
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/')
-                                ? 'bg-[#CFB991] text-black'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            to="/portfolio"
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/portfolio')
-                                ? 'bg-[#CFB991] text-black'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            Portfolio
-                        </Link>
-                        <Link
-                            to="/downloads"
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/downloads')
-                                ? 'bg-[#CFB991] text-black'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            Evidence
-                        </Link>
-                        <Link
-                            to="/about"
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/about')
-                                ? 'bg-[#CFB991] text-black'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            About
-                        </Link>
-                        <Link
-                            to="/ask-pete"
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${isActive('/ask-pete')
-                                ? 'bg-[#CFB991] text-black'
-                                : 'text-slate-300 hover:text-[#CFB991] hover:bg-slate-800'
-                                }`}
-                        >
-                            Ask Pete
-                        </Link>
-                    </div>
-                )}
             </div>
+
+            {/* Mobile Menu Dropdown */}
+            {isOpen && (
+                <div className="md:hidden absolute top-full left-0 w-full bg-slate-950 border-b border-slate-800 p-4 shadow-2xl">
+                    <div className="flex flex-col gap-4">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                onClick={() => setIsOpen(false)}
+                                className={`text-lg font-medium ${isActive(link.path) ? 'text-[#CFB991]' : 'text-slate-400'
+                                    }`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            )}
         </nav>
     );
 }

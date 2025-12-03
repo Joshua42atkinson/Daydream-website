@@ -2,10 +2,9 @@ import React from 'react';
 
 export default function Footer() {
     return (
-        <footer className="mt-24 pt-8 border-t border-slate-800 text-center text-slate-600 text-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
-                <p>© 2025 Joshua Atkinson. Learning Design & Technology Portfolio.</p>
-                <p className="mt-2 opacity-60">Designed with the "Ask Pete" Glassmorphism System.</p>
+        <footer className="bg-slate-900 border-t border-slate-800 py-8 mt-auto">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+                <p>&copy; {new Date().getFullYear()} Joshua Atkinson. All rights reserved.</p>
             </div>
         </footer>
     );
