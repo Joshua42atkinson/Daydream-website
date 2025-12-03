@@ -89,7 +89,7 @@ export const portfolioData = {
                         "content": "I moved beyond standard citation managers to build a tool that actively analyzes content weight. This required acquiring skills in Graph Theory and NLP.",
                         "competency_alignment": "This aligns with the 'Analyze Technologies' competency, proving that research tools can be engineered to support specific cognitive load theories."
                     },
-                    "file_path": "https://github.com/joshua42atkinson/daydream_website/"
+                    "file_path": "https://github.com/joshua42atkinson/Daydream-website/"
                 },
                 {
                     "title": "Tech Badge: Basic Course Tools (The Field Manual)",
@@ -100,7 +100,7 @@ export const portfolioData = {
                         "content": "This project forced me to align with professional software engineering standards. I transitioned from file naming conventions (v1, v2) to strict Git version control.",
                         "competency_alignment": "In modern ID work, 'Content as Code' is the standard. This artifact demonstrates the ability to manage instructional blueprints with the same rigor as software code."
                     },
-                    "file_path": "https://github.com/joshua42atkinson/daydream_website/"
+                    "file_path": "https://github.com/joshua42atkinson/Daydream-website/"
                 }
             ]
         },
