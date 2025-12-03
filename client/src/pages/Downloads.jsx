@@ -1,109 +1,108 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ARTIFACTS, CATEGORIES } from '../data/artifacts';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import { Download, FileText, ExternalLink } from 'lucide-react';
+import React from 'react';
+import { FileText, Download, Folder, Database, FileCode } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
 
-const Downloads = () => {
-    const [selectedCategory, setSelectedCategory] = useState("All");
-
-    // Filter for EVIDENCE artifacts only
-    const evidenceArtifacts = ARTIFACTS.filter(art => art.type === 'evidence');
-
-    const filteredArtifacts = selectedCategory === "All"
-        ? evidenceArtifacts
-        : evidenceArtifacts.filter(art => art.category === selectedCategory);
+export default function Downloads() {
+    // Flatten all artifacts into a single list for the archive
+    const allArtifacts = portfolioData.badges.flatMap(badge =>
+        badge.artifacts.map(artifact => ({
+            ...artifact,
+            badgeName: badge.title,
+            category: badge.categoryId
+        }))
+    );
 
     return (
-        <div className="min-h-screen bg-black text-slate-200 font-sans selection:bg-amber-900 selection:text-amber-50">
-            <Navigation />
+        <div className="min-h-screen bg-slate-950 text-slate-200 font-mono selection:bg-[#CFB991]/30 selection:text-[#CFB991] pt-20">
 
-            <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
-                >
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                        <span className="text-[#CFB991]">Evidence</span> Library
-                    </h1>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                        A comprehensive archive of supporting documentation, design challenges, and technical proofs.
+            <div className="max-w-6xl mx-auto px-6 pb-24">
+                {/* Header */}
+                <div className="border-b border-slate-800 pb-8 mb-8">
+                    <div className="flex items-center gap-3 text-[#CFB991] mb-2">
+                        <Database size={20} />
+                        <span className="uppercase tracking-widest text-sm font-bold">System Archive // Root</span>
+                    </div>
+                    <h1 className="text-4xl font-bold text-white mb-2">Artifact Repository</h1>
+                    <p className="text-slate-500">
+                        Direct access to raw file storage. Indexing {allArtifacts.length} items.
                     </p>
-                </motion.div>
-
-                {/* Category Filter */}
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {CATEGORIES.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setSelectedCategory(category)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category
-                                ? 'bg-[#CFB991] text-black shadow-lg shadow-[#CFB991]/20'
-                                : 'bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-[#CFB991] border border-slate-800'
-                                }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
                 </div>
 
-                {/* Artifact List */}
-                <div className="grid gap-4">
-                    {filteredArtifacts.map((artifact) => (
-                        <motion.div
-                            key={artifact.id}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="group relative bg-slate-900/50 border border-slate-800 hover:border-[#CFB991]/30 rounded-lg p-4 transition-all duration-300 hover:bg-slate-900"
-                        >
-                            <div className="flex items-center justify-between flex-wrap gap-4">
-                                <div className="flex items-start gap-4 flex-1">
-                                    <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 group-hover:border-[#CFB991]/20 transition-colors">
-                                        <FileText className="w-6 h-6 text-[#CFB991]/70 group-hover:text-[#CFB991]" />
+                {/* File System Grid */}
+                <div className="bg-slate-900/30 border border-slate-800 rounded-lg overflow-hidden">
+
+                    {/* Table Header */}
+                    <div className="grid grid-cols-12 gap-4 p-4 bg-slate-900 border-b border-slate-800 text-xs text-slate-500 uppercase tracking-wider font-bold">
+                        <div className="col-span-6 md:col-span-5">Filename / Title</div>
+                        <div className="col-span-3 hidden md:block">Associated Badge</div>
+                        <div className="col-span-3 hidden md:block">Type</div>
+                        <div className="col-span-6 md:col-span-1 text-right">Action</div>
+                    </div>
+
+                    {/* File Rows */}
+                    <div className="divide-y divide-slate-800/50">
+                        {allArtifacts.map((file, index) => (
+                            <div key={index} className="grid grid-cols-12 gap-4 p-4 hover:bg-slate-800/40 transition-colors items-center group">
+
+                                {/* File Name */}
+                                <div className="col-span-6 md:col-span-5 flex items-start gap-3">
+                                    <div className="text-slate-600 group-hover:text-[#CFB991] transition-colors mt-1">
+                                        <FileIcon url={file.file_path} />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold text-slate-200 group-hover:text-[#CFB991] transition-colors">
-                                            {artifact.title}
-                                        </h3>
-                                        <p className="text-sm text-slate-500 mb-1">{artifact.challenge}</p>
-                                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-950 text-slate-400 border border-slate-800">
-                                            {artifact.category}
-                                        </span>
+                                        <div className="text-slate-200 font-medium group-hover:text-white transition-colors">
+                                            {file.title}
+                                        </div>
+                                        <div className="text-xs text-slate-500 md:hidden mt-1">
+                                            {file.badgeName}
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center gap-3">
+                                {/* Badge Context */}
+                                <div className="col-span-3 hidden md:flex items-center text-sm text-slate-400">
+                                    <Folder size={14} className="mr-2 text-slate-600" />
+                                    {file.badgeName}
+                                </div>
+
+                                {/* File Type */}
+                                <div className="col-span-3 hidden md:flex items-center text-xs text-slate-500 uppercase">
+                                    {getFileType(file.file_path)}
+                                </div>
+
+                                {/* Download Button */}
+                                <div className="col-span-6 md:col-span-1 flex justify-end">
                                     <a
-                                        href={artifact.linkUrl}
+                                        href={file.file_path}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-4 py-2 bg-slate-950 hover:bg-[#CFB991]/20 text-slate-300 hover:text-[#CFB991] rounded-md border border-slate-800 hover:border-[#CFB991]/30 transition-all duration-300 text-sm font-medium group-hover:shadow-lg group-hover:shadow-[#CFB991]/10"
+                                        className="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-[#CFB991] hover:bg-slate-800 border border-slate-800 transition-all"
+                                        title="Open Artifact"
                                     >
-                                        {artifact.linkUrl.endsWith('.pdf') ? (
-                                            <>
-                                                <Download className="w-4 h-4" />
-                                                Download PDF
-                                            </>
-                                        ) : (
-                                            <>
-                                                <ExternalLink className="w-4 h-4" />
-                                                View Resource
-                                            </>
-                                        )}
+                                        <Download size={16} />
                                     </a>
                                 </div>
                             </div>
-                        </motion.div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </main>
-
-            <Footer />
+            </div>
         </div>
     );
-};
+}
 
-export default Downloads;
+// Helper to guess icon based on link
+function FileIcon({ url }) {
+    if (url.includes('youtube') || url.includes('youtu.be')) return <FileCode />; // Video
+    if (url.includes('github')) return <FileCode />; // Code
+    if (url.includes('docs.google')) return <FileText />; // Doc
+    return <FileText />;
+}
+
+// Helper to guess type string
+function getFileType(url) {
+    if (url.includes('youtube')) return 'Video Resource';
+    if (url.includes('github')) return 'Source Code';
+    if (url.includes('docs.google')) return 'Cloud Document';
+    return 'External Resource';
+}

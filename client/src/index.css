@@ -2,29 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    :root {
-        --color-purdue-black: #000000;
-        --color-purdue-gold: #CFB991;
-        --color-purdue-aged: #A38A5F;
-        --color-slate-950: #020617;
-    }
-
-    body {
-        @apply bg-black text-slate-200;
-    }
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* Purdue Brand Colors reference */
+  --purdue-gold: #CFB991;
+  --purdue-black: #000000;
+  --slate-950: #020617;
 }
 
-@layer components {
-    .btn-primary {
-        @apply px-6 py-3 bg-[#CFB991] text-black font-bold rounded-lg hover:bg-[#bfa37a] transition-all shadow-lg shadow-[#CFB991]/20;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--slate-950);
+  color: rgba(255, 255, 255, 0.87);
+}
 
-    .card-base {
-        @apply bg-slate-900/50 border border-slate-800 rounded-xl backdrop-blur-sm;
-    }
+/* Custom Scrollbar for Modals and Panels */
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 
-    .text-gold {
-        @apply text-[#CFB991];
-    }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5); /* Slate-900/50 */
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(71, 85, 105, 0.5); /* Slate-600/50 */
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(207, 185, 145, 0.6); /* Purdue Gold */
+  }
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Markdown/Prose Content Styles inside Reflections */
+.prose strong {
+  color: #CFB991;
+}
+
+.prose p {
+  margin-bottom: 1em;
 }

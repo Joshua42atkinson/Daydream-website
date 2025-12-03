@@ -5,10 +5,11 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio'; // The new page we created in Step 2
 import Footer from './components/Footer';
 
-// Placeholder for other pages if you haven't created them yet
-const AskPete = () => <div className="p-20 text-white">Ask Pete Logic Integration Coming Soon...</div>;
-const Downloads = () => <div className="p-20 text-white">Downloads Section Coming Soon...</div>;
-const About = () => <div className="p-20 text-white">About Section Coming Soon...</div>;
+import About from './pages/About';
+import AskPete from './pages/AskPete';
+import Downloads from './pages/Downloads';
+
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             <Route path="/about" element={<About />} />
 
             {/* Fallback for 404s */}
-            <Route path="*" element={<div className="p-20 text-center text-slate-400">404: Page Not Found</div>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

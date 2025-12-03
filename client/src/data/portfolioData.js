@@ -40,7 +40,7 @@ export const portfolioData = {
                         "content": "By mapping Sweller’s CLT to a physics simulation, I demonstrated that instructional design theories are not just guidelines but governed by immutable laws. If the 'Cargo' (content) exceeds the 'Engine' (capacity), the learner will stall.",
                         "competency_alignment": "This aligns with my prior experience in game design, moving from designing for 'fun' to designing for 'flow'. I learned that engagement is the mathematical result of balancing Intrinsic Load against Working Memory capacity."
                     },
-                    "file_path": "https://docs.google.com/document/d/1Nlm2Q5MFzGaa3uL6Xry6gCMrtDjIKw11WIouYPBrIKY/edit?tab=t.0"
+                    "file_path": "/assets/docs/Ask_Pete_White_Paper.docx"
                 }
             ]
         },
@@ -67,18 +67,40 @@ export const portfolioData = {
             "id": "id_tech_skills",
             "categoryId": "foundations",
             "title": "ID Knowledge, Skills, and Attitudes",
-            "image": "/assets/badges/tech_skills.png",
+            "image": "/assets/badges/tech_skills.png", // Ensure you have an image or the fallback will show
             "artifacts": [
                 {
-                    "title": "The 'Ask Pete' Field Manual & Git Log",
-                    "origin": "Independent Project Artifact demonstrating documentation-as-code.",
-                    "summary": "The Field Manual is a comprehensive user guide written in Markdown, while the Git Log documents the 'Phoenix Project' migration. This demonstrates the use of Version Control (Git) to manage complex instructional development.",
+                    "title": "Tech Badge: Presentation Tools (The Daydream Suite)",
+                    "origin": "LDT Technology Badge Challenge: Presentation Tools",
+                    "summary": "A comprehensive suite of presentation artifacts defining the Daydream Initiative. Includes: 1) A Performance Psychology Design Document, 2) A narrated Google Slides presentation on the 'Edutainment Gap', 3) A Powtoon animated video demonstrating 'AI as a Mirror', and 4) A pedagogical infographic.",
                     "reflection": {
-                        "challenge": "Acquire and apply new technology skills in instructional design practice.",
-                        "content": "This project forced me to align with professional software engineering standards, learning Git to manage the 'Phoenix Project' migration without losing the history of the research. Content-as-Code is becoming the standard.",
-                        "competency_alignment": "Coming from a design background, I previously managed files using 'Final_Final_v2' naming conventions. This represents a shift to professional CI/CD workflows."
+                        "challenge": "Highlight key information in an animated manner while balancing pedagogical nuance with visual simplicity.",
+                        "content": "For the animated component, I used Powtoon to translate abstract concepts into tangible metaphors. I represented the 'student' as an avatar ('Alex') and the complex 'Socratic AI' as a non-threatening 'Guide' (orb of light). This visual metaphor inherently demonstrated the concept of psychological safety.",
+                        "competency_alignment": "This process highlighted the distinction between the 'Know' (Slide Decks) and 'Feel' (Animation) domains. I learned to use multimedia learning principles, such as temporal contiguity, to make academic terms 'pop' in sync with narration."
                     },
-                    "file_path": "https://github.com/joshua42atkinson/day_dream"
+                    "file_path": "https://drive.google.com/open?id=1LVcaSAOLl9gjW-SBYylzkXO0WsvU1t5DNjlU3CQxMOE"
+                },
+                {
+                    "title": "Tech Badge: Research Tools (The Weigh Station)",
+                    "origin": "LDT Technology Badge Challenge: Research Tools",
+                    "summary": "The 'Weigh Station' is a custom research instrument that uses Natural Language Processing (NLP) to analyze the intrinsic load of instructional content in real-time. It visualizes curriculum connections using topological graphs, transforming research from a passive activity to a systemic process.",
+                    "reflection": {
+                        "challenge": "Acquire research tools to analyze information systematically.",
+                        "content": "I moved beyond standard citation managers to build a tool that actively analyzes content weight. This required acquiring skills in Graph Theory and NLP.",
+                        "competency_alignment": "This aligns with the 'Analyze Technologies' competency, proving that research tools can be engineered to support specific cognitive load theories."
+                    },
+                    "file_path": "https://github.com/joshua42atkinson/ask_pete/"
+                },
+                {
+                    "title": "Tech Badge: Basic Course Tools (The Field Manual)",
+                    "origin": "LDT Technology Badge Challenge: Basic Tools",
+                    "summary": "A comprehensive user guide written in Markdown, accompanied by a Git Log documenting the 'Phoenix Project' migration. This demonstrates the use of Version Control (Git) and Documentation-as-Code standards to manage complex instructional development.",
+                    "reflection": {
+                        "challenge": "Acquire and apply basic technology skills (Version Control).",
+                        "content": "This project forced me to align with professional software engineering standards. I transitioned from file naming conventions (v1, v2) to strict Git version control.",
+                        "competency_alignment": "In modern ID work, 'Content as Code' is the standard. This artifact demonstrates the ability to manage instructional blueprints with the same rigor as software code."
+                    },
+                    "file_path": "https://github.com/joshua42atkinson/ask_pete/"
                 }
             ]
         },
@@ -97,7 +119,7 @@ export const portfolioData = {
                         "content": "By designing for Local-First storage, I created a system that respects student agency by default. This artifact proves that ethical considerations can be baked into the code itself, rather than just written in a policy document.",
                         "competency_alignment": "I realized that to truly respect the learner, I had to architect a system where their thoughts remained their property, countering the trend of 'Surveillance Capitalism' in EdTech."
                     },
-                    "file_path": "https://github.com/joshua42atkinson/day_dream" // Using repo as evidence of code compliance
+                    "file_path": "/assets/docs/Master_Design_Document.docx" // Using repo as evidence of code compliance
                 }
             ]
         },
@@ -117,7 +139,7 @@ export const portfolioData = {
                         "content": "The paper concludes that we don't need better games; we need better authoring tools for educators. The analysis aligned with the systemic view that the tools available to designers define the products they create.",
                         "competency_alignment": "My prior experience led me to believe the gap was simply 'boring content.' This analysis deepened that understanding to focus on structural and tool-based gaps."
                     },
-                    "file_path": "https://docs.google.com/document/d/1G9eHvMyS-UCUh2N6v5aUaFrMMEdc2M0p2TFedqGfLZE/edit?tab=t.0"
+                    "file_path": "/assets/docs/Edutainment_Gap_White_Paper.docx"
                 }
             ]
         },
@@ -136,7 +158,7 @@ export const portfolioData = {
                         "content": "This finding directly influenced the decision to build the 'Privacy Moat,' creating a high-trust environment where students feel safe to fail. I recognized the specific constraint of 'Social-Emotional Anxiety' in the target demographic.",
                         "competency_alignment": "I previously designed for a 'generic user.' This competency required me to recognize specific emotional and environmental constraints."
                     },
-                    "file_path": "https://docs.google.com/document/d/1nusS6s589cf84tu9XkY3dbwdb524A-_hCRigAM70uU0/edit?tab=t.0"
+                    "file_path": "/assets/docs/Master_Bible.docx"
                 }
             ]
         },
@@ -155,7 +177,7 @@ export const portfolioData = {
                         "content": "The decision to use Rust was not technical vanity; it was an instructional decision to ensure the tool is as reliable as the theory it is built upon. I analyzed the benefits of low-level systems programming to solve specific educational problems like privacy and latency.",
                         "competency_alignment": "This competency forced me to move beyond basic web scripting and evaluate emerging technologies (WebGPU, WASM) against pedagogical requirements."
                     },
-                    "file_path": "https://github.com/joshua42atkinson/day_dream"
+                    "file_path": "/assets/docs/Trinity_Server_Structure.docx"
                 }
             ]
         },
@@ -175,7 +197,7 @@ export const portfolioData = {
                         "content": "This demonstrates the adaptation of standard ID processes to accommodate modern AI-assisted workflows. It treats the 'Design' phase as a 'Blueprint' that an AI agent helps construct.",
                         "competency_alignment": "Traditional ADDIE models felt too linear for software development. This process aligns with my experience in agile development but adapts it for ID."
                     },
-                    "file_path": "https://docs.google.com/document/d/1ojZ6v48rnNLnEHNPOcuiY6vDMabkrg3dop0GyxqEId8/edit?tab=t.0"
+                    "file_path": "/assets/docs/Trinity_Server_Structure.docx"
                 }
             ]
         },
@@ -194,7 +216,7 @@ export const portfolioData = {
                         "content": "By making words 'tools' rather than 'answers,' the strategy forces deep processing and application. This aligns with the theory of Situated Cognition—that knowledge is inseparable from the context in which it is used.",
                         "competency_alignment": "I previously used flashcards for vocabulary (rote memorization). This strategy represents a systematic approach to mechanic-based learning."
                     },
-                    "file_path": "https://docs.google.com/document/d/1Nlm2Q5MFzGaa3uL6Xry6gCMrtDjIKw11WIouYPBrIKY/edit?tab=t.0"
+                    "file_path": "/assets/docs/Game_Design_Document.docx"
                 }
             ]
         },
@@ -213,7 +235,7 @@ export const portfolioData = {
                         "content": "The intervention is designed to frustrate the student just enough to induce deep thinking, without causing them to quit (Derailment).",
                         "competency_alignment": "My prior instinct was to provide help immediately. This competency taught me the value of 'Desirable Difficulty'."
                     },
-                    "file_path": "https://docs.google.com/document/d/1R5PvyeEDpI44iTFXcD7w6Y3V2ddEZN8MjwSajIft6U8/edit?tab=t.0"
+                    "file_path": "/assets/docs/Game_Design_Document.docx"
                 }
             ]
         },
@@ -232,7 +254,7 @@ export const portfolioData = {
                         "content": "This moves the 'classroom' out of the LMS and into the physical world. It uses GPS telemetry as a learning mechanic.",
                         "competency_alignment": "My experience was limited to screen-based learning. This artifact aligned with the research on Embodied Cognition, proving that physical state affects cognitive readiness."
                     },
-                    "file_path": "https://github.com/joshua42atkinson/day_dream"
+                    "file_path": "/assets/docs/Ask_Pete_White_Paper.docx"
                 }
             ]
         },
@@ -252,7 +274,7 @@ export const portfolioData = {
                         "content": "The 'Weigh Station' changes evaluation from a post-mortem to a live diagnostic process. I learned that a final grade tells you IF they learned, but telemetry tells you HOW they learned.",
                         "competency_alignment": "Previously, evaluation meant 'tests.' This competency aligned with the need for 'Process Data' and live diagnostics."
                     },
-                    "file_path": "https://docs.google.com/document/d/1G9eHvMyS-UCUh2N6v5aUaFrMMEdc2M0p2TFedqGfLZE/edit?tab=t.0"
+                    "file_path": "/assets/docs/Ask_Pete_White_Paper.docx"
                 }
             ]
         },
@@ -271,7 +293,7 @@ export const portfolioData = {
                         "content": "A tool is useless if it cannot be paid for. This model ensures the 'Ask Pete' initiative survives beyond the initial research phase, securing its diffusion throughout the university ecosystem.",
                         "competency_alignment": "My prior experience with projects was 'launch and leave.' This competency forced me to consider the 'Institutional Life Cycle' and sustainable economics."
                     },
-                    "file_path": "https://docs.google.com/document/d/1nusS6s589cf84tu9XkY3dbwdb524A-_hCRigAM70uU0/edit?tab=t.0"
+                    "file_path": "/assets/docs/Organizational_Strategy.docx"
                 }
             ]
         }
