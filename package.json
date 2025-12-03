@@ -5,9 +5,14 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "cd client && npm install && npm run build",
+    "install-client": "cd client && npm install"
   },
-  "keywords": ["portfolio", "instructional-design"],
+  "keywords": [
+    "portfolio",
+    "instructional-design"
+  ],
   "author": "LTD Atkinson",
   "license": "MIT"
 }
