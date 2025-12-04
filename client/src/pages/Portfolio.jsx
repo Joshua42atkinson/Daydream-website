@@ -6,7 +6,21 @@ import { X, ExternalLink, Briefcase, Layers, FileText, Lightbulb, CheckCircle } 
 
 export default function Portfolio() {
     const [selectedBadge, setSelectedBadge] = useState(null);
+    const [visibleReflections, setVisibleReflections] = useState({});
     const { categories, badges } = portfolioData;
+
+    // Reset visible reflections when modal closes or changes
+    const handleCloseModal = () => {
+        setSelectedBadge(null);
+        setVisibleReflections({});
+    };
+
+    const toggleReflection = (index) => {
+        setVisibleReflections(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
 
     return (
         <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991]">
@@ -70,7 +84,7 @@ export default function Portfolio() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            onClick={() => setSelectedBadge(null)}
+                            onClick={handleCloseModal}
                             className="absolute inset-0 bg-slate-950/95 backdrop-blur-md"
                         />
 
@@ -90,7 +104,7 @@ export default function Portfolio() {
                                     </h3>
                                 </div>
                                 <button
-                                    onClick={() => setSelectedBadge(null)}
+                                    onClick={handleCloseModal}
                                     className="p-2 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
                                 >
                                     <X size={24} />
@@ -146,28 +160,51 @@ export default function Portfolio() {
                                                 <div className="absolute top-0 right-0 p-4 opacity-10 text-[#CFB991]">
                                                     <Lightbulb size={64} />
                                                 </div>
-                                                <h5 className="text-sm font-bold text-[#CFB991] uppercase tracking-wider mb-4 flex items-center gap-2">
-                                                    <CheckCircle size={16} /> Competency Reflection
-                                                </h5>
+                                                <div className="flex justify-between items-center mb-4">
+                                                    <h5 className="text-sm font-bold text-[#CFB991] uppercase tracking-wider flex items-center gap-2">
+                                                        <CheckCircle size={16} /> Competency Reflection
+                                                    </h5>
+                                                </div>
 
                                                 <div className="space-y-4 text-sm text-slate-400 leading-relaxed">
+                                                    {/* Challenge is always visible */}
                                                     {artifact.reflection.challenge && (
                                                         <div>
                                                             <span className="text-slate-500 font-bold block mb-1">The Challenge:</span>
-                                                            {artifact.reflection.challenge}
+                                                            <p>{artifact.reflection.challenge}</p>
                                                         </div>
                                                     )}
-                                                    {artifact.reflection.content && (
-                                                        <div>
-                                                            <span className="text-slate-500 font-bold block mb-1">My Approach:</span>
-                                                            {artifact.reflection.content}
-                                                        </div>
-                                                    )}
-                                                    {artifact.reflection.competency_alignment && (
-                                                        <div className="pt-2 border-t border-slate-800 mt-2">
-                                                            <span className="text-[#CFB991] font-bold block mb-1">Growth & Alignment:</span>
-                                                            {artifact.reflection.competency_alignment}
-                                                        </div>
+
+                                                    {/* Toggle Button */}
+                                                    <button
+                                                        onClick={() => toggleReflection(index)}
+                                                        className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-[#CFB991] transition-colors flex items-center gap-2"
+                                                    >
+                                                        {visibleReflections[index] ? 'Hide Full Reflection' : 'Read Full Reflection'}
+                                                        <ExternalLink size={12} className={visibleReflections[index] ? "rotate-180" : ""} />
+                                                    </button>
+
+                                                    {/* Hidden/Visible Content */}
+                                                    {visibleReflections[index] && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0, height: 0 }}
+                                                            animate={{ opacity: 1, height: "auto" }}
+                                                            exit={{ opacity: 0, height: 0 }}
+                                                            className="pt-4 border-t border-slate-800 mt-2 space-y-4"
+                                                        >
+                                                            {artifact.reflection.content && (
+                                                                <div>
+                                                                    <span className="text-slate-500 font-bold block mb-1">My Approach:</span>
+                                                                    {artifact.reflection.content}
+                                                                </div>
+                                                            )}
+                                                            {artifact.reflection.competency_alignment && (
+                                                                <div>
+                                                                    <span className="text-[#CFB991] font-bold block mb-1">Growth & Alignment:</span>
+                                                                    {artifact.reflection.competency_alignment}
+                                                                </div>
+                                                            )}
+                                                        </motion.div>
                                                     )}
                                                 </div>
                                             </div>
