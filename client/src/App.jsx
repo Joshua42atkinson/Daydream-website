@@ -14,7 +14,7 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Daydream-website">
       <div className="flex flex-col min-h-screen bg-slate-950 text-slate-200">
 
         {/* Global Navigation */}
