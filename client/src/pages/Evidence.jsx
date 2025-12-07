@@ -1,20 +1,85 @@
-// client/src/pages/Evidence.jsx
+// client/src/pages/Evidence.jsx (COMPLETE REFACTOR)
 
 import React from 'react';
 import { FileText, Code, PenTool, ExternalLink, Video, Github, Award, ChevronRight } from 'lucide-react';
 import { evidenceData as artifacts } from '../data/evidenceData'; 
 
-// Data for external technology badges
-const techBadgeLinks = [
-    { name: "ID Professional Communicator", link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/444920/view", tags: ["Foundations"] },
-    { name: "Applying ID Research & Theory", link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/480837/view", tags: ["Foundations"] },
-    { name: "ID Knowledge, Skills, and Attitudes", link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545190/view", tags: ["Foundations"] },
-    { name: "Ethical, Legal, and Political Implications of Design", link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545473/view", tags: ["Foundations"] },
-    { name: "Systematic Design", link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545490/view", tags: ["Design"] },
-    { name: "Target Population and Environment", link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/447995/view", tags: ["Planning"] },
+// --- START: New Badge Data & Component ---
+
+// IMPORTANT: The imagePath assumes you have placed the files in client/public/assets/badges/
+// The paths use the names of the PNG files you provided.
+const techBadgesData = [
+    { 
+        name: "ID Professional Communicator", 
+        link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/444920/view", 
+        imagePath: "/assets/badges/Presentation_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
+    },
+    { 
+        name: "Applying ID Research & Theory", 
+        link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/480837/view", 
+        imagePath: "/assets/badges/Research_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
+    },
+    { 
+        name: "ID Knowledge, Skills, and Attitudes", // The "Website Development" Badge
+        link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545190/view", 
+        imagePath: "/assets/badges/Website_Development_Technology_Badge_Repository_-_LDT__Badge_Atkinson (2).png" 
+    },
+    { 
+        name: "Ethical, Legal, and Political Implications", 
+        link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545473/view", 
+        // Using null here to intentionally trigger the fallback icon since you are missing this badge image
+        imagePath: null 
+    },
+    { 
+        name: "Systematic Design", 
+        link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545490/view", 
+        imagePath: "/assets/badges/Video_Production_and_Editing_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
+    },
+    { 
+        name: "Target Population and Environment", 
+        link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/447995/view", 
+        imagePath: "/assets/badges/Basic_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png"
+    },
 ];
 
+const BadgeLinkCard = ({ badge }) => (
+    <a
+        href={badge.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center bg-slate-900/40 border border-slate-800 rounded-xl p-4 transition-all duration-300 hover:border-[#CFB991]/50 hover:shadow-xl hover:-translate-y-1 block"
+    >
+        {/* Badge Image or Placeholder Icon */}
+        <div className="w-16 h-16 flex-shrink-0 mr-4 flex items-center justify-center">
+            {badge.imagePath ? (
+                <img
+                    src={badge.imagePath}
+                    alt={badge.name + " Badge"}
+                    className="w-full h-full object-contain"
+                    // Fallback in case the path is wrong
+                    onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<Award size={40} className="text-slate-600" />'; }}
+                />
+            ) : (
+                // Placeholder for missing image
+                <Award size={40} className="text-slate-600" />
+            )}
+        </div>
+        
+        {/* Title and Link Icon */}
+        <div className="flex-grow">
+            <h3 className="text-base font-bold text-white group-hover:text-[#CFB991] transition-colors mb-0">
+                {badge.name}
+            </h3>
+            <div className="flex items-center gap-1 text-sm text-slate-500 group-hover:text-slate-300 transition-colors">
+                View Credential
+                <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
+            </div>
+        </div>
+    </a>
+);
 
+
+// Existing ArtifactCard component (syntax fixed)
 const ArtifactCard = ({ item }) => (
   <div className={`p-6 rounded-lg border border-slate-700 bg-slate-800/50 hover:bg-slate-800 transition-all ${item.isHero ? 'col-span-1 md:col-span-2 lg:col-span-3 border-amber-500/50 bg-slate-800/80' : ''}`}>
     <div className="flex justify-between items-start mb-4">
@@ -67,25 +132,11 @@ export default function EvidencePage() {
           ))}
         </div>
 
-        {/* --- Section 2: Technology Skills Development Badges --- */}
-        <h2 className="text-2xl font-bold text-[#CFB991] mb-6 border-t border-slate-800 pt-8">Technology Skills Development</h2>
+        {/* --- Section 2: Technology Skills Development Badges (REFACTORED) --- */}
+        <h2 className="text-2xl font-bold text-[#CFB991] mb-6 border-t border-slate-800 pt-8">LDT Technology Badges (External Credentials)</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {techBadgeLinks.map((badge, index) => (
-                <a
-                    key={index}
-                    href={badge.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between p-4 bg-slate-900/50 border border-slate-800 rounded-lg hover:border-[#CFB991]/50 transition-colors group"
-                >
-                    <div className="flex items-center gap-3">
-                        <Award size={20} className="text-[#CFB991]" />
-                        <span className="text-slate-300 font-medium group-hover:text-white transition-colors">
-                            {badge.name}
-                        </span>
-                    </div>
-                    <ChevronRight size={18} className="text-slate-500 group-hover:text-[#CFB991] transition-transform group-hover:translate-x-1" />
-                </a>
+            {techBadgesData.map((badge, index) => (
+                <BadgeLinkCard key={index} badge={badge} />
             ))}
         </div>
       </div>
