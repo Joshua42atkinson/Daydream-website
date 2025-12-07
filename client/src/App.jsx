@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
-import Portfolio from './pages/Portfolio'; // The new page we created in Step 2
+import Portfolio from './pages/Portfolio';
 import Evidence from './pages/Evidence';
 import Footer from './components/Footer';
 
@@ -14,7 +14,8 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Router basename="/Daydream-website">
+    // Removed basename="/Daydream-website" for Vercel hosting
+    <Router>
       <div className="flex flex-col min-h-screen bg-slate-950 text-slate-200">
 
         {/* Global Navigation */}
