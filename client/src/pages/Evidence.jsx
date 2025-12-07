@@ -6,39 +6,44 @@ import { evidenceData as artifacts } from '../data/evidenceData';
 
 // --- START: New Badge Data & Component ---
 
-// IMPORTANT: The imagePath assumes you have placed the files in client/public/assets/badges/
+// IMPORTANT: The imagePath assumes you have placed the files in client/public/assets/
 // The paths use the names of the PNG files you provided.
 const techBadgesData = [
     { 
         name: "ID Professional Communicator", 
         link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/444920/view", 
-        imagePath: "/assets/badges/Presentation_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
+        // CORRECTED PATH: Removed /badges/ directory
+        imagePath: "/assets/Presentation_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
     },
     { 
         name: "Applying ID Research & Theory", 
         link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/480837/view", 
-        imagePath: "/assets/badges/Research_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
+        // CORRECTED PATH: Removed /badges/ directory
+        imagePath: "/assets/Research_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
     },
     { 
         name: "ID Knowledge, Skills, and Attitudes", // The "Website Development" Badge
         link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545190/view", 
-        imagePath: "/assets/badges/Website_Development_Technology_Badge_Repository_-_LDT__Badge_Atkinson (2).png" 
+        // CORRECTED PATH: Removed /badges/ directory
+        imagePath: "/assets/Website_Development_Technology_Badge_Repository_-_LDT__Badge_Atkinson (2).png" 
     },
     { 
         name: "Ethical, Legal, and Political Implications", 
         link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545473/view", 
-        // Using null here to intentionally trigger the fallback icon since you are missing this badge image
+        // Keeping null as no specific "Ethics" badge image was provided in your assets
         imagePath: null 
     },
     { 
         name: "Systematic Design", 
         link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545490/view", 
-        imagePath: "/assets/badges/Video_Production_and_Editing_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
+        // CORRECTED PATH: Removed /badges/ directory
+        imagePath: "/assets/Video_Production_and_Editing_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png" 
     },
     { 
         name: "Target Population and Environment", 
         link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/447995/view", 
-        imagePath: "/assets/badges/Basic_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png"
+        // CORRECTED PATH: Removed /badges/ directory
+        imagePath: "/assets/Basic_Tools_Technology_Badge_Repository_-_LDT__Badge_Atkinson.png"
     },
 ];
 

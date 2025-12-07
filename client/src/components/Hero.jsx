@@ -19,12 +19,13 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-4"
+                    className="mb-6" // Increased margin to mb-6 to match larger size
                 >
                     <img
                         src={selfie}
                         alt="Joshua Atkinson"
-                        className="w-32 h-32 rounded-full mx-auto border-4 border-slate-800 shadow-xl"
+                        // MODIFIED: Increased size to w-48 h-48 (md:w-64 md:h-64), added gold border
+                        className="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto border-4 border-[#CFB991] shadow-2xl object-cover" 
                     />
                 </motion.div>
 

@@ -19,6 +19,13 @@ export default function Home() {
                         className="text-center mb-16"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">The Intersection of <span className="text-[#CFB991]">Pedagogy</span> & <span className="text-[#CFB991]">Code</span></h2>
+                        {/* ADDED: Subtle animated divider */}
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: '80px' }}
+                            transition={{ duration: 1, delay: 0.5 }}
+                            className="h-1 bg-[#CFB991] mx-auto rounded-full mb-8"
+                        />
                         <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
                             I build educational infrastructure that respects the physics of the mind. By combining <strong>Instructional Design</strong> principles with <strong>Systems Engineering</strong>, I create learning environments that are reliable, scalable, and psychologically safe.
                         </p>
@@ -74,7 +81,8 @@ export default function Home() {
 // Helper Component for the grid
 function FeatureCard({ icon: Icon, title, desc, delay }) {
     return (
-        <div className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-[#CFB991]/30 transition-all duration-300 group">
+        // MODIFIED: Added backdrop-blur-md for a proper glassmorphism effect
+        <div className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-[#CFB991]/30 transition-all duration-300 group backdrop-blur-md">
             <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-[#CFB991] group-hover:scale-110 transition-transform">
                 <Icon size={24} />
             </div>
