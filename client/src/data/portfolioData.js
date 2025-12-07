@@ -1,6 +1,6 @@
 export const portfolioData = {
     "owner": "Joshua Atkinson",
-    "title": "LTD Competency Portfolio",
+    "title": "LDT Competency Portfolio",
     "categories": [
         {
             "id": "foundations",
@@ -26,40 +26,51 @@ export const portfolioData = {
     "badges": [
         // --- SUPRA-BADGE: PROFESSIONAL FOUNDATIONS ---
         {
-            "id": "id_research_theory",
-            "categoryId": "foundations",
-            "title": "Applying ID Research and Theory",
-            "image": "/assets/badges/research_theory.png",
-            "artifacts": [
-                {
-                    "title": "Cognitive Logistics & The Railway Metaphor",
-                    "origin": "Ask Pete Operator's Handbook (Capstone Project).",
-                    "summary": "This artifact is the 'Operator's Handbook' from the Ask Pete Capstone Project. It serves as a field manual that translates the abstract principles of Cognitive Load Theory (CLT) into a concrete physics simulation known as 'Cognitive Logistics,' where Intrinsic Load is modeled as 'Cargo Weight' and Germane Load as 'Steam Pressure.'",
-                    "reflection": {
-                        "challenge": "Explain key concepts and principles related to instructional design.",
-                        "content": "This challenge required me to explain key concepts and principles related to instructional design. To demonstrate this, I developed the 'Ask Pete Operator's Handbook,' which translates the abstract principles of Cognitive Load Theory (CLT) into a concrete physics simulation. In this artifact, Intrinsic Load is modeled as 'Cargo Weight,' Extraneous Load as 'Track Friction,' and Germane Load as 'Combustion.' By mapping Sweller's CLT to a railway physics simulation, I demonstrated that instructional design theories are not just guidelines but are governed by immutable laws similar to thermodynamics. If the 'Cargo' (content) exceeds the 'Engine' (capacity), the learner will stall.",
-                        "competency_alignment": "This competency aligns with my background as a Marine Corps Incident Commander and Firefighter, rather than traditional game design. In firefighting, we operate under strict physical laws: pump pressure must match hose resistance, or the system fails. I applied this same 'systems thinking' to Cognitive Load Theory, treating the learner's mind not as a black box, but as a mechanical system with finite limits. My ability to 'vibe code' this platform from scratch—leveraging AI to execute complex logic without prior programming experience—demonstrates my core competency: meta-cognition. I translated my understanding of the 'Self' (cultivated through meditation) and operational logistics into a digital pedagogy, proving that the principles of managing pressure and flow are universal, whether in a fire hose or a human mind."
-                    },
-                    "file_path": "/assets/docs/Ask_Pete_Operators_Handbook.pdf"
-                }
-            ]
-        },
-        {
             "id": "id_communicator",
             "categoryId": "foundations",
             "title": "ID Professional Communicator",
             "image": "/assets/badges/communicator.png",
             "artifacts": [
                 {
-                    "title": "From Mindmap to Model: The Rise of AI",
-                    "origin": "Professional Blog Post (Blogger) - Created for EDCI 60001.",
-                    "summary": "This artifact is a professional blog post titled 'From Mindmap to Model: The Rise of AI.' It was created to demonstrate the use of asynchronous communication tools for reflective practice. The post explores the implications of AI on instructional design models, using hyperlinked evidence to support the argument.",
+                    "title": "Executive Summary: The Daydream Pivot",
+                    "origin": "Email Exchange with Dr. George Hanshaw & Resulting 'Daydream' Executive Summary.",
+                    "summary": "This artifact captures a pivotal moment where I sought expert mentorship to validate the feasibility of a complex technopedagogical proposal. It demonstrates the ability to accept high-level critique ('narrow the scope') and translate it into a refined, professional asset.",
                     "reflection": {
-                        "challenge": "This challenge required me to 'solicit, accept, and provide constructive feedback' using professional communication tools.",
-                        "content": "To meet this challenge, I established a professional blog as a platform for public reflective practice. The act of publishing this analysis transformed my internal design monologue into an external dialogue, creating a specific channel to 'solicit' feedback from the LDT community. By structuring the post with clear arguments and external evidence, I invited critique not just on my writing, but on my mental models. This fulfills the competency by establishing a transparent feedback loop, where the 'product' is my own professional growth.",
-                        "competency_alignment": "This approach aligns with my professional philosophy of 'working with the garage door up.' In my previous leadership roles, I learned that hiding the thought process prevents correction. By making my thinking visible through this blog, I am explicitly inviting the kind of 'constructive feedback' that prevents groupthink and drives innovation. This artifact proves that I can use digital tools not just to broadcast information, but to facilitate the critical discourse required for high-level instructional design."
+                        "challenge": "Solicit, accept, and provide constructive feedback.",
+                        "content": "For this challenge, I proactively solicited feedback from Dr. Hanshaw regarding the 'Daydream/Iron Road' initiative. Rather than defending the sheer volume of my original documentation, I entered the dialogue with a 'learner's mindset.' The process involved analyzing his specific critique: that the proposal was 'trying to be everything at once.' In direct response, I created a new Executive Summary that stripped away the 'Daydream' sprawl and defined a clear 'Phase 1: Performance Psychology Sandbox.' This revision directly addressed his critique by simplifying the pitch and clarifying the specific ask.",
+                        "competency_alignment": "Prior to this interaction, I often conflated 'feedback' with 'affirmation' and struggled with Scope Creep. I viewed critique regarding length as a misunderstanding of my vision. This experience taught me that feedback is the primary mechanism for 'Scope Governance.' By soliciting critique early, I saved the project from its own ambition. Moving forward, I will prioritize creating Executive Summaries to identify the MVP, ensuring I build what the organization can actually support."
+                    },
+                    "file_path": "/assets/docs/Daydream_Executive_Summary.pdf"
+                },
+                {
+                    "title": "From Mindmap to Model: The Rise of AI",
+                    "origin": "Professional Blog Post (Blogger) - Created for Independent LDT Research Project.",
+                    "summary": "A professional blog post exploring the implications of AI on instructional design. It serves as a meta-commentary on the writing process itself, demonstrating how abstract concepts can be refined into clear, scannable professional communication.",
+                    "reflection": {
+                        "challenge": "Write and edit messages that are clear, concise, and grammatically correct.",
+                        "content": "The composition process for this artifact began with a 'brain dump' which I organized using AI tools to create a logical hierarchy. However, the final polish was strictly human; I used a rigorous self-editing method of reading the draft aloud to catch awkward phrasing. I achieved clarity through specific formatting choices suited for digital readers, utilizing distinct headers and short, focused paragraphs to maintain visual rhythm. These choices demonstrate the ability to convey complex technical evolution in an accessible professional narrative.",
+                        "competency_alignment": "My background in comparative literature often led to 'dense' academic writing. Through the LDT program, I realized that 'clarity' in instructional design is different from 'depth' in literature. I had to unlearn complex sentence structures and embrace the 'economy of force.' This 'Mindmap to Model' writing process ensures that my future communications are not just accurate, but engaging and scannable for busy stakeholders."
                     },
                     "file_path": "https://daydream67.blogspot.com/2025/11/from-mindmap-to-model-rise-of-ai.html"
+                }
+            ]
+        },
+        {
+            "id": "id_research_theory",
+            "categoryId": "foundations",
+            "title": "Applying ID Research and Theory",
+            "image": "/assets/badges/research_theory.png",
+            "artifacts": [
+                {
+                    "title": "The Iron Network Codex",
+                    "origin": "Design Document created for EDCI 672/Capstone.",
+                    "summary": "A comprehensive 'translation guide' that interprets abstract learning theories into tangible game mechanics. It reframes Cognitive Load Theory (CLT) as a logistical challenge, defining Intrinsic Load as 'Cargo Mass' and Extraneous Load as 'Track Friction.'",
+                    "reflection": {
+                        "challenge": "Explain key concepts and principles related to instructional design.",
+                        "content": "To create this artifact, I engaged in a collaborative synthesis with Generative AI, treating it as a 'concept engine.' I adopted a method of 'Systems Isomorphism'—creating a direct mapping between psychological principles and industrial mechanics. I interpreted Intrinsic Load as 'Cargo Mass' and Vygotsky’s ZPD through the mechanic of the 'Signal Tower.' This metaphor explains complex load management simply: 'If the cargo is too heavy, you must shunt the train to avoid stalling.'",
+                        "competency_alignment": "I realized that instructional design theories are not just rules for teachers; they are the 'physics' of the learner's mind. Before this, I viewed CLT as abstract psychology; now I see it as software engineering constraints. I will continue to apply this 'Systems Isomorphism,' ensuring that every mechanic in my designs is rooted in solid instructional research and made accessible through metaphor."
+                    },
+                    "file_path": "/assets/docs/The_Iron_Network_Codex.pdf"
                 }
             ]
         },
@@ -70,15 +81,15 @@ export const portfolioData = {
             "image": "/assets/badges/tech_skills.png",
             "artifacts": [
                 {
-                    "title": "Rapid Skill Acquisition: The Portfolio Codebase",
-                    "origin": "Independent Professional Development (Site Architecture).",
-                    "summary": "This artifact is the portfolio website itself—a React/Vite application built from scratch. It serves as evidence of 'Just-in-Time' professional development, demonstrating the ability to rapidly acquire and apply complex technical skills (JavaScript, React, Tailwind) by leveraging AI as a collaborative partner.",
+                    "title": "LDT Technology Badge: Website Development",
+                    "origin": "EDCI 60001 LDT Technology Badge.",
+                    "summary": "This badge represents the mastery of rapid content deployment tools. It serves as evidence of a deliberate effort to master the 'Technopedagogical' landscape by evaluating the trade-offs between ease of use (Google Sites) and customization.",
                     "reflection": {
-                        "challenge": "This challenge required me to participate in professional development activities to grow my instructional design skill set.",
-                        "content": "To fulfill this, I engaged in an intensive, self-directed development cycle to architect this portfolio using tools I had no prior fluency in. Adopting a 'no-self' mentality, I utilized AI as a force multiplier, bypassing the ego's hesitation to 'be an expert' before acting. I treated myself merely as the tool through which the design intention was executed. By removing the friction of my own identity as a 'non-coder,' I was able to 'vibe code' the entire infrastructure, allowing the immediate needs of the project to dictate my learning path rather than my previous limitations.",
-                        "competency_alignment": "This approach aligns with the LDT competency by demonstrating that professional development is not about accumulating static certifications, but about the fluidity of the self in service to the learner. I embrace the 'empty vessel' philosophy—I hold no fixed identity as a 'designer' or 'developer,' but become whatever the instructional problem requires. This 'no-self' stance allows for frictionless adaptation to new technologies, ensuring that I remain a clear conduit for the solution rather than a barrier of ego."
+                        "challenge": "Participate in professional development activities.",
+                        "content": "The EDCI 60001 course provided a structured environment to explore web development. I experimented with the platform's intuitive interface while navigating the trade-offs of its lack of built-in AI customization. I had to troubleshoot issues and seek external resources—specifically using Gemini to bridge the gap left by the platform. The artifact shows that I can leverage simple platforms to create effective instructional hubs, fulfilling the criteria of growing my ID skillset.",
+                        "competency_alignment": "My previous experience was limited to drag-and-drop builders which I found restrictive. This experience shifted my perspective to view professional development as a strategic necessity. I plan to continue this growth by experimenting with embedding more outside resources, such as AI-generated code snippets, into standard platforms to overcome their native limitations."
                     },
-                    "file_path": "https://github.com/joshua42atkinson/daydream-website"
+                    "file_path": "/assets/docs/LDT_Tech_Badge.pdf"
                 }
             ]
         },
@@ -89,15 +100,15 @@ export const portfolioData = {
             "image": "/assets/badges/ethics.png",
             "artifacts": [
                 {
-                    "title": "The 'Privacy Moat' & Apache Prime Directive",
-                    "origin": "Institutional Compliance Document prepared for the Purdue Research Foundation.",
-                    "summary": "The 'Privacy Moat' details the 'Hybrid Sovereign Architecture' which processes student data locally to ensure FERPA compliance. It includes the 'Apache Prime Directive' to prevent vendor lock-in.",
+                    "title": "RCR Training & The Privacy Pivot",
+                    "origin": "Responsible Conduct of Research (RCR) Training Certificate & Architecture Pivot.",
+                    "summary": "This certificate serves as the theoretical foundation that guided a critical design pivot. It documents the shift from a cloud-based 'Oracle' model to a 'Local-First' architecture to comply with FERPA and Data Sovereignty requirements.",
                     "reflection": {
-                        "challenge": "Recognize, respect, and comply with organizational constraints (FERPA).",
-                        "content": "By designing for Local-First storage, I created a system that respects student agency by default. This artifact proves that ethical considerations can be baked into the code itself, rather than just written in a policy document.",
-                        "competency_alignment": "I realized that to truly respect the learner, I had to architect a system where their thoughts remained their property, countering the trend of 'Surveillance Capitalism' in EdTech."
+                        "challenge": "Recognize, respect, and comply with organizational constraints.",
+                        "content": "The RCR training acted as a 'governance filter' for my design process. It forced me to audit the 'Iron Road' project, which originally featured GPS tracking and cloud AI. I realized these features created unacceptable privacy risks. The evidence of complying with constraints is found in the architectural pivot: I explicitly abandoned the cloud model for a Local-First Rust architecture. This ensures all student data remains physically on the device, complying with the mandate to protect vulnerable populations.",
+                        "competency_alignment": "Prior to this, I recognized ethics largely as 'plagiarism' rules. I failed to see the 'surveillance capitalism' inherent in cloud AI. This training moved ethics from an abstract concept to a concrete design constraint. I now view myself not just as an architect of learning, but as a guardian of learner data, applying these frameworks as non-negotiable constraints at the start of the design process."
                     },
-                    "file_path": "/assets/docs/Master_Design_Document.docx" // Using repo as evidence of code compliance
+                    "file_path": "/assets/docs/RCR_Certificate.pdf"
                 }
             ]
         },
@@ -109,15 +120,15 @@ export const portfolioData = {
             "image": "/assets/badges/gap_analysis.png",
             "artifacts": [
                 {
-                    "title": "The 'Edutainment Gap' White Paper",
-                    "origin": "Independent Research Paper conducted for the 'Ask Pete' strategic planning phase.",
-                    "summary": "This analysis identifies a 'Market Failure' between High-Engagement/Low-Rigor products (Video Games) and High-Rigor/Low-Engagement products (LMS). It identifies the 'ID Tool Gap' as the root cause.",
+                    "title": "The Vision vs. Reality Gap Analysis",
+                    "origin": "The Iron Road: A Technopedagogical Architecture (Gap Analysis Section).",
+                    "summary": "A forensic analysis of the 'Planning-Doing Gap' in the Daydream project. It diagnoses the disconnect between the 'Digital Vision' (White Papers) and 'Digital Reality' (Codebase), identifying scope creep as the primary failure point.",
                     "reflection": {
                         "challenge": "Conducting a gap analysis.",
-                        "content": "The paper concludes that we don't need better games; we need better authoring tools for educators. The analysis aligned with the systemic view that the tools available to designers define the products they create.",
-                        "competency_alignment": "My prior experience led me to believe the gap was simply 'boring content.' This analysis deepened that understanding to focus on structural and tool-based gaps."
+                        "content": "Identifying the performance problem required a forensic audit of my own development environment. Data sources included a 'Codebase Catalog' and 'Technical Audit,' which revealed terabytes of redundant AI models. The comparison between the Desired Situation and Actual Situation exposed a massive 'Planning-Doing Gap.' I used this analysis to propose a 'Vertical Slice' strategy, stripping away the MMO layers to focus on a single, actionable authoring loop.",
+                        "competency_alignment": "In previous projects, I conflated 'ambition' with 'strategy.' I lacked a formal method for diagnosing the delta between current and desired states, often falling into the 'dopamine trap' of endless ideation. This challenge taught me that Gap Analysis is a necessary governance tool. Moving forward, I will apply this methodology to ensure the ambition of the design never outpaces the reality of the resources."
                     },
-                    "file_path": "/assets/docs/Edutainment_Gap_White_Paper.docx"
+                    "file_path": "/assets/docs/Iron_Road_Gap_Analysis.pdf"
                 }
             ]
         },
@@ -128,15 +139,45 @@ export const portfolioData = {
             "image": "/assets/badges/target_pop.png",
             "artifacts": [
                 {
-                    "title": "Environmental Analysis: The Legal & Psychological Landscape",
-                    "origin": "Mentor-in-the-Loop Strategy Brief.",
-                    "summary": "This Strategy Brief documents the rigorous analysis of the target environment for the Daydream platform. It examines the 'Legal Environment' (COPPA/FERPA constraints) and the 'Psychological Environment' (Interpersonal Risk) to justify the architectural rejection of email in favor of a secure 'Mentor Portal.'",
+                    "title": "Ask Pete Field Manual: The Boilermaker's Guide",
+                    "origin": "Context-aware support tool designed for Purdue University.",
+                    "summary": "A deep environmental and cultural analysis of the Purdue student body. It identifies 'Boilermaker' cultural anchors (resilience, engineering) to create an 'indigenous' support tool that reframes mental health as 'Cognitive Logistics.'",
                     "reflection": {
-                        "challenge": "This challenge required me to determine characteristics of a target population and environment that impact design.",
-                        "content": "To address this, I moved beyond simple demographic surveys to analyze the invisible 'Structural Environments' of the project. I audited the Legal Environment (analyzing COPPA/GDPR statutes) and the Psychological Environment (applying Edmondson's research on 'Psychological Safety'). My analysis revealed that the standard 'social sharing' environment (email) was hostile to the target population's need for safety. This environmental data directly dictated the design decision to build a 'Granular Consent Architecture' and a secure, local-first 'Mentor Portal,' ensuring the environment itself was an active protector of the learner.",
-                        "competency_alignment": "This aligns with my background in Public Administration and Crisis Management. In those fields, 'Environment' includes the regulatory code and safety protocols that keep people alive. I applied this same lens to ID, treating 'Privacy Compliance' not as a legal checkbox, but as a form of 'Environmental Health and Safety' for the digital learner. I design environments that protect the user by default."
+                        "challenge": "Determine characteristics of a target population and/or environment.",
+                        "content": "I employed Generative AI to conduct a forensic historical analysis of Purdue’s lore, identifying narrative anchors like 'One Brick Higher.' I determined that this population responds better to 'structural mandates' than abstract emotional appeals. These findings impacted design choices: I reframed diet/energy as 'Thermodynamics' and anxiety through the lens of Gemini 8. This utilized the 'Boilermaker Special' as an anatomical map to depersonalize failure.",
+                        "competency_alignment": "As a remote student, I lacked implicit cultural knowledge of the campus. I learned that a target population is defined by its 'Lore' and shared narrative. 'Engineering' content to match the specific 'Design Specs' of a population creates resonance. I will always prioritize cultural analysis to bridge the distance between designer intent and learner reality."
                     },
-                    "file_path": "/assets/docs/Mentor_in_the_Loop_Strategy_Brief.pdf"
+                    "file_path": "/assets/docs/Ask_Pete_Field_Manual.pdf"
+                }
+            ]
+        },
+        {
+            "id": "analysis_techniques",
+            "categoryId": "planning",
+            "title": "Analysis Techniques for Instruction",
+            "image": "/assets/badges/gap_analysis.png",
+            "artifacts": [
+                {
+                    "title": "Vocabulary-as-a-Mechanism (VaaM)",
+                    "origin": "The Iron Road: Instructional Analysis Section.",
+                    "summary": "This artifact details the 'Vocabulary as a Mechanism' framework, which emerged from a deep analysis of learning prerequisites. It determines that vocabulary words are 'subordinate tools' required to unlock higher-level concepts.",
+                    "reflection": {
+                        "challenge": "Determine subordinate and prerequisite skills and knowledge.",
+                        "content": "I determined subordinate skills by analyzing the 'physics' of language via Cognitive Load Theory. I asked, 'How heavy is this concept?' leading to the discovery that Intrinsic Load cannot be managed without specific vocabulary 'equipped.' I mapped these dependencies as a 'Coal and Steam' economy, determining that a student must possess specific words to process heavy concepts.",
+                        "competency_alignment": "My background in literature led me to view vocabulary as binary. This challenge shifted my perspective to view words as prerequisite keys. Determining prerequisites is about assessing the 'weight' of language. I will use this framework to ensure learners are properly 'equipped' before facing complex challenges."
+                    },
+                    "file_path": "/assets/docs/VaaM_Framework.pdf"
+                },
+                {
+                    "title": "Synthetic Source Verification Matrix",
+                    "origin": "Iron Road / Ask Pete: Vision vs. Reality Gap Analysis.",
+                    "summary": "A validation methodology for Generative AI content. It uses 'Adversarial Interrogation' and 'Forensic Code Auditing' to validate the accuracy of AI-generated technical specifications against the physical reality of the codebase.",
+                    "reflection": {
+                        "challenge": "Use appropriate techniques to analyze various types and sources to validate content.",
+                        "content": "My primary source was Generative AI, which introduced the risk of 'Hallucination of Success.' I developed 'Synthetic Source Verification,' employing 'Adversarial Interrogation' to force the AI to identify biases, and 'Triangulation' to cross-reference claims against the codebase. The 'Gap Analysis Matrix' evidences this, identifying where the AI described non-existent features like a 'Weigh Station using Gemma 3.'",
+                        "competency_alignment": "Traditionally, validation meant checking author credentials. Working with AI rendered this obsolete. I learned to verify 'technical reality' rather than reputation. Moving forward, I will apply 'Adversarial Interrogation' to all synthetic sources to ensure design documents reflect reality, not imagination."
+                    },
+                    "file_path": "/assets/docs/Gap_Analysis_Matrix.pdf"
                 }
             ]
         },
@@ -147,15 +188,15 @@ export const portfolioData = {
             "image": "/assets/badges/analyze_tech.png",
             "artifacts": [
                 {
-                    "title": "Technical Analysis: Systems Isomorphism",
-                    "origin": "Ask Pete Operator's Handbook (Section 7.0).",
-                    "summary": "This artifact is the Technical Specification from the Operator's Handbook. It documents the analysis of the Rust programming language and Bevy game engine, evaluating them against the pedagogical requirement for 'Psychological Safety.' It introduces the concept of 'Systems Isomorphism'—ensuring the reliability of the code matches the rigor of the pedagogy.",
+                    "title": "The Glass Box Architecture",
+                    "origin": "The Iron Road: Technopedagogical Architecture Analysis.",
+                    "summary": "An architectural analysis of Local-First AI and the Rust programming language. It evaluates these technologies not just for performance, but for their ethical capacity to preserve Data Sovereignty and create a 'Glass Box' learning environment.",
                     "reflection": {
-                        "challenge": "This challenge required me to analyze the characteristics of existing and emerging technologies and their potential use.",
-                        "content": "To address this, I conducted a comparative analysis between traditional web stacks (JavaScript) and emerging systems languages (Rust). My analysis focused on the concept of 'Systems Isomorphism'—the idea that the structural integrity of the software must mirror the psychological safety promised to the learner. I determined that Rust's 'Borrow Checker' (which prevents memory conflicts) could serve as a functional parallel to a 'Privacy-First' architecture. By selecting this emerging technology, I prioritized the user's safety over the developer's ease, ensuring the system 'cannot crash' just as the learner is supported to prevent crashing.",
-                        "competency_alignment": "This demonstrates a shift from viewing technology as a mere delivery vehicle to viewing it as the environment itself. By adopting a 'no-self' approach, I allowed the ethical requirements of the project (Privacy/Safety) to dictate the technology stack, rather than relying on my pre-existing comfort zone. This analysis proves that tool selection is an ethical act."
+                        "challenge": "Analyze the characteristics of existing and emerging technologies and their potential use.",
+                        "content": "I analyzed the characteristics of Local-First AI and Rust. My analysis determined that running 'Quantized' LLMs locally allowed me to invert the 'Oracle' model, creating a system that acts as a 'Mirror.' I evaluated Rust for its strict 'memory safety,' drawing a parallel to 'psychological safety.' The evidence is the selection of a stack that guarantees Data Sovereignty, creating a 'Privacy Moat.'",
+                        "competency_alignment": "I previously viewed AI tools as opaque 'Oracles' that encouraged executive help-seeking. This analysis established that the choice of technology is an ethical stance. I will prioritize technologies that help students analyze the 'physics' of their learning without exposing their internal lives to the noise of the internet."
                     },
-                    "file_path": "/assets/docs/Ask_Pete_Operators_Handbook.pdf"
+                    "file_path": "/assets/docs/Iron_Road_Architecture.pdf"
                 }
             ]
         },
@@ -167,15 +208,15 @@ export const portfolioData = {
             "image": "/assets/badges/id_process.png",
             "artifacts": [
                 {
-                    "title": "Design Synthesis: The Unified Roadmap",
-                    "origin": "Mentor-in-the-Loop Strategy Brief (Part IV).",
-                    "summary": "This artifact documents the Instructional Design process used to build Daydream 3.0. It demonstrates a 'Pedagogical Synthesis' process, where conflicting theories (CLT's privacy vs. Vygotsky's sociality) were analyzed and resolved into a unified, 5-Phase Implementation Roadmap (Spike -> Core -> Social -> Launch).",
+                    "title": "Constraint-Based ADDIE Protocol",
+                    "origin": "The Iron Road: Constraint-Based ADDIE Section.",
+                    "summary": "A modified ID workflow created to manage the 'exponential ideation' of Generative AI. It treats development time as a finite resource ('Coal') and prioritizes 'Vertical Slice' development over comprehensive curriculum design.",
                     "reflection": {
-                        "challenge": "This challenge required me to select or create an instructional design process based on the nature of the project.",
-                        "content": "To address this, I created a custom 'Synthesis Process.' Standard ID models often treat design as linear (ADDIE), but this project required reconciling opposing constraints: the need for social learning (Vygotsky) versus the need for privacy (CLT). My process involved a dialectical synthesis: Thesis (Private Reflection) + Antithesis (Social Sharing) = Synthesis (The Granular Consent Architecture). This artifact captures the moment that abstract theory was converted into a concrete, phased development roadmap, proving that 'Process' is the bridge between philosophy and product.",
-                        "competency_alignment": "This mirrors my experience in Incident Command, where standard operating procedures (SOPs) often conflict with ground truths. I learned that a rigid process fails under pressure; the best process is one that absorbs conflicting data and synthesizes a new course of action. This document is the 'Incident Action Plan' for the software's development."
+                        "challenge": "Select or create an instructional design process based on the nature of the project.",
+                        "content": "I modified the standard ADDIE model because it could not handle the 'Planning-Doing Gap' caused by AI acceleration. In the Analysis phase, I treated time as 'Coal.' In Design, I shifted to a 'Vertical Slice' methodology. In Development, I prioritized 'Psychological Safety' using Rust's compiler constraints. This 'Braking System' protocol allowed me to adjust the process to fit the resources of a solo parent developer.",
+                        "competency_alignment": "I initially failed to account for AI's ability to inflate scope. I learned that the ID process must serve the designer. This 'Constraint-Based ADDIE' is now my standard operating procedure, ensuring innovation is tempered by deliverability."
                     },
-                    "file_path": "/assets/docs/Mentor_in_the_Loop_Strategy_Brief.pdf"
+                    "file_path": "/assets/docs/Constraint_Based_ADDIE.pdf"
                 }
             ]
         },
@@ -186,15 +227,15 @@ export const portfolioData = {
             "image": "/assets/badges/systematic_design.png",
             "artifacts": [
                 {
-                    "title": "Sequencing the 'Mentor' Curriculum (TPACK)",
-                    "origin": "Mentor-in-the-Loop Strategy Brief (Part III).",
-                    "summary": "This artifact demonstrates the systematic design of the 'Mentor Certification' module. It breaks down the complex role of a mentor into specific TPACK (Technological, Pedagogical, Content Knowledge) competencies and sequences them into a mandatory training arc that must be completed before a user can interact with students.",
+                    "title": "Sequencing Matrix: Dependency of Force",
+                    "origin": "The Iron Road: Sequencing Matrix.",
+                    "summary": "A curriculum sequencing matrix based on 'Thermodynamics' rather than chronology. It outlines the 'Dependency of Force,' ensuring students acquire the 'Fuel' (Metabolic Energy) required to move the 'Mass' (Intrinsic Load) of complex concepts.",
                     "reflection": {
-                        "challenge": "This challenge required me to identify and sequence instructional goals for a target audience.",
-                        "content": "To meet this challenge, I performed a task analysis of the 'Mentor' role, identifying that Content Knowledge (Algebra) was insufficient without Pedagogical Knowledge (Empathy) and Technological Knowledge (Privacy Tools). I sequenced these goals into a mandatory 'Gatekeeper' module. The system enforces this sequence: a mentor cannot access the 'Social Loop' (Phase 3) until they have demonstrated mastery of the 'Private Loop' (Phase 1). This ensures that the instructional sequence is not just a suggestion, but a structural law of the platform.",
-                        "competency_alignment": "This aligns with the 'Crawl, Walk, Run' methodology I used in military training. You never put a Marine in a live-fire exercise (Social Loop) until they have mastered the mechanics in a dry run (Certification). I applied this same systematic rigor to the mentor's journey, ensuring that 'Safety' is a prerequisite for 'Service.'"
+                        "challenge": "Identify and sequence instructional goals.",
+                        "content": "I sequenced objectives based on Cognitive Load Theory. Phase 1 (Acquisition) focuses on identifying Mass. Phase 2 (Management) focuses on managing Coal. Phase 3 (Application) involves overcoming Static. The system physically locks the 'Publish' button if Intrinsic Load exceeds capacity. This creates a self-regulating learning sequence where the 'scaffolding' is a law of physics.",
+                        "competency_alignment": "My previous sequencing was linear (Chapter 1, then Chapter 2). I learned that sequencing is a matter of physics; you cannot sequence a 'Heavy' concept before the student has the fuel. I will apply this 'Dependency of Force' logic to ensure sustainable learner progress."
                     },
-                    "file_path": "/assets/docs/Mentor_in_the_Loop_Strategy_Brief.pdf"
+                    "file_path": "/assets/docs/Sequencing_Matrix.pdf"
                 }
             ]
         },
@@ -205,15 +246,26 @@ export const portfolioData = {
             "image": "/assets/badges/interventions.png",
             "artifacts": [
                 {
-                    "title": "Vocabulary-as-a-Mechanic (VaaM)",
-                    "origin": "Ask Pete Operator's Handbook (Section 2.4).",
-                    "summary": "This artifact details the 'Vocabulary-as-a-Mechanic' (VaaM) intervention strategy. It redefines content (vocabulary words) as physical 'Cargo' that must be transported through a game loop of Acquisition (Dual Coding), Application (Puzzle Solving), and Reinforcement (Mastery).",
+                    "title": "Mechanized Pedagogy: The Weigh Station",
+                    "origin": "The Iron Road: Technopedagogical Architecture.",
+                    "summary": "This artifact operationalizes 'Constraint-Based Modeling' and 'Socratic Scaffolding' directly into the software interface. The 'Weigh Station' physically prevents cognitive overload, acting as an active instructional intervention.",
                     "reflection": {
-                        "challenge": "This challenge required me to identify instructional strategies that align with instructional goals.",
-                        "content": "To meet this challenge, I designed the VaaM system to solve the problem of rote memorization. Instead of abstract study, the intervention treats words as functional tools ('Keys') required to unlock narrative progress. I utilized Miller's Law (7±2) to limit the 'Cargo Hold' (Working Memory), ensuring the intervention respects cognitive load limits while forcing 'Situated Usage.' This intervention transforms the learner from a passive recipient of definitions into an active operator of language.",
-                        "competency_alignment": "This aligns with the philosophy of 'Instrumental Pedagogy'—where the learner must *use* the knowledge to survive the environment. By designing the intervention as a 'Game Loop,' I removed the friction of the 'teacher' persona. The system provides objective feedback through physics (the door opens or it doesn't), allowing the learner to self-correct without judgment."
+                        "challenge": "Identify instructional strategies that align with instructional goals.",
+                        "content": "To align with the goal of managing Cognitive Load, I determined the use of Constraint-Based Modeling. The system physically locks the 'Publish' button if Intrinsic Load exceeds capacity. To foster metacognition, I selected 'AI as a Mirror,' rejecting the 'Oracle' strategy. These strategies transform abstract rules into concrete mechanical constraints, enforcing pedagogical rigor by design.",
+                        "competency_alignment": "I previously viewed strategies as things teachers 'do.' I learned that the environment itself teaches. By 'mechanizing' pedagogy, I ensure the rules of interaction naturally guide the learner. The game's code doesn't just deliver content; it enforces the pedagogy."
                     },
-                    "file_path": "/assets/docs/Ask_Pete_Operators_Handbook.pdf"
+                    "file_path": "/assets/docs/The_Weigh_Station.pdf"
+                },
+                {
+                    "title": "Glassmorphism Design System",
+                    "origin": "Daydream Portfolio Codebase & Design System.",
+                    "summary": "A visual design system based on the 'Economy of Force.' It utilizes a 'Glassmorphism' aesthetic (React/Tailwind) to reduce extraneous cognitive load, treating the interface as a 'Head-Up Display' that minimizes visual noise.",
+                    "reflection": {
+                        "challenge": "Use appropriate message and visual design principles.",
+                        "content": "I engineered a design system to strictly enforce visual principles. I applied Contrast (bg-slate-950) to eliminate noise, Repetition (BadgeCard components) for consistency, and Proximity to group metadata. These choices create a 'Head-Up Display' effect, ensuring the user's eye is drawn to the signal. This meets the criteria of using design to manage cognitive load.",
+                        "competency_alignment": "I used to think visual design was about being 'pretty.' I learned from Mayer’s principles that design is about Cognitive Economy. I will apply this 'Economy of Force' to all interfaces, ensuring every pixel serves a cognitive function."
+                    },
+                    "file_path": "https://github.com/joshua42atkinson/daydream-website"
                 }
             ]
         },
@@ -225,50 +277,12 @@ export const portfolioData = {
             "artifacts": [
                 {
                     "title": "The 'Storyfied' D20 System",
-                    "origin": "Game Design Document: 'The Iron Road to Cognition'.",
-                    "summary": "This artifact documents the selection and modification of the Open Game License (OGL) d20 System for instructional use. It details how the standard tabletop RPG mechanics were 'Storyfied' to measure cognitive load rather than combat damage, transforming a recreational engine into a pedagogical tool.",
+                    "origin": "The Iron Road to Cognition: 'Ask Pete' D20 Narrative Ecosystem Specification.",
+                    "summary": "This artifact represents the modification of the Open Game License (d20 System) for educational purposes. It re-maps standard RPG attributes (Strength, Constitution) to cognitive attributes (Traction, Efficiency) to measure learning flow.",
                     "reflection": {
-                        "challenge": "This challenge required me to select and modify existing materials to support instructional strategies.",
-                        "content": "To address this, I selected the d20 System (a proven probability engine) as the foundation for the 'Ask Pete' platform. Rather than building a game engine from scratch, I modified this existing material to align with Bloom's Taxonomy. I re-mapped 'Strength' to 'Traction' (Intrinsic Load capacity) and 'Hit Points' to 'Steam' (Mental Energy). This modification allows the platform to use a robust, pre-tested mathematical framework to model the 'Edutainment Gap,' ensuring that the gameplay mechanics directly reinforce the learning objectives without reinventing the wheel.",
-                        "competency_alignment": "This aligns with my philosophy of 'Creative Synthesis.' I believe innovation often comes from the re-contextualization of existing tools rather than pure invention. By adapting a gaming framework for education, I demonstrated the ability to see the pedagogical potential in non-educational materials and rigorously modify them to meet specific learning goals."
-                    },
-                    "file_path": "/assets/docs/Storyfied_D20_Game_Design.pdf"
-                }
-            ]
-        },
-        {
-            "id": "learning_assessment",
-            "categoryId": "design",
-            "title": "Design Learning Assessment",
-            "image": "/assets/badges/interventions.png",
-            "artifacts": [
-                {
-                    "title": "The Gradient Scale: Bloom's Taxonomy as Physics",
-                    "origin": "Storyfied D20 Game Design Document (Section 2.2).",
-                    "summary": "This artifact defines the project's assessment logic, which maps Bloom's Taxonomy directly to the d20 Difficulty Class (DC) system. It transforms assessment from a post-hoc quiz into a real-time 'Logistics Check,' measuring the learner's ability to 'transport cargo' (apply concepts) against a 'gradient' (cognitive complexity).",
-                    "reflection": {
-                        "challenge": "This challenge required me to identify learning processes and outcomes to be measured.",
-                        "content": "To meet this challenge, I designed a 'Stealth Assessment' system where the learning outcome (Conceptual Mastery) is measured by the game physics. I aligned the 'Gradient' of the virtual track with Bloom's levels: Remembering is a 'Flat Track' (DC 5), while Creating is a 'Vertical Rack' (DC 30). This allows the system to measure the learner's cognitive process in real-time. A successful die roll isn't just luck; it represents the successful application of 'Steam' (Effort) + 'Traction' (Skill) to overcome the 'Weight' (Intrinsic Load) of the concept.",
-                        "competency_alignment": "This reframes assessment from a judgment of the student to a readout of the system. By treating learning outcomes as physical vectors (Mass x Velocity), I removed the ambiguity of traditional grading. This demonstrates my ability to design assessments that are integral to the learning activity itself, rather than external interruptions."
-                    },
-                    "file_path": "/assets/docs/Storyfied_D20_Game_Design.pdf"
-                }
-            ]
-        },
-        {
-            "id": "analysis_techniques",
-            "categoryId": "planning",
-            "title": "Analysis Techniques for Instruction",
-            "image": "/assets/badges/gap_analysis.png",
-            "artifacts": [
-                {
-                    "title": "Psychographic Learner Analysis: The Persona Engine",
-                    "origin": "Storyfied D20 Game Design Document (Section 3.0).",
-                    "summary": "This artifact details the 'Persona Engine,' a learner analysis tool that uses Jungian Archetypes to categorize students. Unlike demographic surveys, this technique analyzes the learner's 'Psychological Profile' (Hero, Sage, Jester) to tailor the instructional scaffolding to their specific motivational needs.",
-                    "reflection": {
-                        "challenge": "This challenge required me to determine subordinate skills and analyze learner characteristics.",
-                        "content": "To address this, I employed a psychographic analysis technique based on Jungian psychology. I determined that 'cognitive ability' was not the only prerequisite for success; 'motivational style' was equally critical. I analyzed the target population and identified four distinct learner profiles (e.g., The Sage, who values accuracy; The Hero, who values speed). I then designed specific 'Locomotive Stats' (Traction, Efficiency) to match these profiles. This technique allows the instruction to adapt dynamically to the learner's internal architecture, proving that effective analysis goes beyond 'what they know' to 'who they are.'",
-                        "competency_alignment": "This mirrors the 'Profile Analysis' used in intelligence work. You cannot influence a target if you do not understand their underlying drives. I applied this operational mindset to the learner, using analysis not just to categorize them, but to empower them with a 'Digital Twin' that validates their unique learning style."
+                        "challenge": "Identify and select existing materials that support the content analysis.",
+                        "content": "My content analysis identified an 'Edutainment Gap' requiring high engagement. I selected the d20 System because it provides a proven mathematical framework. I also selected Jungian Archetypes to scaffold self-reflection. I modified combat mechanics into 'Logistics Checks.' This demonstrates Creative Synthesis—adapting robust frameworks rather than building from scratch.",
+                        "competency_alignment": "I suffered from 'Not Invented Here' syndrome. This challenge taught me the value of adapting proven systems. I now view the world as a library of materials waiting to be adapted, allowing me to stand on the shoulders of giants."
                     },
                     "file_path": "/assets/docs/Storyfied_D20_Game_Design.pdf"
                 }
@@ -281,15 +295,34 @@ export const portfolioData = {
             "image": "/assets/badges/develop_materials.png",
             "artifacts": [
                 {
-                    "title": "The 'Node Garden' (Phygital Learning)",
-                    "origin": "Mobile Application Prototype for the 'Ask Pete' ecosystem.",
-                    "summary": "The 'Node Garden' is a GPS-enabled game board overlaying the Purdue campus. It operationalizes Embodied Cognition by requiring physical movement to generate 'Kinetic Fuel' for the learning engine.",
+                    "title": "Daydream Initiative Infographic & Screencast",
+                    "origin": "Static Infographic & Dynamic Screencast Tutorial.",
+                    "summary": "Two distinct artifacts: a static infographic summarizing the ADDIE framework for stakeholders, and a screencast documenting the creation process. This demonstrates the ability to produce materials for both declarative (What) and procedural (How) knowledge.",
                     "reflection": {
                         "challenge": "Produce instructional materials in a variety of delivery formats.",
-                        "content": "This moves the 'classroom' out of the LMS and into the physical world. It uses GPS telemetry as a learning mechanic.",
-                        "competency_alignment": "My experience was limited to screen-based learning. This artifact aligned with the research on Embodied Cognition, proving that physical state affects cognitive readiness."
+                        "content": "I created the Infographic to synthesize abstract phases into a scannable visual. Simultaneously, I recorded a Screencast to document the creation process, acting as a 'worked example.' The infographic serves stakeholders; the video serves learners. This fulfills the requirement of creating static and dynamic media.",
+                        "competency_alignment": "My experience was skewed toward text. This challenge pushed me to diversify my 'Instructional Toolkit.' I learned that text is for depth, visuals for comprehension, and video for modeling. I am now a multi-modal creator."
                     },
-                    "file_path": "/assets/docs/Ask_Pete_White_Paper.docx"
+                    "file_path": "/assets/docs/Daydream_Infographic.pdf"
+                }
+            ]
+        },
+        {
+            "id": "learning_assessment",
+            "categoryId": "design",
+            "title": "Design Learning Assessment",
+            "image": "/assets/badges/interventions.png",
+            "artifacts": [
+                {
+                    "title": "The Logistics Check & Gradient Scale",
+                    "origin": "The Iron Road to Cognition: 'Ask Pete' D20 Narrative Ecosystem Specification.",
+                    "summary": "An assessment framework that maps Bloom's Taxonomy to the d20 Difficulty Class (DC) system. It treats knowledge application as a probability event ('Logistics Check') rather than a test, maintaining narrative immersion.",
+                    "reflection": {
+                        "challenge": "Ensure that assessment is aligned with instructional goals.",
+                        "content": "To align with 'Metacognitive Management,' I developed the 'Logistics Check.' I established a 'Gradient Scale' where recall is a 'Flat Track' (DC 5) and synthesis is a 'Vertical Rack' (DC 30). By calculating success based on Traction + Steam, the assessment mirrors the human experience of solving a problem. It allows failure to be viewed as a 'Stall' rather than a judgment.",
+                        "competency_alignment": "I previously viewed assessment as a high-stakes 'test.' I aligned my understanding with 'Stealth Assessment.' I learned that we don't need sterile testing environments; we need systems that respect the physics of the mind."
+                    },
+                    "file_path": "/assets/docs/Logistics_Check_Framework.pdf"
                 }
             ]
         },
@@ -301,15 +334,26 @@ export const portfolioData = {
             "image": "/assets/badges/evaluation.png",
             "artifacts": [
                 {
-                    "title": "The Signal Tower: Hattie's Feedback Model",
-                    "origin": "Ask Pete Operator's Handbook (Section 5.0).",
-                    "summary": "This artifact outlines the 'Signal Tower' evaluation protocol, which translates John Hattie's Feedback model into a visual signaling system. It distinguishes between 'Feed-Up' (Blue Signal/Goals), 'Feed-Back' (Amber Signal/Progress), and 'Feed-Forward' (Green Signal/Next Steps).",
+                    "title": "Technical Audit: The Formative Check",
+                    "origin": "Iron Road / Ask Pete: Technical Audit & Codebase Catalog.",
+                    "summary": "A formative evaluation utilizing 'Expert Review' to audit the codebase. It collected quantitative data on 'Terabyte Bloat' to identify the 'Planning-Doing Gap,' leading to the removal of unstable MMO features.",
                     "reflection": {
-                        "challenge": "This challenge required me to implement formative evaluation plans to provide information for adjustment.",
-                        "content": "To address this, I translated abstract evaluation theory into a concrete 'Telemetry System.' Rather than relying on post-hoc grades, the system uses the 'Big Bass Drum Protocol' to synchronize the learner's effort with the external reality of the curriculum. The 'Amber Signal' (Feed-Back) serves as a non-judgmental speedometer check, indicating when 'Drag > Thrust.' This formative data allows the learner to vent steam (manage emotion) or sand the rails (apply discipline) in real-time.",
-                        "competency_alignment": "This approach reframes evaluation from a moral judgment of the student to a mechanical readout of the system. In my practice, I view data as 'high-fidelity telemetry'—it is neither good nor bad, it is simply input for the next decision loop. This allows evaluation to serve as a navigation aid rather than a gatekeeper."
+                        "challenge": "Implement formative evaluation plans.",
+                        "content": "I implemented an Expert Review methodology. I collected data on storage usage and feature functionality. The data revealed that 'Massively Multiplayer' features were causing instability. I used this to modify the design, pivoting to a 'Vertical Slice' MVP. This saved the project from systemic failure.",
+                        "competency_alignment": "I thought formative evaluation meant asking 'Do you like this?' I learned it involves quantitative auditing. Sometimes the most honest feedback comes from the compiler. This tool is a critical governance mechanism."
                     },
-                    "file_path": "/assets/docs/Ask_Pete_Operators_Handbook.pdf"
+                    "file_path": "/assets/docs/Technical_Audit.pdf"
+                },
+                {
+                    "title": "Alpha Prototype Evaluation Protocol",
+                    "origin": "The Iron Road Design Specification: Evaluation Protocol (Section 5).",
+                    "summary": "A summative evaluation plan based on Kirkpatrick’s Four Levels. It uses telemetry to measure 'Coal Depletion' (Reaction) and determines a definitive 'Go/No-Go' decision for the project's architecture.",
+                    "reflection": {
+                        "challenge": "Implement summative evaluation plans.",
+                        "content": "I adapted Kirkpatrick’s model for a technopedagogical context. For Level 1, I designed a telemetry system to measure 'Coal Depletion' behaviorally. The evaluation of the Alpha build determined the MMO concept was a 'No-Go.' Based on this hard data, I decided to modify the program to a Single-Player tool.",
+                        "competency_alignment": "I previously viewed summative evaluation as a 'final exam.' I learned to view it as an executive tool to answer 'Is this sustainable?' It allows for pruning 'dead branches' to save the tree. I now value a 'No-Go' result as much as a 'Go' result."
+                    },
+                    "file_path": "/assets/docs/Evaluation_Protocol.pdf"
                 }
             ]
         },
@@ -320,15 +364,15 @@ export const portfolioData = {
             "image": "/assets/badges/dissemination.png",
             "artifacts": [
                 {
-                    "title": "The Internal Recharge Center Model",
-                    "origin": "Business Strategy Document for University Administration.",
-                    "summary": "This plan establishes 'Ask Pete' as an Internal Recharge Center, funding the project through a 'Seat Fee' ($5/student) rather than grants. It details the sustainable diffusion of the tool across the university.",
+                    "title": "Scope Governance & The Diffusion Pivot",
+                    "origin": "The Iron Road Design Specification: Executive Summary & Scope Governance Matrix.",
+                    "summary": "A dissemination strategy based on 'Subtraction.' It outlines the pivot from a theoretical 'Moonshot' to a deployable 'Local-First' tool, aligning the project with the organizational goal of Data Sovereignty to ensure adoption.",
                     "reflection": {
-                        "challenge": "Create a plan for the dissemination and/or the diffusion of the interventions.",
-                        "content": "A tool is useless if it cannot be paid for. This model ensures the 'Ask Pete' initiative survives beyond the initial research phase, securing its diffusion throughout the university ecosystem.",
-                        "competency_alignment": "My prior experience with projects was 'launch and leave.' This competency forced me to consider the 'Institutional Life Cycle' and sustainable economics."
+                        "challenge": "Create a vision of change that aligns learning and performance goals with organizational goals.",
+                        "content": "My initial vision was 'Undiffusable' due to FERPA liabilities. I engaged in 'Adversarial Interrogation' to negotiate down the scope. The new vision utilizes a Local-First architecture, aligning perfectly with organizational goals of Data Sovereignty. By removing privacy barriers, I transformed a fantasy into a deployable artifact.",
+                        "competency_alignment": "I thought dissemination was 'marketing.' I learned that adoption depends on compatibility with values. The most effective diffusion strategy is often subtraction—removing barriers. I will apply this lesson to future change management."
                     },
-                    "file_path": "/assets/docs/Organizational_Strategy.docx"
+                    "file_path": "/assets/docs/Scope_Governance_Matrix.pdf"
                 }
             ]
         }

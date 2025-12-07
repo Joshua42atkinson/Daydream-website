@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Terminal, BookOpen } from 'lucide-react';
+import { Menu, X, Terminal, BookOpen, Archive } from 'lucide-react';
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +17,7 @@ export default function Navigation() {
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'Competency Portfolio', path: '/portfolio', icon: BookOpen },
+        { name: 'Evidence', path: '/evidence', icon: Archive },
         { name: 'Ask Pete', path: '/ask-pete', icon: Terminal },
         { name: 'About', path: '/about' },
     ];
