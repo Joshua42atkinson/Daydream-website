@@ -3,6 +3,8 @@ import { portfolioData } from '../data/portfolioData';
 import BadgeCard from '../components/BadgeCard';
 import { Briefcase, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
 
 export default function Portfolio() {
     // Note: Removed unused useState, setSelectedBadge, etc., as navigation handles the detail view.
@@ -10,7 +12,17 @@ export default function Portfolio() {
     const { categories, badges } = portfolioData;
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991]">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991]"
+        >
+            <Helmet>
+                <title>Portfolio | Joshua Atkinson</title>
+                <meta name="description" content="IBSTPI-aligned instructional design portfolio demonstrating competencies in professional foundations, planning, design, evaluation, and research." />
+            </Helmet>
 
             {/* Hero Section - RE-INSERTED */}
             <div className="relative py-24 px-6 text-center overflow-hidden border-b border-slate-900">
@@ -20,8 +32,9 @@ export default function Portfolio() {
                         <Briefcase size={14} />
                         {portfolioData.title}
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-                        Competency <span className="text-[#CFB991]">Portfolio</span>
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                        <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Competency</span>{' '}
+                        <span className="bg-gradient-to-r from-[#CFB991] via-amber-300 to-yellow-400 bg-clip-text text-transparent animate-pulse">Portfolio</span>
                     </h1>
                     <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
                         A systematic collection of artifacts and reflections demonstrating mastery of the Purdue LDT Competencies.
@@ -35,7 +48,7 @@ export default function Portfolio() {
                 {/* Iterate through SUPRA-BADGES (Categories) */}
                 {categories.map((category) => (
                     <div key={category.id} className="mb-32 last:mb-0 relative">
-                        
+
                         {/* Section Header - RE-INSERTED */}
                         <div className="flex flex-col md:flex-row md:items-end gap-6 mb-12 border-b border-slate-800 pb-8">
                             <div className="bg-slate-900 p-4 rounded-2xl border border-slate-800 text-[#CFB991]">
@@ -53,12 +66,13 @@ export default function Portfolio() {
                             {badges
                                 .filter(b => b.categoryId === category.id)
                                 .map((badge) => (
-                                    <Link 
+                                    <Link
                                         key={badge.id}
-                                        to={`/portfolio/${category.id}/${badge.id}`} 
+                                        to={`/portfolio/${category.id}/${badge.id}`}
                                     >
                                         <BadgeCard
                                             badge={badge}
+                                            categoryId={category.id}
                                         />
                                     </Link>
                                 ))
@@ -68,6 +82,6 @@ export default function Portfolio() {
                 ))}
             </div>
             {/* Note: The Modal/AnimatePresence block was removed to enable direct page navigation. */}
-        </div>
+        </motion.div>
     );
 }

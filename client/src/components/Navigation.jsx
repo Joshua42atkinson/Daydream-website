@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Terminal, BookOpen, Archive } from 'lucide-react';
+import { Menu, X, Terminal, BookOpen, Archive, FileText } from 'lucide-react';
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +26,9 @@ export default function Navigation() {
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${scrolled
-                    ? 'bg-slate-950/90 backdrop-blur-md border-slate-800 py-3 shadow-lg'
-                    : 'bg-transparent border-transparent py-5'
+            className={`fixed top-0 w-full z-50 transition-all duration-300 print:hidden ${scrolled
+                ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800 py-3 shadow-lg'
+                : 'bg-transparent border-transparent py-5'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,8 +51,8 @@ export default function Navigation() {
                                 key={link.name}
                                 to={link.path}
                                 className={`flex items-center gap-2 text-sm font-medium transition-colors ${isActive(link.path)
-                                        ? 'text-[#CFB991]'
-                                        : 'text-slate-400 hover:text-white'
+                                    ? 'text-[#CFB991]'
+                                    : 'text-slate-400 hover:text-white'
                                     }`}
                             >
                                 {link.icon && <link.icon size={16} />}

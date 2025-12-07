@@ -4,6 +4,8 @@ import {
   BookOpen, Users, Search, Palette, CheckCircle, Filter,
   Cpu, Shield, Sparkles, ChevronRight, Download
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
 import { flagshipProjects, supportingArtifacts, competencyDomains } from '../data/competencyData';
 import { technologyBadges } from '../data/technologyBadges';
 
@@ -28,7 +30,7 @@ const CompetencyBadge = ({ domainId, small = false }) => {
 };
 
 const FlagshipProjectCard = ({ project }) => (
-  <div className="bg-slate-950/70 border-2 border-[#CFB991]/30 rounded-2xl overflow-hidden backdrop-blur-md shadow-2xl hover:shadow-[#CFB991]/20 transition-all duration-300 hover:-translate-y-1">
+  <div className="bg-slate-950/90 border-2 border-[#CFB991]/30 rounded-2xl overflow-hidden backdrop-blur-md shadow-2xl hover:shadow-[#CFB991]/20 transition-all duration-300 hover:-translate-y-1">
     {/* Header */}
     <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-8 border-b border-slate-700">
       <div className="flex items-start justify-between mb-4">
@@ -109,7 +111,7 @@ const ArtifactCard = ({ artifact }) => (
     href={artifact.pdfPath}
     target="_blank"
     rel="noopener noreferrer"
-    className="group block p-6 bg-slate-950/70 border border-slate-800 rounded-xl hover:border-[#CFB991]/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 backdrop-blur-md"
+    className="group block p-6 bg-slate-950/85 border border-slate-800 rounded-xl hover:border-[#CFB991]/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 backdrop-blur-md"
   >
     <div className="flex items-start justify-between mb-4">
       <div className="flex items-center gap-2">
@@ -146,7 +148,17 @@ export default function EvidencePage() {
     : supportingArtifacts;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pt-20">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen bg-slate-950 text-slate-100 pt-20"
+    >
+      <Helmet>
+        <title>Technical Skills & Credentials | Joshua Atkinson</title>
+        <meta name="description" content="Comprehensive showcase of technical abilities, professional tools, and earned credentials across instructional design, web development, and educational technology." />
+      </Helmet>
       {/* Hero Section */}
       <div className="relative overflow-hidden border-b border-slate-900">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black opacity-90" />
@@ -268,7 +280,7 @@ export default function EvidencePage() {
                 href={badge.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start bg-slate-950/70 border border-slate-800 rounded-xl p-5 transition-all duration-300 hover:border-[#CFB991]/50 hover:shadow-xl hover:-translate-y-1 backdrop-blur-md"
+                className="group flex items-start bg-slate-950/85 border border-slate-800 rounded-xl p-5 transition-all duration-300 hover:border-[#CFB991]/50 hover:shadow-xl hover:-translate-y-1 backdrop-blur-md"
               >
                 <div className="w-14 h-14 flex-shrink-0 mr-4 flex items-center justify-center">
                   {badge.imagePath ? (
@@ -302,6 +314,6 @@ export default function EvidencePage() {
           </div>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 }

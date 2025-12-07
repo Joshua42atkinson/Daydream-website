@@ -1,31 +1,87 @@
 import React from 'react';
 import { Terminal, Cpu, Shield, Zap, Network, Lock, ArrowRight, BookOpen, Users } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import D20GameWindow from '../components/D20GameWindow';
 
 export default function AskPete() {
+    const [showGame, setShowGame] = useState(false);
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991] pt-20">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991] pt-20"
+        >
+            {showGame && <D20GameWindow onClose={() => setShowGame(false)} />}
+            <Helmet>
+                <title>The Ask Pete Initiative | Joshua Atkinson</title>
+                <meta name="description" content="A GPS-enabled physical AI learning ecosystem built with Rust and Bevy. Demonstrates advanced instructional design and systems architecture." />
+            </Helmet>
 
             {/* Mission Header */}
             <div className="max-w-7xl mx-auto px-6 mb-24 relative overflow-hidden">
+                {/* Animated gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 via-blue-600/10 to-purple-600/10 rounded-3xl" />
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-5" />
+
+                {/* Floating orbs */}
+                <div className="absolute top-10 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-10 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
                 <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
                     <Terminal size={400} />
                 </div>
 
-                <div className="relative z-10 max-w-4xl">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-bold tracking-widest text-[#CFB991] uppercase rounded-full bg-[#CFB991]/10 border border-[#CFB991]/20">
-                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                        System Architecture v2.4
-                    </div>
+                <div className="relative z-10 max-w-4xl py-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                    >
+                        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-bold tracking-widest uppercase rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400">
+                            <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
+                            System Architecture v2.4
+                        </div>
+                    </motion.div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
-                        The <span className="text-[#CFB991]">Living</span> Laboratory.
-                    </h1>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-5xl md:text-7xl font-bold mb-8 tracking-tight"
+                    >
+                        The{' '}
+                        <span className="bg-gradient-to-r from-[#CFB991] via-amber-300 to-yellow-400 bg-clip-text text-transparent animate-pulse">Living</span>{' '}
+                        <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Laboratory</span>.
+                    </motion.h1>
 
-                    <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">
-                        "Ask Pete" is not just a chatbot. It is a <strong>GPS-Enabled Physical AI Learning Ecosystem</strong> designed
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="text-xl text-slate-400 max-w-2xl leading-relaxed"
+                    >
+                        "Ask Pete" is not just a chatbot. It is a <strong className="text-pink-400">GPS-Enabled Physical AI Learning Ecosystem</strong> designed
                         to capture high-fidelity telemetry of the student's cognitive journey. It functions as a 'Black Box Recorder'
                         for the learning process.
-                    </p>
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        <button
+                            onClick={() => setShowGame(true)}
+                            className="mt-8 px-8 py-4 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 font-bold rounded-xl flex items-center gap-3 transition-all font-mono tracking-wider group"
+                        >
+                            <Terminal size={20} className="group-hover:text-emerald-300" />
+                            LAUNCH IRON ROAD SIMULATION
+                        </button>
+                    </motion.div>
                 </div>
             </div>
 
@@ -279,7 +335,7 @@ export default function AskPete() {
                     </a>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
