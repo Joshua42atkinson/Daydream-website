@@ -3,10 +3,7 @@ import { Terminal, Cpu, Shield, Zap, Network, Lock, ArrowRight, BookOpen, Users 
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import D20GameWindow from '../components/D20GameWindow';
-
 export default function AskPete() {
-    const [showGame, setShowGame] = useState(false);
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -15,7 +12,6 @@ export default function AskPete() {
             transition={{ duration: 0.3 }}
             className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991] pt-20"
         >
-            {showGame && <D20GameWindow onClose={() => setShowGame(false)} />}
             <Helmet>
                 <title>The Ask Pete Initiative | Joshua Atkinson</title>
                 <meta name="description" content="A GPS-enabled physical AI learning ecosystem built with Rust and Bevy. Demonstrates advanced instructional design and systems architecture." />
@@ -75,11 +71,11 @@ export default function AskPete() {
                         transition={{ delay: 0.3 }}
                     >
                         <button
-                            onClick={() => setShowGame(true)}
-                            className="mt-8 px-8 py-4 bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 font-bold rounded-xl flex items-center gap-3 transition-all font-mono tracking-wider group"
+                            disabled
+                            className="mt-8 px-8 py-4 bg-slate-800/50 border border-slate-700 text-slate-500 font-bold rounded-xl flex items-center gap-3 cursor-not-allowed font-mono tracking-wider"
                         >
-                            <Terminal size={20} className="group-hover:text-emerald-300" />
-                            LAUNCH IRON ROAD SIMULATION
+                            <Terminal size={20} />
+                            IRON ROAD SIMULATION (MIGRATING...)
                         </button>
                     </motion.div>
                 </div>
