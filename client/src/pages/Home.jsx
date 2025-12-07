@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import { Layers, BrainCircuit, Shield, Cpu } from 'lucide-react';
+// ADD THIS LINE BELOW:
+import { motion } from 'framer-motion'; 
 
 export default function Home() {
     return (
