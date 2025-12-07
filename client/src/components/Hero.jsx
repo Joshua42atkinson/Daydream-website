@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal, Cpu, Shield, Landmark } from 'lucide-react'; // Added Landmark for Gov feel
 import { Link } from 'react-router-dom';
+import selfie from '../assets/selfie.jpg';
 
 export default function Hero() {
     return (
@@ -13,15 +14,18 @@ export default function Hero() {
             <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/shattered-island.png')]" />
 
             <div className="relative z-10 container mx-auto px-6 text-center">
-                {/* Identity Badge */}
+
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 text-xs font-mono tracking-widest uppercase"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-4"
                 >
-                    <Shield size={12} className="text-[#CFB991]" />
-                    <span>Operations & Leadership</span>
+                    <img
+                        src={selfie}
+                        alt="Joshua Atkinson"
+                        className="w-32 h-32 rounded-full mx-auto border-4 border-slate-800 shadow-xl"
+                    />
                 </motion.div>
 
                 {/* Name & Title */}
@@ -29,10 +33,22 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-6xl md:text-8xl font-bold mb-6 tracking-tighter"
+                    className="text-6xl md:text-8xl font-bold mb-4 tracking-tighter"
                 >
                     Joshua <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#CFB991] to-amber-700">Atkinson</span>
                 </motion.h1>
+
+                {/* Identity Badge */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 text-xs font-mono tracking-widest uppercase"
+                >
+                    <Shield size={12} className="text-[#CFB991]" />
+                    <span>Operations & Leadership</span>
+                </motion.div>
+
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
