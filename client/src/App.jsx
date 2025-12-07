@@ -1,3 +1,5 @@
+// client/src/App.jsx
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
@@ -11,6 +13,8 @@ import AskPete from './pages/AskPete';
 import Downloads from './pages/Downloads';
 
 import NotFound from './pages/NotFound';
+import SupraBadgePage from './pages/portfolio/SupraBadgePage'; // NEW IMPORT
+import SubBadgePage from './pages/portfolio/SubBadgePage';     // NEW IMPORT
 
 function App() {
   return (
@@ -26,6 +30,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/:categoryId" element={<SupraBadgePage />} /> // NEW ROUTE
+            <Route path="/portfolio/:categoryId/:badgeId" element={<SubBadgePage />} /> // NEW ROUTE
             <Route path="/evidence" element={<Evidence />} />
             <Route path="/ask-pete" element={<AskPete />} />
             <Route path="/downloads" element={<Downloads />} />
