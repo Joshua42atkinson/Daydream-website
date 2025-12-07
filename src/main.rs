@@ -22,9 +22,9 @@ async fn main() {
     // Build our application with routes
     let app = Router::new()
         // Serve static files (CSS, JS, images)
-        .nest_service("/css", ServeDir::new("docs/css"))
-        .nest_service("/js", ServeDir::new("docs/js"))
-        .nest_service("/images", ServeDir::new("docs/images"))
+        .nest_service("/css", ServeDir::new("client/dist/css"))
+        .nest_service("/js", ServeDir::new("client/dist/js"))
+        .nest_service("/images", ServeDir::new("client/dist/images"))
         // HTML page routes
         .route("/", get(serve_index))
         .route("/portfolio.html", get(serve_portfolio))
@@ -35,7 +35,7 @@ async fn main() {
     // Run the server
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
     tracing::info!("🚀 Server starting on http://{}", addr);
-    tracing::info!("📁 Serving static files from ./docs");
+    tracing::info!("📁 Serving static files from ./client/dist");
     tracing::info!("🌐 Visit http://localhost:3000 to view your portfolio");
     
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
@@ -44,15 +44,15 @@ async fn main() {
 
 // Route handlers
 async fn serve_index() -> impl IntoResponse {
-    serve_html_file("docs/index.html").await
+    serve_html_file("client/dist/index.html").await
 }
 
 async fn serve_portfolio() -> impl IntoResponse {
-    serve_html_file("docs/portfolio.html").await
+    serve_html_file("client/dist/portfolio.html").await
 }
 
 async fn serve_about() -> impl IntoResponse {
-    serve_html_file("docs/about.html").await
+    serve_html_file("client/dist/about.html").await
 }
 
 async fn health_check() -> impl IntoResponse {
