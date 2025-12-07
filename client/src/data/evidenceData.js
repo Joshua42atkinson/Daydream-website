@@ -1,3 +1,4 @@
+// client/src/data/evidenceData.js
 export const evidenceData = [
   {
     title: "The Iron Network: A Codex",
@@ -62,5 +63,13 @@ export const evidenceData = [
     description: "The source code for the Day/Dream project, which evolved into the Ask Pete initiative.",
     link: "https://github.com/joshua42atkinson/day_dream",
     tags: ["Codebase", "Repository", "Day/Dream"]
+  },
+  [cite_start]// NEW ARTIFACT FOR CITI CERTIFICATE [cite: 68, 69, 70, 71, 72, 73, 76]
+  { 
+    title: "CITI Program: Responsible Conduct of Research",
+    type: "Certification",
+    [cite_start]description: "Formal certification in the Responsible Conduct of Research (RCR) from CITI Program, required by Purdue University[cite: 78]. [cite_start]This training forms the ethical bedrock for the 'Local-First' privacy architecture[cite: 73, 76].",
+    link: "https://drive.google.com/file/d/1bzusqy8zvMaGDE_KspVCs_r8xw1M9_jI/view?usp=drive_link",
+    tags: ["Ethics", "Compliance", "Certification"]
   }
 ];

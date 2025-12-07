@@ -7,12 +7,14 @@ import { evidenceData } from '../../data/evidenceData';
 
 // --- START: Explicit Title Mapping for Robust Linking ---
 const ARTIFACT_TITLE_MAP = {
+    // ... (existing mappings)
     // Foundations Badges
     "Executive Summary: The Daydream Pivot": "Email Reflection Artifact",
     "From Mindmap to Model: The Rise of AI": "Blog: From Mindmap to Model",
     "The Iron Network Codex": "The Iron Network: A Codex",
     "LDT Technology Badge: Website Development": null, // No external link available in evidenceData
-    "RCR Training & The Privacy Pivot": null, // No external link available in evidenceData
+    // FIX: Map the ethics badge artifact to the correct CITI certification title
+    "RCR Training & The Privacy Pivot": "CITI Program: Responsible Conduct of Research", 
     
     // Planning Badges
     "The Vision vs. Reality Gap Analysis": "Iron Road Design Document",
@@ -23,7 +25,7 @@ const ARTIFACT_TITLE_MAP = {
     
     // Design Badges
     "Constraint-Based ADDIE Protocol": "Iron Road Design Document",
-    "Sequencing Matrix: Dependency of Force": null, // No external link available in evidenceData
+    "Sequencing Matrix: Dependency of Force": null,
     "Mechanized Pedagogy: The Weigh Station": "Storyfied D20 Game Design",
     "Glassmorphism Design System": "Day/Dream GitHub Repository",
     "The 'Storyfied' D20 System": "Storyfied D20 Game Design",
