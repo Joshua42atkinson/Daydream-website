@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Code, PenTool, ExternalLink } from 'lucide-react';
+import { FileText, Code, PenTool, ExternalLink, Video, Github } from 'lucide-react';
 
 // The verified data we just prepared
 const artifacts = [
@@ -52,6 +52,20 @@ const artifacts = [
     description: "Evidence of professional communication and feedback integration. Demonstrates the pivot in project scope based on expert critique.",
     link: "https://drive.google.com/file/d/1NHiexwwJNsEpS1uIhX-DKkDnWGUsvV-3/view?usp=sharing",
     tags: ["Feedback", "Pivot"]
+  },
+  {
+    title: "Day/Dream Project Overview",
+    type: "Video",
+    description: "A video overview of the Day/Dream project, which evolved into the Ask Pete initiative.",
+    link: "https://youtu.be/dYxmWd50xgs?si=6MyQkJ7-ABvjxOGK",
+    tags: ["Video", "Overview", "Day/Dream"]
+  },
+  {
+    title: "Day/Dream GitHub Repository",
+    type: "Repository",
+    description: "The source code for the Day/Dream project, which evolved into the Ask Pete initiative.",
+    link: "https://github.com/joshua42atkinson/day_dream",
+    tags: ["Codebase", "Repository", "Day/Dream"]
   }
 ];
 
@@ -61,7 +75,9 @@ const ArtifactCard = ({ item }) => (
       <div className="flex items-center gap-2">
         {item.type === "Design Document" && <PenTool className="w-5 h-5 text-amber-400" />}
         {item.type === "Technical Spec" && <Code className="w-5 h-5 text-blue-400" />}
-        {!["Design Document", "Technical Spec"].includes(item.type) && <FileText className="w-5 h-5 text-slate-400" />}
+        {item.type === "Video" && <Video className="w-5 h-5 text-red-400" />}
+        {item.type === "Repository" && <Github className="w-5 h-5 text-green-400" />}
+        {!["Design Document", "Technical Spec", "Video", "Repository"].includes(item.type) && <FileText className="w-5 h-5 text-slate-400" />}
         <span className="text-xs font-mono uppercase tracking-wider text-slate-400">{item.type}</span>
       </div>
       <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
@@ -96,8 +112,8 @@ export default function EvidencePage() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {artifacts.map((artifact, index) => (
-            <ArtifactCard key={index} item={artifact} />
+          {artifacts.map((artifact) => (
+            <ArtifactCard key={artifact.title} item={artifact} />
           ))}
         </div>
       </div>
