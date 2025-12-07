@@ -5,15 +5,16 @@ import { ExternalLink, FileText, Lightbulb } from 'lucide-react';
 import ReflectionViewer from '../../components/ReflectionViewer'; 
 import { evidenceData } from '../../data/evidenceData'; 
 
+// ... (existing imports)
+
 // --- START: Explicit Title Mapping for Robust Linking ---
 const ARTIFACT_TITLE_MAP = {
-    // ... (existing mappings)
     // Foundations Badges
     "Executive Summary: The Daydream Pivot": "Email Reflection Artifact",
     "From Mindmap to Model: The Rise of AI": "Blog: From Mindmap to Model",
     "The Iron Network Codex": "The Iron Network: A Codex",
-    "LDT Technology Badge: Website Development": null, // No external link available in evidenceData
-    // FIX: Map the ethics badge artifact to the correct CITI certification title
+    "LDT Technology Badge: Website Development": null,
+    // FIXED: Map the ethics badge artifact to the correct CITI certification title
     "RCR Training & The Privacy Pivot": "CITI Program: Responsible Conduct of Research", 
     
     // Planning Badges
@@ -37,10 +38,7 @@ const ARTIFACT_TITLE_MAP = {
     "Alpha Prototype Evaluation Protocol": "Iron Road Design Document",
     "Scope Governance & The Diffusion Pivot": "Iron Road Design Document",
     
-    // Duplicates/Older Artifacts (ensuring coverage)
-    "Executive Summary: The Daydream Pivot": "Email Reflection Artifact",
-    "From Mindmap to Model: The Rise of AI": "Blog: From Mindmap to Model",
-    "The Iron Network Codex": "The Iron Network: A Codex",
+    // Removed duplicate keys/Older Artifacts
 };
 // --- END: Explicit Title Mapping for Robust Linking ---
 
