@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/Daydream-website/',
   build: {
-    outDir: '../docs',
+    outDir: 'dist',
     emptyOutDir: true,
   }
 })
