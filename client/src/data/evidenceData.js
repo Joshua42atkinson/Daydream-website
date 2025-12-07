@@ -63,12 +63,19 @@ export const evidenceData = [
     link: "https://github.com/joshua42atkinson/day_dream",
     tags: ["Codebase", "Repository", "Day/Dream"]
   },
-  // NEW ARTIFACT FOR CITI CERTIFICATE (Syntax fixed)
   { 
     title: "CITI Program: Responsible Conduct of Research",
     type: "Certification",
     description: "Formal certification in the Responsible Conduct of Research (RCR) from CITI Program, required by Purdue University. This training forms the ethical bedrock for the 'Local-First' privacy architecture.",
     link: "https://drive.google.com/file/d/1bzusqy8zvMaGDE_KspVCs_r8xw1M9_jI/view?usp=drive_link",
     tags: ["Ethics", "Compliance", "Certification"]
+  },
+  // NEW ENTRY ADDED
+  { 
+    title: "Website Development Technology Badge (Credential)",
+    type: "Certification",
+    description: "External credential for completing the EDCI 60001 LDT Technology Badge in Website Development.",
+    link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545190/view",
+    tags: ["Tech Skills", "Credential", "Website"]
   }
 ];

@@ -13,7 +13,8 @@ const ARTIFACT_TITLE_MAP = {
     "Executive Summary: The Daydream Pivot": "Email Reflection Artifact",
     "From Mindmap to Model: The Rise of AI": "Blog: From Mindmap to Model",
     "The Iron Network Codex": "The Iron Network: A Codex",
-    "LDT Technology Badge: Website Development": null,
+    // FIXED: Mapping to the new entry in evidenceData.js
+    "LDT Technology Badge: Website Development": "Website Development Technology Badge (Credential)", 
     // FIXED: Map the ethics badge artifact to the correct CITI certification title
     "RCR Training & The Privacy Pivot": "CITI Program: Responsible Conduct of Research", 
     
@@ -26,7 +27,8 @@ const ARTIFACT_TITLE_MAP = {
     
     // Design Badges
     "Constraint-Based ADDIE Protocol": "Iron Road Design Document",
-    "Sequencing Matrix: Dependency of Force": null,
+    // FIXED: Mapping design spec to main Iron Road Design Document
+    "Sequencing Matrix: Dependency of Force": "Iron Road Design Document",
     "Mechanized Pedagogy: The Weigh Station": "Storyfied D20 Game Design",
     "Glassmorphism Design System": "Day/Dream GitHub Repository",
     "The 'Storyfied' D20 System": "Storyfied D20 Game Design",
