@@ -18,10 +18,16 @@ export default function Footer() {
                                 Joshua<span className="text-[#CFB991]">Atkinson</span>
                             </span>
                         </Link>
-                        <p className="text-slate-400 max-w-sm leading-relaxed mb-6">
+                        <p className="text-slate-400 max-w-sm leading-relaxed mb-4">
                             A Master's Competency Portfolio for Purdue University's Learning Design & Technology program.
                             Built with Rust, React, and Pedagogical Rigor.
                         </p>
+                        <div className="px-4 py-3 bg-slate-900/50 border-l-4 border-[#CFB991] rounded-r-lg mb-6">
+                            <p className="text-sm text-slate-300 leading-relaxed">
+                                <strong className="text-[#CFB991]">Local-First Philosophy:</strong> This portfolio is designed with privacy-centric principles.
+                                All instructional tools prioritize data sovereignty and learner agency over surveillance capitalism.
+                            </p>
+                        </div>
                         <div className="flex gap-4">
                             <SocialLink href="https://github.com/joshua42atkinson" icon={Github} label="GitHub" />
                             <SocialLink href="https://linkedin.com/in/joshua-atkinson" icon={Linkedin} label="LinkedIn" />

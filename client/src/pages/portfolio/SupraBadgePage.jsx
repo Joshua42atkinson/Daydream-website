@@ -41,7 +41,7 @@ export default function SupraBadgePage() {
                         <Link
                             key={badge.id}
                             to={`/portfolio/${categoryId}/${badge.id}`}
-                            className="group bg-slate-900/40 border border-slate-800 hover:border-[#CFB991]/50 rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-[#CFB991]/5 hover:-translate-y-1 block"
+                            className="group bg-slate-950/70 border border-slate-800 hover:border-[#CFB991]/50 rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-[#CFB991]/5 hover:-translate-y-1 block backdrop-blur-md"
                         >
                             <div className="flex items-start justify-between mb-6">
                                 <div className="p-3 rounded-lg bg-slate-800 group-hover:bg-[#CFB991]/20 text-slate-400 group-hover:text-[#CFB991] transition-colors">

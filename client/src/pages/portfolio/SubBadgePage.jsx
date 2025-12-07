@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { portfolioData } from '../../data/portfolioData';
 import { ExternalLink, FileText, Lightbulb } from 'lucide-react';
-import ReflectionViewer from '../../components/ReflectionViewer'; 
-import { evidenceData } from '../../data/evidenceData'; 
+import ReflectionViewer from '../../components/ReflectionViewer';
+import { evidenceData } from '../../data/evidenceData';
 
 // ... (existing imports)
 
@@ -14,17 +14,17 @@ const ARTIFACT_TITLE_MAP = {
     "From Mindmap to Model: The Rise of AI": "Blog: From Mindmap to Model",
     "The Iron Network Codex": "The Iron Network: A Codex",
     // FIXED: Mapping to the new entry in evidenceData.js
-    "LDT Technology Badge: Website Development": "Website Development Technology Badge (Credential)", 
+    "LDT Technology Badge: Website Development": "Website Development Technology Badge (Credential)",
     // FIXED: Map the ethics badge artifact to the correct CITI certification title
-    "RCR Training & The Privacy Pivot": "CITI Program: Responsible Conduct of Research", 
-    
+    "RCR Training & The Privacy Pivot": "CITI Program: Responsible Conduct of Research",
+
     // Planning Badges
     "The Vision vs. Reality Gap Analysis": "Iron Road Design Document",
     "Ask Pete Field Manual: The Boilermaker's Guide": "Ask Pete Field Manual (Short 8k)",
     "Vocabulary-as-a-Mechanism (VaaM)": "Storyfied D20 Game Design",
     "Synthetic Source Verification Matrix": "Iron Road Design Document",
     "The Glass Box Architecture": "Iron Road: Codebase of a Digital Mirror",
-    
+
     // Design Badges
     "Constraint-Based ADDIE Protocol": "Iron Road Design Document",
     // FIXED: Mapping design spec to main Iron Road Design Document
@@ -34,12 +34,12 @@ const ARTIFACT_TITLE_MAP = {
     "The 'Storyfied' D20 System": "Storyfied D20 Game Design",
     "Daydream Initiative Infographic & Screencast": "Day/Dream Project Overview",
     "The Logistics Check & Gradient Scale": "Storyfied D20 Game Design",
-    
+
     // Evaluation Badges
     "Technical Audit: The Formative Check": "Iron Road: Codebase of a Digital Mirror",
     "Alpha Prototype Evaluation Protocol": "Iron Road Design Document",
     "Scope Governance & The Diffusion Pivot": "Iron Road Design Document",
-    
+
     // Removed duplicate keys/Older Artifacts
 };
 // --- END: Explicit Title Mapping for Robust Linking ---
@@ -51,7 +51,7 @@ const getArtifactLink = (artifact) => {
 
     // If no mapping exists, or if it's explicitly null, return the placeholder file path
     if (!targetTitle) {
-        return artifact.file_path; 
+        return artifact.file_path;
     }
 
     // 2. Search evidenceData for an EXACT title match
@@ -60,9 +60,9 @@ const getArtifactLink = (artifact) => {
     if (match) {
         return match.link;
     }
-    
+
     // 3. Fallback to the original internal placeholder path if no match is found (shouldn't happen with the map)
-    return artifact.file_path; 
+    return artifact.file_path;
 };
 
 
@@ -71,6 +71,11 @@ export default function SubBadgePage() {
 
     const category = portfolioData.categories.find(c => c.id === categoryId);
     const badge = portfolioData.badges.find(b => b.id === badgeId);
+
+    // Scroll to top when page loads (must be before conditional return)
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [badgeId]); // Re-scroll when badge changes
 
     if (!category || !badge) {
         return <Navigate to={`/portfolio/${categoryId}`} replace />;
@@ -104,9 +109,9 @@ export default function SubBadgePage() {
 
                         return (
                             <div key={index} className="scroll-mt-32">
-                                
+
                                 {/* 1. The Artifact Card */}
-                                <div className="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden mb-8 shadow-xl">
+                                <div className="bg-slate-950/70 border border-slate-800 rounded-2xl overflow-hidden mb-8 shadow-xl backdrop-blur-md">
                                     <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-800/50">
                                         <div className="flex items-center gap-4">
                                             <div className="p-4 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 text-[#CFB991] shadow-inner">
@@ -154,7 +159,7 @@ export default function SubBadgePage() {
                                         </span>
                                         <div className="h-px flex-grow bg-slate-800"></div>
                                     </div>
-                                    
+
                                     <ReflectionViewer reflection={artifact.reflection} />
                                 </div>
 

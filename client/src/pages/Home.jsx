@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import { Layers, BrainCircuit, Shield, Cpu } from 'lucide-react';
 // ADD THIS LINE BELOW:
-import { motion } from 'framer-motion'; 
+import { motion } from 'framer-motion';
 
 export default function Home() {
     return (
@@ -82,7 +82,7 @@ export default function Home() {
 function FeatureCard({ icon: Icon, title, desc, delay }) {
     return (
         // MODIFIED: Added backdrop-blur-md for a proper glassmorphism effect
-        <div className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 hover:border-[#CFB991]/30 transition-all duration-300 group backdrop-blur-md">
+        <div className="p-8 rounded-2xl bg-slate-950/70 border border-slate-800 hover:border-[#CFB991]/30 transition-all duration-300 group backdrop-blur-md">
             <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-[#CFB991] group-hover:scale-110 transition-transform">
                 <Icon size={24} />
             </div>

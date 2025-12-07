@@ -41,7 +41,7 @@ export default function PortfolioHome() {
                         <Link
                             key={category.id}
                             to={`/portfolio/${category.id}`}
-                            className="group relative overflow-hidden bg-slate-900/40 border border-slate-800 hover:border-[#CFB991]/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-[#CFB991]/10 hover:-translate-y-1 block"
+                            className="group relative overflow-hidden bg-slate-950/70 border border-slate-800 hover:border-[#CFB991]/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-[#CFB991]/10 hover:-translate-y-1 block backdrop-blur-md"
                         >
                             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                                 <CategoryIcon id={category.id} size={120} />

@@ -29,7 +29,7 @@ export default function Downloads() {
                 </div>
 
                 {/* File System Grid */}
-                <div className="bg-slate-900/30 border border-slate-800 rounded-lg overflow-hidden">
+                <div className="bg-slate-950/70 border border-slate-800 rounded-lg overflow-hidden backdrop-blur-md">
 
                     {/* Table Header */}
                     <div className="grid grid-cols-12 gap-4 p-4 bg-slate-900 border-b border-slate-800 text-xs text-slate-500 uppercase tracking-wider font-bold">
@@ -42,7 +42,7 @@ export default function Downloads() {
                     {/* File Rows */}
                     <div className="divide-y divide-slate-800/50">
                         {allArtifacts.map((file, index) => (
-                            <div key={index} className="grid grid-cols-12 gap-4 p-4 hover:bg-slate-800/40 transition-colors items-center group">
+                            <div key={index} className="grid grid-cols-12 gap-4 p-4 hover:bg-slate-900/70 transition-colors items-center group">
 
                                 {/* File Name */}
                                 <div className="col-span-6 md:col-span-5 flex items-start gap-3">

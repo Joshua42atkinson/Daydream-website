@@ -150,7 +150,7 @@ export default function About() {
 
 // Helper Component
 const CompetencyCard = ({ title, desc, icon: Icon }) => (
-    <div className="p-6 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-[#CFB991]/30 transition-all duration-300">
+    <div className="p-6 bg-slate-950/70 border border-slate-800 rounded-xl hover:border-[#CFB991]/30 transition-all duration-300">
         <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-4 text-[#CFB991]">
             <Icon size={24} />
         </div>
