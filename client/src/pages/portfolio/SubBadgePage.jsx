@@ -1,8 +1,33 @@
+// client/src/pages/portfolio/SubBadgePage.jsx
+
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { portfolioData } from '../../data/portfolioData';
 import { ArrowLeft, ExternalLink, FileText, Lightbulb } from 'lucide-react';
-import ReflectionViewer from '../../components/ReflectionViewer'; // Import the new component
+import ReflectionViewer from '../../components/ReflectionViewer'; 
+import { evidenceData } from '../../data/evidenceData'; // <--- NEW IMPORT
+
+// Helper to find the correct external link via fuzzy match on the artifact title
+const getArtifactLink = (artifact) => {
+    // Normalizes strings by removing non-alphanumeric characters and converting to lowercase
+    const normalize = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const currentTitle = normalize(artifact.title);
+
+    // Look for a partial match in the evidenceData array
+    const match = evidenceData.find(item => {
+        const itemTitle = normalize(item.title);
+        // Check if the badge title contains the evidence title OR vice-versa
+        return currentTitle.includes(itemTitle) || itemTitle.includes(currentTitle);
+    });
+
+    if (match) {
+        return match.link;
+    }
+    
+    // Final fallback to the original internal placeholder path (as a last resort)
+    return artifact.file_path; 
+};
+
 
 export default function SubBadgePage() {
     const { categoryId, badgeId } = useParams();
@@ -36,59 +61,64 @@ export default function SubBadgePage() {
 
             {/* Content Area */}
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="space-y-24"> {/* Increased spacing for drama */}
-                    {badgeArtifacts.map((artifact, index) => (
-                        <div key={index} className="scroll-mt-32">
-                            
-                            {/* 1. The Artifact Card */}
-                            <div className="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden mb-8 shadow-xl">
-                                <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-800/50">
-                                    <div className="flex items-center gap-4">
-                                        <div className="p-4 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 text-[#CFB991] shadow-inner">
-                                            <FileText size={28} />
-                                        </div>
-                                        <div>
-                                            <h2 className="text-2xl font-bold text-white mb-2">
-                                                {artifact.title}
-                                            </h2>
-                                            <div className="inline-block px-3 py-1 bg-slate-950 rounded text-xs font-mono text-slate-500 uppercase tracking-wider border border-slate-800">
-                                                {artifact.origin}
+                <div className="space-y-24">
+                    {badgeArtifacts.map((artifact, index) => {
+                        const artifactLink = getArtifactLink(artifact); // <--- Use the helper here
+
+                        return (
+                            <div key={index} className="scroll-mt-32">
+                                
+                                {/* 1. The Artifact Card */}
+                                <div className="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden mb-8 shadow-xl">
+                                    <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-800/50">
+                                        <div className="flex items-center gap-4">
+                                            <div className="p-4 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 text-[#CFB991] shadow-inner">
+                                                <FileText size={28} />
+                                            </div>
+                                            <div>
+                                                <h2 className="text-2xl font-bold text-white mb-2">
+                                                    {artifact.title}
+                                                </h2>
+                                                <div className="inline-block px-3 py-1 bg-slate-950 rounded text-xs font-mono text-slate-500 uppercase tracking-wider border border-slate-800">
+                                                    {artifact.origin}
+                                                </div>
                                             </div>
                                         </div>
+                                        {/* Use the dynamically resolved artifactLink here */}
+                                        {artifactLink && (
+                                            <a
+                                                href={artifactLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="group flex items-center gap-3 px-6 py-3 bg-[#CFB991] hover:bg-white text-slate-950 font-bold rounded-xl transition-all hover:shadow-[0_0_20px_rgba(207,185,145,0.3)]"
+                                            >
+                                                View Artifact
+                                                <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
+                                            </a>
+                                        )}
                                     </div>
-                                    {artifact.file_path && (
-                                        <a
-                                            href={artifact.file_path}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group flex items-center gap-3 px-6 py-3 bg-[#CFB991] hover:bg-white text-slate-950 font-bold rounded-xl transition-all hover:shadow-[0_0_20px_rgba(207,185,145,0.3)]"
-                                        >
-                                            View Artifact
-                                            <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
-                                        </a>
-                                    )}
+                                    <div className="p-6 md:p-8 bg-slate-950/30">
+                                        <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Summary</h3>
+                                        <p className="text-slate-300 text-lg leading-relaxed">{artifact.summary}</p>
+                                    </div>
                                 </div>
-                                <div className="p-6 md:p-8 bg-slate-950/30">
-                                    <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Summary</h3>
-                                    <p className="text-slate-300 text-lg leading-relaxed">{artifact.summary}</p>
-                                </div>
-                            </div>
 
-                            {/* 2. The Reflection Timeline (The "Fancy" Part) */}
-                            <div className="pl-2 md:pl-4">
-                                <div className="flex items-center gap-3 mb-8">
-                                    <div className="h-px flex-grow bg-slate-800"></div>
-                                    <span className="text-[#CFB991] font-bold uppercase tracking-widest text-sm flex items-center gap-2">
-                                        <Lightbulb size={16} /> Competency Reflection
-                                    </span>
-                                    <div className="h-px flex-grow bg-slate-800"></div>
+                                {/* 2. The Reflection Timeline (The "Fancy" Part) */}
+                                <div className="pl-2 md:pl-4">
+                                    <div className="flex items-center gap-3 mb-8">
+                                        <div className="h-px flex-grow bg-slate-800"></div>
+                                        <span className="text-[#CFB991] font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                                            <Lightbulb size={16} /> Competency Reflection
+                                        </span>
+                                        <div className="h-px flex-grow bg-slate-800"></div>
+                                    </div>
+                                    
+                                    <ReflectionViewer reflection={artifact.reflection} />
                                 </div>
-                                
-                                <ReflectionViewer reflection={artifact.reflection} />
-                            </div>
 
-                        </div>
-                    ))}
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
