@@ -1,30 +1,65 @@
-// client/src/pages/portfolio/SubBadgePage.jsx
-
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { portfolioData } from '../../data/portfolioData';
-import { ArrowLeft, ExternalLink, FileText, Lightbulb } from 'lucide-react';
+import { ExternalLink, FileText, Lightbulb } from 'lucide-react';
 import ReflectionViewer from '../../components/ReflectionViewer'; 
-import { evidenceData } from '../../data/evidenceData'; // <--- NEW IMPORT
+import { evidenceData } from '../../data/evidenceData'; 
 
-// Helper to find the correct external link via fuzzy match on the artifact title
+// --- START: Explicit Title Mapping for Robust Linking ---
+const ARTIFACT_TITLE_MAP = {
+    // Foundations Badges
+    "Executive Summary: The Daydream Pivot": "Email Reflection Artifact",
+    "From Mindmap to Model: The Rise of AI": "Blog: From Mindmap to Model",
+    "The Iron Network Codex": "The Iron Network: A Codex",
+    "LDT Technology Badge: Website Development": null, // No external link available in evidenceData
+    "RCR Training & The Privacy Pivot": null, // No external link available in evidenceData
+    
+    // Planning Badges
+    "The Vision vs. Reality Gap Analysis": "Iron Road Design Document",
+    "Ask Pete Field Manual: The Boilermaker's Guide": "Ask Pete Field Manual (Short 8k)",
+    "Vocabulary-as-a-Mechanism (VaaM)": "Storyfied D20 Game Design",
+    "Synthetic Source Verification Matrix": "Iron Road Design Document",
+    "The Glass Box Architecture": "Iron Road: Codebase of a Digital Mirror",
+    
+    // Design Badges
+    "Constraint-Based ADDIE Protocol": "Iron Road Design Document",
+    "Sequencing Matrix: Dependency of Force": null, // No external link available in evidenceData
+    "Mechanized Pedagogy: The Weigh Station": "Storyfied D20 Game Design",
+    "Glassmorphism Design System": "Day/Dream GitHub Repository",
+    "The 'Storyfied' D20 System": "Storyfied D20 Game Design",
+    "Daydream Initiative Infographic & Screencast": "Day/Dream Project Overview",
+    "The Logistics Check & Gradient Scale": "Storyfied D20 Game Design",
+    
+    // Evaluation Badges
+    "Technical Audit: The Formative Check": "Iron Road: Codebase of a Digital Mirror",
+    "Alpha Prototype Evaluation Protocol": "Iron Road Design Document",
+    "Scope Governance & The Diffusion Pivot": "Iron Road Design Document",
+    
+    // Duplicates/Older Artifacts (ensuring coverage)
+    "Executive Summary: The Daydream Pivot": "Email Reflection Artifact",
+    "From Mindmap to Model: The Rise of AI": "Blog: From Mindmap to Model",
+    "The Iron Network Codex": "The Iron Network: A Codex",
+};
+// --- END: Explicit Title Mapping for Robust Linking ---
+
+// Helper to find the correct external link based on the map and exact title match
 const getArtifactLink = (artifact) => {
-    // Normalizes strings by removing non-alphanumeric characters and converting to lowercase
-    const normalize = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-    const currentTitle = normalize(artifact.title);
+    // 1. Get the canonical title from the map
+    const targetTitle = ARTIFACT_TITLE_MAP[artifact.title];
 
-    // Look for a partial match in the evidenceData array
-    const match = evidenceData.find(item => {
-        const itemTitle = normalize(item.title);
-        // Check if the badge title contains the evidence title OR vice-versa
-        return currentTitle.includes(itemTitle) || itemTitle.includes(currentTitle);
-    });
+    // If no mapping exists, or if it's explicitly null, return the placeholder file path
+    if (!targetTitle) {
+        return artifact.file_path; 
+    }
+
+    // 2. Search evidenceData for an EXACT title match
+    const match = evidenceData.find(item => item.title === targetTitle);
 
     if (match) {
         return match.link;
     }
     
-    // Final fallback to the original internal placeholder path (as a last resort)
+    // 3. Fallback to the original internal placeholder path if no match is found (shouldn't happen with the map)
     return artifact.file_path; 
 };
 
@@ -63,7 +98,7 @@ export default function SubBadgePage() {
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="space-y-24">
                     {badgeArtifacts.map((artifact, index) => {
-                        const artifactLink = getArtifactLink(artifact); // <--- Use the helper here
+                        const artifactLink = getArtifactLink(artifact); // Use the helper here
 
                         return (
                             <div key={index} className="scroll-mt-32">
@@ -84,8 +119,8 @@ export default function SubBadgePage() {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* Use the dynamically resolved artifactLink here */}
-                                        {artifactLink && (
+                                        {/* Use the dynamically resolved artifactLink here and check if it's an external link */}
+                                        {artifactLink && !artifactLink.startsWith('/assets/docs/') && ( // Only show button if link is external (not the broken placeholder)
                                             <a
                                                 href={artifactLink}
                                                 target="_blank"
@@ -95,6 +130,11 @@ export default function SubBadgePage() {
                                                 View Artifact
                                                 <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
                                             </a>
+                                        )}
+                                        {artifactLink && artifactLink.startsWith('/assets/docs/') && (
+                                            <span className="text-sm text-slate-500">
+                                                External link not available.
+                                            </span>
                                         )}
                                     </div>
                                     <div className="p-6 md:p-8 bg-slate-950/30">
