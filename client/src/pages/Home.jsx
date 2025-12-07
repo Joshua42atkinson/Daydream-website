@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import { motion } from 'framer-motion';
 import { Layers, BrainCircuit, Shield, Cpu } from 'lucide-react';
 
 export default function Home() {

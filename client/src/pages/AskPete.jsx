@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Terminal, Cpu, Shield, Zap, Network, Lock, ArrowRight } from 'lucide-react';
 
 export default function AskPete() {
