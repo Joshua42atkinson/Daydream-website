@@ -1,15 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flag, Brain, Settings, CheckCircle, Rocket, Quote } from 'lucide-react';
+import { Flag, Brain, Settings, CheckCircle, Rocket, Quote, Infinity as InfinityIcon } from 'lucide-react';
 
 export default function ReflectionViewer({ reflection }) {
-    // Map the 5 sections to icons and labels
+    // Map the sections to icons and labels
     const sections = [
         { key: 'introduction', label: 'Context', icon: Flag, color: 'text-blue-400', border: 'border-blue-500/30' },
         { key: 'prior_knowledge', label: 'Prior Knowledge', icon: Brain, color: 'text-purple-400', border: 'border-purple-500/30' },
         { key: 'process', label: 'The Process', icon: Settings, color: 'text-amber-400', border: 'border-amber-500/30' },
         { key: 'evidence', label: 'Evidence', icon: CheckCircle, color: 'text-emerald-400', border: 'border-emerald-500/30' },
-        { key: 'conclusion', label: 'Future Application', icon: Rocket, color: 'text-pink-400', border: 'border-pink-500/30' }
+        { key: 'conclusion', label: 'Future Application', icon: Rocket, color: 'text-pink-400', border: 'border-pink-500/30' },
+        // NEW SECTION: Lifelong Learning (Pearl/Silver Aesthetic)
+        {
+            key: 'lifelong_learning',
+            label: 'Lifelong Learning',
+            icon: InfinityIcon,
+            color: 'text-slate-200', // Pearl/Silver text
+            border: 'border-slate-200/50' // Pearl border
+        }
     ];
 
     return (
@@ -38,7 +46,7 @@ export default function ReflectionViewer({ reflection }) {
                     if (!content) return null;
 
                     return (
-                        <motion.div 
+                        <motion.div
                             key={section.key}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -71,7 +79,7 @@ export default function ReflectionViewer({ reflection }) {
                 {reflection.content && !reflection.introduction && (
                     <div className="pl-8 text-slate-400 italic">
                         <p>{reflection.content}</p>
-                        <br/>
+                        <br />
                         <p>{reflection.competency_alignment}</p>
                     </div>
                 )}
