@@ -25,7 +25,7 @@ export const evidenceData = [
     title: "Iron Road: Codebase of a Digital Mirror",
     type: "Technical Audit",
     description: "A deep dive into the technical architecture. Covers the 'Rust-Powered' stack, local-first privacy mandates, and the 'AI as Mirror' philosophy.",
-    link: "https://drive.google.com/file/d/1FK-mO0mtWNomOX9AsguMtEMWDrR7EMhV/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1N8mwY0Lc7AVkscWAQ2Y0HJIqo5F9K9-g/view?usp=drive_link",
     tags: ["Codebase", "Rust", "AI Architecture"]
   },
   {
@@ -63,7 +63,7 @@ export const evidenceData = [
     link: "https://github.com/joshua42atkinson/day_dream",
     tags: ["Codebase", "Repository", "Day/Dream"]
   },
-  { 
+  {
     title: "CITI Program: Responsible Conduct of Research",
     type: "Certification",
     description: "Formal certification in the Responsible Conduct of Research (RCR) from CITI Program, required by Purdue University. This training forms the ethical bedrock for the 'Local-First' privacy architecture.",
@@ -71,7 +71,7 @@ export const evidenceData = [
     tags: ["Ethics", "Compliance", "Certification"]
   },
   // NEW ENTRY ADDED
-  { 
+  {
     title: "Website Development Technology Badge (Credential)",
     type: "Certification",
     description: "External credential for completing the EDCI 60001 LDT Technology Badge in Website Development.",

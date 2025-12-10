@@ -41,7 +41,7 @@ export const flagshipProjects = [
         hook: "Preventing AI privacy violations via local-first architecture while teaching Cognitive Load Theory through railway metaphors",
         role: "Lead Architect & Instructional Designer",
         tools: ["Rust", "WebAssembly", "Local AI", "Bevy ECS"],
-        pdfPath: "/assets/docs/The_Iron_Network__A_Codex_for_the_Cognitive_Railway_Ecosystem.pdf",
+        pdfPath: "https://drive.google.com/file/d/1yjrFFXxburg6YaWWnm-ie_mhB0YQmj5CzeF7n4GLywk/view?usp=sharing",
         competencies: [
             {
                 domain: "research",
@@ -73,7 +73,7 @@ export const flagshipProjects = [
         hook: "Cultural engineering that reframes self-help as 'Cognitive Logistics' to match engineering mindset",
         role: "Instructional Designer & Cultural Analyst",
         tools: ["Generative AI", "d20 System", "Jungian Archetypes", "React"],
-        pdfPath: "/assets/docs/Short_8k_ask_pete.pdf",
+        pdfPath: "https://drive.google.com/file/d/1ODzPG8MJMMdZoFc_buzYKQ2_qpOVYW8A/view?usp=sharing",
         competencies: [
             {
                 domain: "planning",
@@ -106,7 +106,7 @@ export const supportingArtifacts = [
         id: "email-exchange",
         title: "Email Exchange with Dr. Hanshaw",
         type: "Professional Communication",
-        pdfPath: "/assets/docs/Email.pdf",
+        pdfPath: "https://drive.google.com/file/d/1NHiexwwJNsEpS1uIhX-DKkDnWGUsvV-3/view?usp=sharing",
         competencies: ["professional"],
         description: "Demonstrates 'Scope Governance' through iterative feedback, transforming sprawling proposal into streamlined Executive Summary",
         tags: ["Feedback", "Scope Management", "Professional Development"]
@@ -115,7 +115,7 @@ export const supportingArtifacts = [
         id: "iron-road-design",
         title: "Iron Road Design Document",
         type: "Design Document",
-        pdfPath: "/assets/docs/Iron_Road_Design_Document_Creation.pdf",
+        pdfPath: "https://drive.google.com/file/d/1quc1o168NXArNr8woAwUb-pCP9TL0oNj/view?usp=sharing",
         competencies: ["design", "planning"],
         description: "Complete ADDIE-based design documentation with gap analysis, learner analysis, and instructional strategies",
         tags: ["ADDIE", "Systematic Design", "Documentation"]
@@ -124,7 +124,7 @@ export const supportingArtifacts = [
         id: "storyfied-d20",
         title: "Storyfied D20 Game Design",
         type: "Creative Synthesis",
-        pdfPath: "/assets/docs/Storyfied_D20_Game_Design.pdf",
+        pdfPath: "https://drive.google.com/file/d/1oGPRJjpms68CiYaNJxNqUcIpaIswPJdt/view?usp=sharing",
         competencies: ["design", "research"],
         description: "Adaptation of Open Game License mechanics for educational purposes, demonstrating material modification competency",
         tags: ["Game-Based Learning", "Adaptation", "Mechanics"]
@@ -133,7 +133,7 @@ export const supportingArtifacts = [
         id: "codebase",
         title: "Iron Road Codebase Documentation",
         type: "Technical Specification",
-        pdfPath: "/assets/docs/Iron_Road_Ask_Pete__The_Codebase.pdf",
+        pdfPath: "https://drive.google.com/file/d/1N8mwY0Lc7AVkscWAQ2Y0HJIqo5F9K9-g/view?usp=drive_link",
         competencies: ["design", "professional"],
         description: "Technical architecture documentation showing Rust implementation for data sovereignty and cognitive safety",
         tags: ["Architecture", "Privacy", "Technical"]
@@ -142,7 +142,7 @@ export const supportingArtifacts = [
         id: "blog",
         title: "Development Blog",
         type: "Reflective Practice",
-        pdfPath: "/assets/docs/blog.pdf",
+        pdfPath: "https://drive.google.com/file/d/1cLOjMxAeh8FmcRTKF3y_-pRPwfYR8Ns5/view?usp=sharing",
         competencies: ["professional"],
         description: "Continuous documentation of design decisions and project evolution, demonstrating reflective practice",
         tags: ["Reflection", "Documentation", "Process"]
@@ -151,7 +151,7 @@ export const supportingArtifacts = [
         id: "citi-cert",
         title: "CITI Ethics Certification",
         type: "Certification",
-        pdfPath: "/assets/docs/citiCompletionCertificate_14060989_67355196.pdf",
+        pdfPath: "https://drive.google.com/file/d/1bzusqy8zvMaGDE_KspVCs_r8xw1M9_jI/view?usp=drive_link",
         competencies: ["professional"],
         description: "Responsible Conduct of Research training, demonstrating commitment to ethical standards",
         tags: ["Ethics", "Compliance", "Professional Development"]
