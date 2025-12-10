@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flag, Brain, Settings, CheckCircle, Rocket, Quote, Infinity as InfinityIcon } from 'lucide-react';
+import { Flag, Brain, Settings, CheckCircle, Rocket, Quote, Infinity as InfinityIcon, TrendingUp } from 'lucide-react';
 
 export default function ReflectionViewer({ reflection }) {
     // Map the sections to icons and labels
@@ -10,13 +10,14 @@ export default function ReflectionViewer({ reflection }) {
         { key: 'process', label: 'The Process', icon: Settings, color: 'text-amber-400', border: 'border-amber-500/30' },
         { key: 'evidence', label: 'Evidence', icon: CheckCircle, color: 'text-emerald-400', border: 'border-emerald-500/30' },
         { key: 'conclusion', label: 'Future Application', icon: Rocket, color: 'text-pink-400', border: 'border-pink-500/30' },
-        // NEW SECTION: Lifelong Learning (Pearl/Silver Aesthetic)
+        { key: 'lifelong_learning', label: 'Lifelong Learning', icon: InfinityIcon, color: 'text-slate-200', border: 'border-slate-200/50' },
+        // NEW SECTION: Action Plan (Professor's Requirement)
         {
-            key: 'lifelong_learning',
-            label: 'Lifelong Learning',
-            icon: InfinityIcon,
-            color: 'text-slate-200', // Pearl/Silver text
-            border: 'border-slate-200/50' // Pearl border
+            key: 'action_plan',
+            label: 'Action Plan for Growth',
+            icon: TrendingUp,
+            color: 'text-red-400',
+            border: 'border-red-500/30'
         }
     ];
 
@@ -38,11 +39,10 @@ export default function ReflectionViewer({ reflection }) {
                 </div>
             </div>
 
-            {/* The 5-Step Timeline */}
+            {/* The 7-Step Timeline */}
             <div className="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-12 py-4">
                 {sections.map((section, index) => {
                     const content = reflection[section.key];
-                    // Skip if content is missing (backward compatibility)
                     if (!content) return null;
 
                     return (
@@ -74,15 +74,6 @@ export default function ReflectionViewer({ reflection }) {
                         </motion.div>
                     );
                 })}
-
-                {/* Fallback for old data structure if you haven't updated all badges yet */}
-                {reflection.content && !reflection.introduction && (
-                    <div className="pl-8 text-slate-400 italic">
-                        <p>{reflection.content}</p>
-                        <br />
-                        <p>{reflection.competency_alignment}</p>
-                    </div>
-                )}
             </div>
         </div>
     );
