@@ -1,280 +1,276 @@
 import React from 'react';
-import { Download, MapPin, Mail, Github, Linkedin, Terminal, BookOpen, Shield, Cpu, Network, Zap } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { Download, MapPin, Mail, Github, Linkedin, Terminal, Shield, Landmark, GraduationCap, Medal } from 'lucide-react';
 
 const GeneralResume = () => {
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-[#CFB991]/30 selection:text-[#CFB991] py-12 px-4 sm:px-6 lg:px-8 print:bg-white print:text-black print:p-0">
-            <Helmet>
-                <title>Resume | Joshua Atkinson</title>
-                <meta name="description" content="Resume of Joshua Atkinson: Systems Architect, Instructional Strategist, and Operations Leader." />
-            </Helmet>
+        <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8 font-sans text-slate-900">
+            <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden print:shadow-none print:max-w-none">
 
-            {/* Background Atmosphere (Screen Only) */}
-            <div className="fixed inset-0 pointer-events-none print:hidden">
-                <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-emerald-900/10 rounded-full blur-[120px] opacity-30 animate-pulse" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[100px] opacity-30 animate-pulse delay-700" />
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-[0.03]" />
-            </div>
-
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="relative max-w-5xl mx-auto bg-slate-900/80 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden border border-slate-700/50 print:shadow-none print:max-w-none print:bg-white print:border-none print:rounded-none"
-            >
-
-                {/* HEADER SECTION */}
-                <header className="relative p-8 md:p-12 overflow-hidden border-b border-slate-700/50 print:border-slate-300 print:bg-white print:text-black print:p-0 print:mb-6">
-                    {/* Screen-Only Fancy Header Background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800 opacity-90 print:hidden" />
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 print:hidden" />
+                {/* HEADER SECTION - Executive Identity */}
+                <header className="bg-slate-900 text-white p-8 md:p-12 relative overflow-hidden print:bg-white print:text-black print:p-0 print:border-b-2 print:border-slate-800">
+                    <div className="absolute top-0 right-0 p-4 opacity-10 print:hidden">
+                        <Landmark size={120} />
+                    </div>
 
                     <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                         <div className="max-w-3xl">
-                            {/* Screen-Only decorative badge */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.2 }}
-                                className="print:hidden inline-flex items-center gap-2 px-3 py-1 mb-4 text-xs font-mono font-bold tracking-widest uppercase rounded-full bg-[#CFB991]/10 border border-[#CFB991]/30 text-[#CFB991]"
-                            >
-                                <span className="relative flex h-2 w-2 mr-1">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CFB991] opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#CFB991]"></span>
-                                </span>
-                                // INTERACTIVE DOSSIER
-                            </motion.div>
+                            {/* ADDED: Status Badge */}
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 print:hidden">
+                                <Medal size={14} />
+                                Service-Connected Disabled Veteran
+                            </div>
 
-                            <motion.h1
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 }}
-                                className="text-4xl md:text-6xl font-extrabold tracking-tight mb-2 text-white print:text-black print:text-4xl"
-                            >
+                            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2 print:text-4xl print:mb-0">
                                 Joshua Atkinson
-                            </motion.h1>
-                            <motion.p
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 }}
-                                className="text-xl md:text-2xl text-slate-300 font-medium mb-6 print:text-slate-600 print:text-lg print:mb-4"
-                            >
+                            </h1>
+                            <p className="text-xl md:text-2xl text-slate-300 font-medium mb-6 print:text-slate-600 print:text-lg print:mb-2">
+                                Operations Executive <span className="text-[#CFB991] mx-2 print:text-black">•</span>
                                 Systems Architect <span className="text-[#CFB991] mx-2 print:text-black">•</span>
-                                Instructional Strategist <span className="text-[#CFB991] mx-2 print:text-black">•</span>
-                                Operations Leader
-                            </motion.p>
+                                Public Administrator
+                            </p>
 
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.5 }}
-                                className="space-y-4 text-slate-400 leading-relaxed print:text-black print:text-sm"
-                            >
+                            <div className="space-y-4 text-slate-400 leading-relaxed print:text-black print:text-sm">
                                 <p>
-                                    Decorated U.S. Marine Corps Veteran (Gunnery Sergeant) with over 17 years of leadership in fiscal oversight, crisis management, and strategic operations. My career has been defined by decisive problem-solving in high-stakes environments.
+                                    <strong>Executive Summary:</strong> Decorated Marine Corps Veteran and Systems Architect bridging the gap between kinetic operations and digital governance. With over 17 years of leadership experience, I specialize in translating complex regulatory frameworks (Anti-Deficiency Act, FERPA) into operational reality.
                                 </p>
                                 <p className="print:hidden">
-                                    Now established in Houlton, Maine, I am pivoting my focus to Public Administration and Instructional Systems Design, bridging the gap between high-performance code, cognitive science, and kinetic leadership.
+                                    I combine the discipline of a Fiscal Chief—overseeing $13M in assets—with the innovation of a Software Engineer. Currently based in Houlton, Maine, I am dedicated to building resilient systems for public and educational institutions.
                                 </p>
-                                <p className="hidden print:block font-italic text-slate-600">
-                                    Bridging the gap between high-performance code, cognitive science, and kinetic leadership.
-                                </p>
-                            </motion.div>
+                            </div>
                         </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.6 }}
-                            className="flex flex-col items-end gap-3 text-sm font-medium text-slate-300 print:text-black"
-                        >
+                        <div className="flex flex-col items-end gap-3 text-sm font-medium text-slate-300 print:text-black">
                             <a href="mailto:joshua42atkinson@gmail.com" className="flex items-center hover:text-white transition-colors print:text-black">
-                                joshua42atkinson@gmail.com <Mail className="ml-2 w-4 h-4 text-[#CFB991] print:text-black print:ml-1" />
+                                joshua42atkinson@gmail.com <Mail className="ml-2 w-4 h-4 print:hidden" />
                             </a>
                             <div className="flex items-center">
-                                Open to Relocation (Immediate) <MapPin className="ml-2 w-4 h-4 text-[#CFB991] print:hidden" />
+                                Houlton, Maine (Open to Relocation) <MapPin className="ml-2 w-4 h-4 text-[#CFB991] print:hidden" />
                             </div>
                             <div className="flex gap-4 mt-2 print:hidden">
                                 <a href="https://github.com/joshua42atkinson" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                                     <Github className="w-5 h-5" />
                                 </a>
-                                <a href="#" className="hover:text-white transition-colors">
+                                <a href="https://linkedin.com/in/joshua-atkinson" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                                     <Linkedin className="w-5 h-5" />
                                 </a>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </header>
 
-                {/* THE TRIAD - Visualizing the 3 Personas */}
-                <section className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800 border-b border-slate-700/50 print:divide-slate-200 print:border-b-2 print:border-slate-200">
+                {/* CORE COMPETENCIES - The "Executive Dashboard" */}
+                <section className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 border-b border-slate-200 bg-slate-50">
 
-                    {/* Column 1: The Engineer */}
-                    <div className="p-8 hover:bg-slate-800/50 transition-colors print:p-4 print:bg-white">
-                        <div className="flex items-center gap-3 mb-4 text-blue-400 print:text-blue-800">
+                    {/* Column 1: Strategic Governance */}
+                    <div className="p-8 hover:bg-white transition-colors print:p-4">
+                        <div className="flex items-center gap-3 mb-4 text-indigo-900">
+                            <Landmark className="w-6 h-6" />
+                            <h3 className="font-bold text-lg uppercase tracking-wider !text-indigo-900">Fiscal Governance</h3>
+                        </div>
+                        <ul className="space-y-3 text-sm font-medium text-slate-700">
+                            <li className="flex items-start">
+                                <span className="mr-2 text-[#CFB991]">▸</span> Federal Budget Execution
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-[#CFB991]">▸</span> Asset Acquisition ($13M+)
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-[#CFB991]">▸</span> Regulatory Compliance (ADA)
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-[#CFB991]">▸</span> Strategic Resource Allocation
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 2: Technical Architecture */}
+                    <div className="p-8 hover:bg-white transition-colors print:p-4">
+                        <div className="flex items-center gap-3 mb-4 text-blue-900">
                             <Terminal className="w-6 h-6" />
-                            <h3 className="font-bold text-lg uppercase tracking-wider text-white print:text-black">The Engineer</h3>
+                            <h3 className="font-bold text-lg uppercase tracking-wider !text-blue-900">Systems Architecture</h3>
                         </div>
-                        <p className="text-sm text-slate-400 mb-4 print:text-slate-700">
-                            Building memory-safe, high-concurrency infrastructure.
-                        </p>
-                        <ul className="space-y-2 text-sm font-medium text-slate-300 print:text-black">
-                            <li className="flex items-start"><span className="mr-2 text-blue-500">▹</span> Rust (Systems/Async)</li>
-                            <li className="flex items-start"><span className="mr-2 text-blue-500">▹</span> Bevy ECS & Game Physics</li>
-                            <li className="flex items-start"><span className="mr-2 text-blue-500">▹</span> Local-First AI (Candle/Llama)</li>
-                            <li className="flex items-start"><span className="mr-2 text-blue-500">▹</span> Architecture (Axum/Tokio)</li>
+                        <ul className="space-y-3 text-sm font-medium text-slate-700">
+                            <li className="flex items-start">
+                                <span className="mr-2 text-blue-500">▸</span> Rust & WebAssembly (WASM)
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-blue-500">▸</span> Local-First Data Sovereignty
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-blue-500">▸</span> FERPA/COPPA Privacy Design
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-blue-500">▸</span> High-Concurrency Logic
+                            </li>
                         </ul>
                     </div>
 
-                    {/* Column 2: The Instructor */}
-                    <div className="p-8 hover:bg-slate-800/50 transition-colors print:p-4 print:bg-white">
-                        <div className="flex items-center gap-3 mb-4 text-emerald-400 print:text-emerald-800">
-                            <BookOpen className="w-6 h-6" />
-                            <h3 className="font-bold text-lg uppercase tracking-wider text-white print:text-black">The Instructor</h3>
-                        </div>
-                        <p className="text-sm text-slate-400 mb-4 print:text-slate-700">
-                            Operationalizing cognitive load into software mechanics.
-                        </p>
-                        <ul className="space-y-2 text-sm font-medium text-slate-300 print:text-black">
-                            <li className="flex items-start"><span className="mr-2 text-emerald-500">▹</span> Cognitive Load Theory</li>
-                            <li className="flex items-start"><span className="mr-2 text-emerald-500">▹</span> Situated Cognition</li>
-                            <li className="flex items-start"><span className="mr-2 text-emerald-500">▹</span> Agile ADDIE & Design</li>
-                            <li className="flex items-start"><span className="mr-2 text-emerald-500">▹</span> Constraint-Based Learning</li>
-                        </ul>
-                    </div>
-
-                    {/* Column 3: The Leader */}
-                    <div className="p-8 hover:bg-slate-800/50 transition-colors print:p-4 print:bg-white">
-                        <div className="flex items-center gap-3 mb-4 text-red-400 print:text-red-800">
+                    {/* Column 3: Operational Leadership */}
+                    <div className="p-8 hover:bg-white transition-colors print:p-4">
+                        <div className="flex items-center gap-3 mb-4 text-emerald-900">
                             <Shield className="w-6 h-6" />
-                            <h3 className="font-bold text-lg uppercase tracking-wider text-white print:text-black">The Leader</h3>
+                            <h3 className="font-bold text-lg uppercase tracking-wider !text-emerald-900">Crisis Leadership</h3>
                         </div>
-                        <p className="text-sm text-slate-400 mb-4 print:text-slate-700">
-                            Executing high-stakes logistics and strategic pivots.
-                        </p>
-                        <ul className="space-y-2 text-sm font-medium text-slate-300 print:text-black">
-                            <li className="flex items-start"><span className="mr-2 text-red-500">▹</span> Operations Chief (130+ Personnel)</li>
-                            <li className="flex items-start"><span className="mr-2 text-red-500">▹</span> Fiscal Chief (FinOps/Budget)</li>
-                            <li className="flex items-start"><span className="mr-2 text-red-500">▹</span> Crisis Management</li>
-                            <li className="flex items-start"><span className="mr-2 text-red-500">▹</span> Strategic Ecosystem Analysis</li>
+                        <ul className="space-y-3 text-sm font-medium text-slate-700">
+                            <li className="flex items-start">
+                                <span className="mr-2 text-emerald-500">▸</span> Incident Command (18+ Events)
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-emerald-500">▸</span> Personnel Mgmt (130+ Staff)
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-emerald-500">▸</span> SOP Authoring & Enforcement
+                            </li>
+                            <li className="flex items-start">
+                                <span className="mr-2 text-emerald-500">▸</span> Cross-Functional Team Building
+                            </li>
                         </ul>
                     </div>
                 </section>
 
-                {/* MAIN CONTENT AREA */}
-                <div className="p-8 md:p-12 space-y-12 print:p-0 print:pt-6 print:space-y-6">
+                {/* MAIN EXPERIENCE AREA */}
+                <div className="p-8 md:p-12 space-y-12 print:p-6 print:space-y-6">
 
-                    {/* SECTION: IRON ROAD */}
+                    {/* SECTION: ACADEMIC SABBATICAL & CIVIC LEADERSHIP */}
                     <section>
-                        <div className="flex items-baseline justify-between border-b-2 border-slate-800 pb-2 mb-6 print:border-slate-200 print:mb-4">
-                            <h2 className="text-2xl font-bold text-white print:text-black">The "Iron Road" Initiative</h2>
-                            <span className="text-sm font-bold text-[#CFB991] print:text-slate-600">2023 – Present</span>
+                        <div className="flex items-baseline justify-between border-b-2 border-slate-100 pb-2 mb-6 print:mb-3">
+                            <div className="flex items-center gap-3">
+                                <GraduationCap className="text-[#CFB991]" size={28} />
+                                <h2 className="text-2xl font-bold text-slate-900 !text-slate-900">Academic Sabbatical & Civic Leadership</h2>
+                            </div>
+                            <span className="text-sm font-bold text-slate-500">2021 – Present</span>
                         </div>
 
-                        <div className="prose prose-invert max-w-none print:prose-slate">
-                            <p className="text-slate-400 mb-6 italic print:text-slate-700 print:mb-4">
-                                A "Living Laboratory" bridging the gap between high-performance systems engineering and rigorous instructional design.
-                                Serves as the primary evidence base for Technical, Pedagogical, and Strategic competencies.
+                        <div className="prose prose-slate max-w-none mb-6">
+                            <p className="text-slate-600 italic">
+                                Following honorable discharge from the USMC, I executed a strategic pivot to full-time academia and civic service.
+                                Since 2021, I have focused exclusively on acquiring advanced degrees in English and Learning Design while serving as a community leader in Houlton, Maine.
                             </p>
-
-                            <div className="grid gap-6 md:grid-cols-2 print:gap-4 print:block">
-                                <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-500/30 transition-colors print:bg-white print:border-none print:p-0 print:mb-4">
-                                    <h4 className="font-bold text-blue-400 mb-2 print:text-blue-900">Technical Feat: The "Armstrong Maneuver"</h4>
-                                    <p className="text-sm text-slate-300 print:text-slate-800">
-                                        Solved a critical concurrency challenge by architecting a bridge between the asynchronous
-                                        <span className="font-mono text-xs bg-slate-900 px-1 py-0.5 mx-1 rounded text-blue-300 print:bg-slate-200 print:text-black">Axum</span> web server and the synchronous
-                                        <span className="font-mono text-xs bg-slate-900 px-1 py-0.5 mx-1 rounded text-blue-300 print:bg-slate-200 print:text-black">Bevy</span> game loop.
-                                        Utilized <span className="font-mono text-xs bg-slate-900 px-1 py-0.5 mx-1 rounded text-blue-300 print:bg-slate-200 print:text-black">tokio::mpsc</span> channels to enable
-                                        real-time physics simulation without blocking web I/O.
-                                    </p>
-                                </div>
-
-                                <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-emerald-500/30 transition-colors print:bg-white print:border-none print:p-0 print:mb-4">
-                                    <h4 className="font-bold text-emerald-400 mb-2 print:text-emerald-900">Pedagogical Feat: "Coal & Steam" Economy</h4>
-                                    <p className="text-sm text-slate-300 print:text-slate-800">
-                                        Operationalized abstract learning theory into game physics. Modeled <strong>Intrinsic Load</strong> as physical weight ("Cargo")
-                                        and <strong>Motivation</strong> as fuel ("Coal"). This creates a verifiable mathematical model for student burnout
-                                        and engagement trajectory.
-                                    </p>
-                                </div>
-
-                                <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 md:col-span-2 hover:border-red-500/30 transition-colors print:bg-white print:border-none print:p-0">
-                                    <h4 className="font-bold text-red-400 mb-2 print:text-red-900">Strategic Feat: The Pivot & "Terabyte Problem"</h4>
-                                    <p className="text-sm text-slate-300 print:text-slate-800">
-                                        Demonstrated executive discipline by pivoting from a "Massively Multiplayer" vision to a "Vertical Slice" MVP
-                                        to align with resource constraints. Personally remediated a critical infrastructure failure (data leak) through
-                                        forensic auditing and rigorous "Garbage Collection" protocols.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* SECTION: USMC */}
-                    <section>
-                        <div className="flex items-baseline justify-between border-b-2 border-slate-800 pb-2 mb-6 print:border-slate-200 print:mb-4">
-                            <h2 className="text-2xl font-bold text-white print:text-black">Military Operations Leadership</h2>
-                            <span className="text-sm font-bold text-[#CFB991] print:text-slate-600">2016 – 2021</span>
                         </div>
 
-                        <div className="space-y-6 print:space-y-4">
-                            <div>
+                        <div className="space-y-8">
+                            <div className="pl-4 border-l-2 border-[#CFB991]">
                                 <div className="flex justify-between items-baseline mb-2">
-                                    <h3 className="font-bold text-lg text-slate-200 print:text-black">Operations Chief</h3>
-                                    <span className="text-sm text-slate-500 print:text-slate-600">United States Marine Corps</span>
+                                    <h3 className="font-bold text-lg text-slate-800">Board Member & Program Coordinator</h3>
+                                    <span className="text-sm text-slate-500">Unitarian Church of Houlton / The Cup Cafe</span>
                                 </div>
-                                <p className="text-slate-400 text-sm leading-relaxed print:text-slate-800">
-                                    Served as the "Technical Program Manager" for a 131-person unit. Orchestrated daily logistics, personnel development,
-                                    and tactical execution. Commanded the response to 18 aircraft emergencies, establishing a "Command Post" architecture
-                                    that coordinated fire, medical, and logistics in real-time high-stress environments.
+                                <p className="text-slate-700 text-sm leading-relaxed">
+                                    Spearheaded community outreach initiatives in Northern Aroostook County.
+                                    Oversaw operational budgets and coordinated volunteer staffing for "The Cup Cafe," a food security program serving vulnerable residents.
+                                    Demonstrated ability to build consensus among diverse stakeholders and manage non-profit assets.
                                 </p>
                             </div>
 
-                            <div>
+                            <div className="pl-4 border-l-2 border-slate-200">
                                 <div className="flex justify-between items-baseline mb-2">
-                                    <h3 className="font-bold text-lg text-slate-200 print:text-black">Fiscal Chief (FinOps)</h3>
-                                    <span className="text-sm text-slate-500 print:text-slate-600">Goodfellow AFB, TX</span>
+                                    <h3 className="font-bold text-lg text-slate-800">Full-Time Scholar (B.A. & M.S.)</h3>
+                                    <span className="text-sm text-slate-500">2021 – Present</span>
                                 </div>
-                                <p className="text-slate-400 text-sm leading-relaxed print:text-slate-800">
-                                    Managed federal budget execution and procurement. Ensured 100% compliance with the Anti-Deficiency Act,
-                                    translating complex regulatory code into operational reality—a direct parallel to modern FinOps and Compliance Engineering.
+                                <p className="text-slate-700 text-sm leading-relaxed mb-3">
+                                    Maintained a full-time academic courseload for 3+ years, achieving Summa Cum Laude honors while simultaneously architecting the "Iron Road" educational platform.
                                 </p>
                             </div>
                         </div>
                     </section>
 
-                    {/* SECTION: EDUCATION */}
-                    <section>
-                        <div className="flex items-baseline justify-between border-b-2 border-slate-800 pb-2 mb-6 print:border-slate-200 print:mb-4">
-                            <h2 className="text-2xl font-bold text-white print:text-black">Education</h2>
+                    {/* SECTION: USMC EXECUTIVE LEADERSHIP */}
+                    <section className="break-before-page">
+                        <div className="flex items-baseline justify-between border-b-2 border-slate-100 pb-2 mb-6 print:mb-3">
+                            <h2 className="text-2xl font-bold text-slate-900 !text-slate-900">Military Operations Executive</h2>
+                            <span className="text-sm font-bold text-slate-500">2010 – 2021</span>
                         </div>
-                        <div className="grid md:grid-cols-2 gap-4 print:block print:space-y-4">
-                            <div>
-                                <h3 className="font-bold text-slate-200 print:text-black">Master of Science in Education</h3>
-                                <p className="text-sm text-slate-500 print:text-slate-700">Purdue University (LDT Focus) | In Progress</p>
+
+                        <div className="space-y-8">
+                            {/* Role 1: Fiscal Chief */}
+                            <div className="group">
+                                <div className="flex justify-between items-baseline mb-2">
+                                    <h3 className="font-bold text-lg text-slate-800 group-hover:text-blue-800 transition-colors">Fiscal Chief (Financial Operations)</h3>
+                                    <span className="text-sm text-slate-500">Marine Corps Detachment, Texas</span>
+                                </div>
+                                <p className="text-slate-700 text-sm leading-relaxed mb-3">
+                                    Served as the Chief Financial Officer for the detachment. Executed the annual operating budget with zero discrepancies.
+                                </p>
+                                <ul className="list-disc pl-5 space-y-1 text-sm text-slate-600">
+                                    <li><strong>Strategic Acquisition:</strong> Managed contracting for <strong>$13 million</strong> in specialized training equipment and staffing, ensuring strict compliance with federal acquisition regulations.</li>
+                                    <li><strong>Audit Readiness:</strong> Supervised all purchasing and travel authorizations, maintaining 100% accountability of public funds in accordance with the Anti-Deficiency Act.</li>
+                                </ul>
                             </div>
-                            <div>
-                                <h3 className="font-bold text-slate-200 print:text-black">Bachelor of Arts in English (Fiction Focus)</h3>
-                                <p className="text-sm text-slate-500 print:text-slate-700">Southern New Hampshire University (SNHU)</p>
+
+                            {/* Role 2: Operations Chief */}
+                            <div className="group">
+                                <div className="flex justify-between items-baseline mb-2">
+                                    <h3 className="font-bold text-lg text-slate-800 group-hover:text-blue-800 transition-colors">Operations Chief</h3>
+                                    <span className="text-sm text-slate-500">Marine Wing Support Squadron 272</span>
+                                </div>
+                                <p className="text-slate-700 text-sm leading-relaxed mb-3">
+                                    Directed daily operations and long-term strategic planning for a 131-person unit.
+                                </p>
+                                <ul className="list-disc pl-5 space-y-1 text-sm text-slate-600">
+                                    <li><strong>Crisis Management:</strong> Served as Incident Commander for <strong>18 aircraft emergencies</strong>, coordinating fire, medical, and logistics assets in high-stakes environments.</li>
+                                    <li><strong>Policy Authoring:</strong> Authored the Standard Operating Procedures (SOPs) for the unit's Equal Opportunity and Professional Conduct program, governing 500+ staff members.</li>
+                                    <li><strong>Global Logistics:</strong> Maintained accountability and operational readiness for personnel and equipment during Exercise Trident Juncture in Norway.</li>
+                                </ul>
+                            </div>
+
+                            {/* Role 3: Recruiter */}
+                            <div className="group">
+                                <div className="flex justify-between items-baseline mb-2">
+                                    <h3 className="font-bold text-lg text-slate-800 group-hover:text-blue-800 transition-colors">Talent Acquisition Specialist</h3>
+                                    <span className="text-sm text-slate-500">Marine Corps Recruiting Station Indianapolis</span>
+                                </div>
+                                <ul className="list-disc pl-5 space-y-1 text-sm text-slate-600">
+                                    <li>Named <strong>"Employee of the Year" (2011)</strong> for the city of Indianapolis.</li>
+                                    <li>Managed applicant pipelines, ensuring all candidates met rigorous federal qualification standards (medical, legal, educational).</li>
+                                    <li><strong>Diversity & Inclusion:</strong> Actively sought to meet and exceed recruitment diversity goals while maintaining high quality standards.</li>
+                                </ul>
                             </div>
                         </div>
                     </section>
+
+                    {/* SECTION: EDUCATION & CERTIFICATIONS */}
+                    <section>
+                        <div className="flex items-baseline justify-between border-b-2 border-slate-100 pb-2 mb-6 print:mb-3">
+                            <h2 className="text-2xl font-bold text-slate-900 !text-slate-900">Education & Credentials</h2>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-8 print:gap-4">
+                            <div className="bg-slate-50 p-6 rounded-lg border border-slate-100 print:p-3 print:border-none">
+                                <h3 className="font-bold text-slate-800 !text-slate-800">Master of Science in Education</h3>
+                                <p className="text-sm text-slate-600 font-medium">Purdue University | 2024 – Present</p>
+                                <p className="text-xs text-slate-500 mt-2">Focus: Learning Design & Technology</p>
+                            </div>
+                            <div className="bg-slate-50 p-6 rounded-lg border border-slate-100 print:p-3 print:border-none">
+                                <h3 className="font-bold text-slate-800 !text-slate-800">Bachelor of Arts in English</h3>
+                                <p className="text-sm text-slate-600 font-medium">Southern New Hampshire University | 2021 – 2024</p>
+                                <p className="text-xs text-slate-500 mt-2">Summa Cum Laude (Fiction Focus)</p>
+                            </div>
+                        </div>
+
+                        <div className="mt-6 pt-6 border-t border-slate-100">
+                            <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 !text-slate-900">Professional Certifications</h4>
+                            <div className="flex flex-wrap gap-2">
+                                <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full border border-slate-200">Fire Officer III (Executive Level)</span>
+                                <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full border border-slate-200">Fire Instructor III</span>
+                                <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full border border-slate-200">Incident Safety Officer</span>
+                                <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full border border-slate-200">Lean Six Sigma (Green Belt Equiv/USMC)</span>
+                                <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full border border-slate-200">P3 Professional Selling Skills</span>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
 
-                {/* FOOTER ACTION (Screen Only) */}
-                <div className="bg-slate-900 border-t border-slate-800 p-8 flex justify-center print:hidden">
+                {/* FOOTER ACTION */}
+                <div className="bg-slate-50 border-t border-slate-200 p-8 flex justify-center print:hidden">
                     <button
                         onClick={() => window.print()}
-                        className="flex items-center gap-2 bg-[#CFB991] text-slate-900 px-8 py-3 rounded-full hover:bg-white transition-all shadow-lg hover:shadow-[#CFB991]/20 font-bold"
+                        className="flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl font-bold tracking-wide"
                     >
-                        <Download className="w-4 h-4" />
-                        Download / Print to PDF
+                        <Download className="w-5 h-5" />
+                        Download Executive Resume
                     </button>
                 </div>
-            </motion.div>
-        </div >
+            </div>
+        </div>
     );
 };
 

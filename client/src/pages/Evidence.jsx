@@ -172,12 +172,12 @@ export default function EvidencePage() {
 
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="text-white">Technical </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#CFB991] to-amber-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#CFB991] via-amber-200 to-yellow-400 animate-pulse">
               Skills
             </span>
             <br />
             <span className="text-white">& </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#CFB991] to-amber-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#CFB991] via-amber-200 to-yellow-400 animate-pulse">
               Credentials
             </span>
           </h1>
@@ -202,7 +202,7 @@ export default function EvidencePage() {
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <Sparkles className="w-6 h-6 text-[#CFB991]" />
-            <h2 className="text-3xl font-bold text-white">Flagship Projects</h2>
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Flagship Projects</h2>
           </div>
           <p className="text-slate-400 mb-8 max-w-3xl">
             Major projects demonstrating technical proficiency across multiple tools and platforms.
@@ -220,7 +220,7 @@ export default function EvidencePage() {
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <Filter className="w-6 h-6 text-[#CFB991]" />
-            <h2 className="text-2xl font-bold text-white">Filter by Competency Domain</h2>
+            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Filter by Competency Domain</h2>
           </div>
 
           <div className="flex flex-wrap gap-3">
@@ -252,7 +252,7 @@ export default function EvidencePage() {
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <FileText className="w-6 h-6 text-[#CFB991]" />
-            <h2 className="text-3xl font-bold text-white">Supporting Artifacts</h2>
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Supporting Artifacts</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -266,7 +266,7 @@ export default function EvidencePage() {
         <section>
           <div className="flex items-center gap-3 mb-8 border-t border-slate-800 pt-12">
             <Award className="w-6 h-6 text-[#CFB991]" />
-            <h2 className="text-3xl font-bold text-white">LDT Technology Badges</h2>
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">LDT Technology Badges</h2>
           </div>
           <p className="text-slate-400 mb-8 max-w-3xl">
             External credentials earned through Purdue University's Learning Design & Technology program,
