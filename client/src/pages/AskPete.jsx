@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, Cpu, Shield, Zap, Network, Lock, ArrowRight, BookOpen, Users, Database, Globe } from 'lucide-react';
+import { Terminal, Cpu, Shield, Zap, Network, Lock, ArrowRight, BookOpen, Users, Database, Globe, Activity } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 
