@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { portfolioData } from '../../data/portfolioData';
-import { ExternalLink, FileText, Lightbulb, ArrowLeft, Sparkles } from 'lucide-react';
+import { ExternalLink, FileText, Lightbulb, ArrowLeft, Sparkles, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import ReflectionViewer from '../../components/ReflectionViewer';

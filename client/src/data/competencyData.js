@@ -41,7 +41,7 @@ export const flagshipProjects = [
         hook: "Preventing AI privacy violations via local-first architecture while teaching Cognitive Load Theory through railway metaphors",
         role: "Lead Architect & Instructional Designer",
         tools: ["Rust", "WebAssembly", "Local AI", "Bevy ECS"],
-        pdfPath: "/assets/docs/The Iron Network_ A Codex for the Cognitive Railway Ecosystem.pdf",
+        pdfPath: "/assets/docs/The_Iron_Network__A_Codex_for_the_Cognitive_Railway_Ecosystem.pdf",
         competencies: [
             {
                 domain: "research",
@@ -73,7 +73,7 @@ export const flagshipProjects = [
         hook: "Cultural engineering that reframes self-help as 'Cognitive Logistics' to match engineering mindset",
         role: "Instructional Designer & Cultural Analyst",
         tools: ["Generative AI", "d20 System", "Jungian Archetypes", "React"],
-        pdfPath: "/assets/docs/Short 8k ask pete.pdf",
+        pdfPath: "/assets/docs/Short_8k_ask_pete.pdf",
         competencies: [
             {
                 domain: "planning",
@@ -115,7 +115,7 @@ export const supportingArtifacts = [
         id: "iron-road-design",
         title: "Iron Road Design Document",
         type: "Design Document",
-        pdfPath: "/assets/docs/Iron Road Design Document Creation.pdf",
+        pdfPath: "/assets/docs/Iron_Road_Design_Document_Creation.pdf",
         competencies: ["design", "planning"],
         description: "Complete ADDIE-based design documentation with gap analysis, learner analysis, and instructional strategies",
         tags: ["ADDIE", "Systematic Design", "Documentation"]
@@ -124,7 +124,7 @@ export const supportingArtifacts = [
         id: "storyfied-d20",
         title: "Storyfied D20 Game Design",
         type: "Creative Synthesis",
-        pdfPath: "/assets/docs/Storyfied D20 Game Design.pdf",
+        pdfPath: "/assets/docs/Storyfied_D20_Game_Design.pdf",
         competencies: ["design", "research"],
         description: "Adaptation of Open Game License mechanics for educational purposes, demonstrating material modification competency",
         tags: ["Game-Based Learning", "Adaptation", "Mechanics"]
@@ -133,7 +133,7 @@ export const supportingArtifacts = [
         id: "codebase",
         title: "Iron Road Codebase Documentation",
         type: "Technical Specification",
-        pdfPath: "/assets/docs/Iron Road# Ask Pete_ The Codebase.pdf",
+        pdfPath: "/assets/docs/Iron_Road_Ask_Pete__The_Codebase.pdf",
         competencies: ["design", "professional"],
         description: "Technical architecture documentation showing Rust implementation for data sovereignty and cognitive safety",
         tags: ["Architecture", "Privacy", "Technical"]
