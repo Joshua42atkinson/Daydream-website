@@ -134,15 +134,11 @@ export default function SubBadgePage() {
                             {badge.title}
                         </h1>
 
-                        {/* Artifact count */}
                         <div className="flex items-center gap-6 text-slate-400">
+                            {/* UPDATED LANGUAGE: Challenges Solved instead of Artifacts */}
                             <div className="flex items-center gap-2">
-                                <FileText size={18} className="text-[#CFB991]" />
-                                <span className="font-medium">{badgeArtifacts.length} Artifact{badgeArtifacts.length !== 1 ? 's' : ''}</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Lightbulb size={18} className="text-[#CFB991]" />
-                                <span className="font-medium">Competency Reflections</span>
+                                <Target size={18} className="text-[#CFB991]" />
+                                <span className="font-medium">{badgeArtifacts.length} Challenges Solved</span>
                             </div>
                         </div>
                     </motion.div>
@@ -182,6 +178,10 @@ export default function SubBadgePage() {
                                                 </div>
 
                                                 <div className="flex-1">
+                                                    {/* UPDATED LABEL: Evidence / Artifact */}
+                                                    <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1 flex items-center gap-2">
+                                                        <FileText size={12} /> Evidence / Artifact
+                                                    </div>
                                                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight group-hover:text-[#CFB991] transition-colors">
                                                         {artifact.title}
                                                     </h2>
@@ -211,12 +211,10 @@ export default function SubBadgePage() {
                                     <div className="p-8 md:p-10 bg-slate-950/40">
                                         <div className="flex items-center gap-2 mb-4">
                                             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-                                            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Summary</span>
+                                            <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Artifact Abstract</span>
                                             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
                                         </div>
-                                        <p className="text-slate-300 text-lg leading-relaxed">
-                                            {artifact.summary}
-                                        </p>
+                                        <p className="text-slate-300 text-lg leading-relaxed">{artifact.summary}</p>
                                     </div>
                                 </div>
 
@@ -226,11 +224,10 @@ export default function SubBadgePage() {
                                         <div className="h-px flex-grow bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
                                         <span className="text-[#CFB991] font-bold uppercase tracking-widest text-sm flex items-center gap-2">
                                             <Lightbulb size={16} className="animate-pulse" />
-                                            Competency Reflection
+                                            Challenge De-Brief
                                         </span>
                                         <div className="h-px flex-grow bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
                                     </div>
-
                                     <ReflectionViewer reflection={artifact.reflection} />
                                 </div>
                             </motion.div>

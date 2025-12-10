@@ -9,23 +9,23 @@ export const portfolioData = {
   "categories": [
     {
       "id": "foundations",
-      "title": "Professional Foundations in LDT",
-      "description": "Core competencies in instructional design research, theory, communication, and ethics."
+      "title": "Professional Foundations",
+      "description": "System Core & Protocols. The underlying kernel of professional identity—ethics, communication standards, and theoretical frameworks—that governs all subsequent operations."
     },
     {
       "id": "planning",
-      "title": "Planning and Analysis",
-      "description": "Competencies in analyzing learning needs, technologies, and target populations."
+      "title": "Planning & Analysis",
+      "description": "Reconnaissance & Diagnostics. The forensic phase of design, utilizing data telemetry and environmental scans to define the precise 'Mission Parameters' before a single line of code is written."
     },
     {
       "id": "design",
-      "title": "Design and Development",
-      "description": "Competencies in creating engaging, systematic, and effective learning experiences."
+      "title": "Design & Development",
+      "description": "Architecture & Engineering. The constructive phase where abstract learning theories are compiled into concrete, executable learning environments and assets."
     },
     {
       "id": "evaluation",
-      "title": "Evaluation and Implementation",
-      "description": "Competencies in assessing learning outcomes and implementing sustainable solutions."
+      "title": "Evaluation & Implementation",
+      "description": "Quality Assurance & Deployment. The rigorous stress-testing of interventions against reality, ensuring sustainable adoption and measuring 'Signal Fidelity' (learning transfer)."
     }
   ],
   "badges": [
