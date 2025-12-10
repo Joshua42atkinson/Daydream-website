@@ -23,116 +23,106 @@ export default function Home() {
 
             <Hero />
 
-            {/* GUIDED GATEWAY SECTION */}
+            {/* MEDIA COMMAND CENTER */}
             <section className="py-24 px-6 relative border-t border-slate-900 bg-slate-950">
-                {/* Background Grid - Systems Architect Aesthetic */}
+                {/* Background Grid */}
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
 
-                <div className="max-w-6xl mx-auto relative z-10">
+                <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Identify Your <span className="text-[#CFB991]">Objective</span></h2>
-                        <p className="text-slate-400 mb-8">Select your role to initialize a tailored operational view.</p>
-
-                        {/* PERSONA BUTTONS */}
-                        <div className="flex flex-wrap justify-center gap-6">
-                            <PersonaButton
-                                id="recruiter"
-                                label="Recruiter / Hiring Manager"
-                                icon={Briefcase}
-                                active={persona === 'recruiter'}
-                                onClick={setPersona}
-                            />
-                            <PersonaButton
-                                id="educator"
-                                label="Educator / Researcher"
-                                icon={GraduationCap}
-                                active={persona === 'educator'}
-                                onClick={setPersona}
-                            />
-                            <PersonaButton
-                                id="developer"
-                                label="Developer / Engineer"
-                                icon={Code}
-                                active={persona === 'developer'}
-                                onClick={setPersona}
-                            />
-                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Operational <span className="text-[#CFB991]">Briefing</span></h2>
+                        <p className="text-slate-400 max-w-2xl mx-auto">
+                            Review the specialized intelligence brief below. This dossier synthesizes the
+                            <span className="text-cyan-400 font-medium"> Iron Road</span> architecture and the
+                            <span className="text-[#CFB991] font-medium"> Boilermaker Mindset</span>.
+                        </p>
                     </motion.div>
 
-                    {/* DYNAMIC CONTENT AREA */}
-                    <AnimatePresence mode="wait">
-                        {persona === 'recruiter' && (
-                            <PersonaContent key="recruiter" title="Executive Summary">
-                                <ContentCard
-                                    title="Professional Resume"
-                                    desc="17 years of operational leadership, fiscal governance, and crisis management."
-                                    icon={FileText}
-                                    link="/resume"
-                                    cta="Review Experience"
-                                />
-                                <ContentCard
-                                    title="Flagship Project: The Iron Road"
-                                    desc="Technopedagogical ecosystem built for high-stakes learning."
-                                    icon={Layers}
-                                    link="/portfolio"
-                                    cta="View Portfolio"
-                                />
-                            </PersonaContent>
-                        )}
+                    <div className="grid lg:grid-cols-3 gap-8 items-start">
 
-                        {persona === 'educator' && (
-                            <PersonaContent key="educator" title="Pedagogical Architecture">
-                                <ContentCard
-                                    title="Ask Pete: Cognitive Logistics"
-                                    desc="Reframing 'help-seeking' as a logistical operation for engineering students."
-                                    icon={BrainCircuit}
-                                    link="/ask-pete"
-                                    cta="Analyze Methodology"
-                                />
-                                <ContentCard
-                                    title="Core Competencies"
-                                    desc="Research, Design, and Evaluation badges demonstrating IBSTPI standards."
-                                    icon={GraduationCap}
-                                    link="/portfolio"
-                                    cta="Explore Badges"
-                                />
-                            </PersonaContent>
-                        )}
+                        {/* MAIN VIDEO CONSOLE */}
+                        <div className="lg:col-span-2 space-y-4">
+                            <div className="flex items-center gap-2 text-[#CFB991] font-mono text-xs uppercase tracking-widest pl-2">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CFB991] opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#CFB991]"></span>
+                                </span>
+                                Visual Feed // Systems_Isomorphism.mp4
+                            </div>
 
-                        {persona === 'developer' && (
-                            <PersonaContent key="developer" title="Technical Specifications">
-                                <ContentCard
-                                    title="Codebase: Iron Road"
-                                    desc="Rust/WASM architecture focusing on Local-First data sovereignty."
-                                    icon={Code}
-                                    link="/portfolio" // We could deep link if we had a specific tech page
-                                    cta="Audit Architecture"
-                                />
-                                <ContentCard
-                                    title="Privacy Moat"
-                                    desc="System design preventing surveillance capitalism in EdTech."
-                                    icon={Shield}
-                                    link="/ask-pete"
-                                    cta="Inspect Security"
-                                />
-                            </PersonaContent>
-                        )}
+                            <div className="relative aspect-video bg-slate-900 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden group">
+                                {/* Decorators */}
+                                <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[#CFB991]/30 rounded-tl-lg z-20" />
+                                <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-[#CFB991]/30 rounded-br-lg z-20" />
 
-                        {!persona && (
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                className="text-center text-slate-500 italic mt-12 border-t border-slate-800 pt-12"
-                            >
-                                <p>System awaiting input... Select a protocol above.</p>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                                {/* Placeholder / Video Element */}
+                                <video
+                                    className="w-full h-full object-cover"
+                                    controls
+                                    poster="assets/video_thumbnail_placeholder.jpg" // User to provide or we gen generic
+                                >
+                                    <source src="assets/home_video.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                {/* Overlay for 'Empty' state if needed, but video controls handle it */}
+                            </div>
+                            <p className="text-slate-500 text-sm font-mono border-l-2 border-slate-800 pl-4 py-1">
+                                [SECURE CHANNEL]: Visualizing the translation of kinetic operations into cognitive systems.
+                            </p>
+                        </div>
+
+                        {/* AUDIO LOG CONSOLE */}
+                        <div className="lg:col-span-1 space-y-4">
+                            <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest pl-2">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                                </span>
+                                Audio Log // Deep_Dive_Protocol.mp3
+                            </div>
+
+                            <div className="bg-slate-900/80 border border-slate-700 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden">
+                                {/* Background Waveform Effect (Static or CSS anim) */}
+                                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-cyan-900/20 to-transparent pointer-events-none" />
+
+                                <div className="relative z-10 flex flex-col h-full justify-between min-h-[300px]">
+                                    <div>
+                                        <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center border border-slate-600 mb-6 text-cyan-400 shadow-lg">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c-1.7 0-3 1.2-3 2.6v6.8c0 1.4 1.3 2.6 3 2.6s3-1.2 3-2.6V4.6C15 3.2 13.7 2 12 2z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" y1="19" x2="12" y2="23" /><line x1="8" y1="23" x2="16" y2="23" /></svg>
+                                        </div>
+
+                                        <h3 className="text-xl font-bold text-white mb-2">NotebookLM Deep Dive</h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                            AI-synthesized discussion analyzing the core pedagogical architecture of the Iron Road capability.
+                                        </p>
+                                    </div>
+
+                                    <div className="bg-slate-950 rounded-xl p-4 border border-slate-800">
+                                        <audio
+                                            controls
+                                            className="w-full h-10 accent-[#CFB991]"
+                                        >
+                                            <source src="assets/home_audio.m4a" type="audio/mp4" />
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Decorative 'Next Up' or Status */}
+                            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/50 flex items-center justify-between">
+                                <span className="text-xs text-slate-500 font-mono">STATUS</span>
+                                <span className="text-xs text-emerald-400 font-mono font-bold">READY FOR PLAYBACK</span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </section>
         </motion.div>
