@@ -9,7 +9,7 @@ export const evaluationBadges = [
         "title": "Technical Audit: The Formative Check",
         "origin": "Iron Road / Ask Pete: Technical Audit & Codebase Catalog.",
         "summary": "A formative evaluation utilizing 'Expert Review' to audit the codebase. It collected quantitative data on 'Terabyte Bloat' to identify the 'Planning-Doing Gap,' leading to the removal of unstable MMO features.",
-        "file_path": "/assets/docs/Technical_Audit.pdf",
+        "file_path": "/assets/docs/Iron_Road_Design_Document.pdf",
         "reflection": {
           "challenge": "Implement formative evaluation plans.",
           "introduction": "For the challenge 'Implement formative evaluation plans,' I am submitting the Technical Audit of the Iron Road codebase. Formative evaluation is an iterative process conducted during design and development to identify deficiencies and make corrections before the final launch. For this project, I implemented a formative evaluation plan utilizing an Expert Review methodology, specifically focusing on technical feasibility and scope alignment during the Development Phase.",
@@ -25,7 +25,7 @@ export const evaluationBadges = [
         "title": "Alpha Prototype Evaluation Protocol",
         "origin": "The Iron Road Design Specification: Evaluation Protocol (Section 5).",
         "summary": "A summative evaluation plan based on Kirkpatrick’s Four Levels. It uses telemetry to measure 'Coal Depletion' (Reaction) and determines a definitive 'Go/No-Go' decision for the project's architecture.",
-        "file_path": "/assets/docs/Evaluation_Protocol.pdf",
+        "file_path": "/assets/docs/Iron_Road_Design_Document.pdf",
         "reflection": {
           "challenge": "Implement summative evaluation plans.",
           "introduction": "For the challenge 'Implement summative evaluation plans,' I am submitting the Evaluation Protocol for the Iron Road Alpha Prototype. Summative evaluation is typically conducted after implementation to determine the overall effectiveness of instruction and to make high-stakes decisions regarding the program's future. For the 'Iron Road' project, I applied this summative logic to the Alpha build to determine a definitive 'Go/No-Go' decision regarding the project's architectural direction.",
@@ -49,7 +49,7 @@ export const evaluationBadges = [
         "title": "Scope Governance & The Diffusion Pivot",
         "origin": "The Iron Road Design Specification: Executive Summary & Scope Governance Matrix.",
         "summary": "A dissemination strategy based on 'Subtraction.' It outlines the pivot from a theoretical 'Moonshot' to a deployable 'Local-First' tool, aligning the project with the organizational goal of Data Sovereignty to ensure adoption.",
-        "file_path": "/assets/docs/Scope_Governance_Matrix.pdf",
+        "file_path": "/assets/docs/Iron_Road_Design_Document.pdf",
         "reflection": {
           "challenge": "Create a vision of change that aligns learning and performance goals with organizational goals.",
           "introduction": "For the challenge 'Create a vision of change,' I am submitting the Executive Summary of the Iron Road specification. Dissemination and diffusion are often misunderstood as simply 'marketing' a finished product; however, in systems design, diffusion strategies must begin during the design phase. This artifact outlines the fundamental pivot from a theoretical 'Moonshot' (Daydream) to a deployable 'Local-First' application (Iron Road), ensuring that the project could actually be disseminated to the target organization.",

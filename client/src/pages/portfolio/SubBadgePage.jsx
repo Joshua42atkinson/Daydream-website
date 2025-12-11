@@ -15,6 +15,7 @@ const ARTIFACT_TITLE_MAP = {
     "The Iron Network Codex": "The Iron Network: A Codex",
     "LDT Technology Badge: Website Development": "Website Development Technology Badge (Credential)",
     "RCR Training & The Privacy Pivot": "CITI Program: Responsible Conduct of Research",
+    "Web Development Credential: The Rapid Deployment Protocol": "Website Development Technology Badge (Credential)",
 
     // Planning Badges
     "The Vision vs. Reality Gap Analysis": "Iron Road Design Document",
@@ -193,7 +194,7 @@ export default function SubBadgePage() {
                                             </div>
 
                                             {/* Action Button */}
-                                            {artifactLink && !artifactLink.startsWith('/assets/docs/') && (
+                                            {artifactLink && (
                                                 <a
                                                     href={artifactLink}
                                                     target="_blank"

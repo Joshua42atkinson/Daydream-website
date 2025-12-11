@@ -9,7 +9,7 @@ export const designBadges = [
         "title": "Constraint-Based ADDIE Protocol",
         "origin": "The Iron Road: Constraint-Based ADDIE Section.",
         "summary": "A modified ID workflow created to manage the 'exponential ideation' of Generative AI. It treats development time as a finite resource.",
-        "file_path": "/assets/docs/Constraint_Based_ADDIE.pdf",
+        "file_path": "/assets/docs/Iron_Road_Design_Document.pdf",
         "reflection": {
           "challenge": "Select or create an instructional design process based on the nature of the project.",
           "introduction": "For the challenge 'Select or create an instructional design process,' I am submitting my 'Constraint-Based ADDIE' protocol. This modified workflow was created to manage the unique constraints of a solo developer working with AI. While standard models provide a roadmap for linear development, they often fail to account for the exponential ideation capabilities of Generative AI.",
@@ -33,7 +33,7 @@ export const designBadges = [
         "title": "Sequencing Matrix: Dependency of Force",
         "origin": "The Iron Road: Sequencing Matrix.",
         "summary": "A curriculum sequencing matrix based on 'Thermodynamics' rather than chronology. It outlines the 'Dependency of Force' required for the learner to progress.",
-        "file_path": "/assets/docs/Sequencing_Matrix.pdf",
+        "file_path": "/assets/docs/Iron_Road_Design_Document.pdf",
         "reflection": {
           "challenge": "Identify and sequence instructional goals.",
           "introduction": "For the challenge 'Identify and sequence instructional goals,' I am submitting the Sequencing Matrix from my 'Iron Road' Design Document. This artifact outlines the 'Dependency of Force' required for the learner to progress through the curriculum. In traditional instructional design, sequencing goals often follows a linear taxonomy—moving simply from 'define' to 'analyze'. However, for this project, the challenge was to teach the elusive skill of 'learning how to learn'.",
@@ -57,7 +57,7 @@ export const designBadges = [
         "title": "Mechanized Pedagogy: The Weigh Station",
         "origin": "The Iron Road: Technopedagogical Architecture.",
         "summary": "This artifact operationalizes 'Constraint-Based Modeling' directly into the software interface. The 'Weigh Station' physically prevents cognitive overload.",
-        "file_path": "/assets/docs/The_Weigh_Station.pdf",
+        "file_path": "/assets/docs/Iron_Road_Design_Document.pdf",
         "reflection": {
           "challenge": "Identify instructional strategies that align with instructional goals.",
           "introduction": "For this challenge, the instructional goal was not simply to transfer knowledge, but to fundamentally alter the learner's relationship with difficulty itself. The 'Edutainment Gap' analysis revealed that students often view struggle as a sign of failure rather than a prerequisite for growth. Therefore, I determined that standard instructional strategies like direct instruction or passive modeling would be insufficient.",
@@ -145,7 +145,7 @@ export const designBadges = [
         "title": "The Logistics Check & Gradient Scale",
         "origin": "The Iron Road to Cognition: 'Ask Pete' D20 Narrative Ecosystem Specification.",
         "summary": "An assessment framework that maps Bloom's Taxonomy to the d20 Difficulty Class (DC) system. It treats knowledge application as a probability event.",
-        "file_path": "/assets/docs/Logistics_Check_Framework.pdf",
+        "file_path": "/assets/docs/Iron_Road_Design_Document.pdf",
         "reflection": {
           "challenge": "Ensure that assessment is aligned with instructional goals.",
           "introduction": "For the challenge 'Ensure that assessment is aligned with instructional goals,' I am submitting the 'Logistics Check' framework from my Iron Road Design Document. This assessment plan measures learner progress through narrative simulation rather than traditional testing. The goal was to find a way to bridge 'work' with 'play' without sacrificing rigor, ensuring that the evaluation mechanism itself reinforced the learning objectives rather than interrupting them.",

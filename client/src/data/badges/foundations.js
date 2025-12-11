@@ -25,7 +25,7 @@ export const foundationsBadges = [
         "title": "From Mindmap to Model: The Rise of AI",
         "origin": "Professional Transmission (Blog) - Independent Research Protocol.",
         "summary": "A professional analysis of the 'AI integration' workflow. It serves as a meta-commentary on the writing process, treating communication as a 'Signal Processing' challenge.",
-        "file_path": "https://daydream67.blogspot.com/2025/11/from-mindmap-to-model-rise-of-ai.html",
+        "file_path": "/assets/docs/Blog_From_Mindmap_to_Model.pdf",
         "reflection": {
           "challenge": "Write and edit messages that are clear, concise, and grammatically correct.",
           "introduction": "For the challenge 'Write and edit messages that are clear, concise, and grammatically correct,' I am submitting the transmission log titled 'From Mindmap to Model: The Rise of AI'. This artifact serves as a 'System Update' to the professional network, translating the complex evolution of Artificial Intelligence into a readable operational narrative. It functions as a meta-analysis, using the writing process itself to demonstrate the 'Signal Processing' required to convert abstract raw data into a clear, receivable signal.",

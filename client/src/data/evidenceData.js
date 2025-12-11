@@ -3,7 +3,7 @@ export const evidenceData = [
     title: "The Iron Network: A Codex",
     type: "Design Document",
     description: "The definitive 'Lore Bible' for the Cognitive Railway Ecosystem. This document mythologizes Purdue's history into the 'Foundry' and establishes the systems isomorphism between software engineering and cognitive resilience.",
-    link: "https://drive.google.com/file/d/1yjrFFXxburg6YaWWnm-ie_mhB0YQmj5CzeF7n4GLywk/view?usp=sharing",
+    link: "/assets/docs/The_Iron_Network_Codex.pdf",
     tags: ["Lore", "Pedagogy", "System Architecture"],
     isHero: true
   },
@@ -11,42 +11,42 @@ export const evidenceData = [
     title: "Ask Pete Field Manual (Short 8k)",
     type: "Field Manual",
     description: "The 'Boilermaker’s Guide to Cognitive Logistics.' A handbook for students that reframes failure as data (The Heavilon Protocol) and uses the steam engine as a metaphor for self-regulation.",
-    link: "https://drive.google.com/file/d/1ODzPG8MJMMdZoFc_buzYKQ2_qpOVYW8A/view?usp=sharing",
+    link: "/assets/docs/Ask_Pete_Field_Manual.pdf",
     tags: ["Student Guide", "Psychology", "Resilience"]
   },
   {
     title: "Storyfied D20 Game Design",
     type: "Technical Spec",
     description: "A comprehensive specification for the D20 narrative ecosystem. Details the 'Logistics Check' mechanics, Jungian Locomotive Profiles, and the 'Coal & Steam' tokenomics of attention.",
-    link: "https://drive.google.com/file/d/1oGPRJjpms68CiYaNJxNqUcIpaIswPJdt/view?usp=sharing",
+    link: "/assets/docs/Storyfied_D20_Game_Design.pdf",
     tags: ["Game Design", "Mechanics", "D20 System"]
   },
   {
     title: "Iron Road: Codebase of a Digital Mirror",
     type: "Technical Audit",
     description: "A deep dive into the technical architecture. Covers the 'Rust-Powered' stack, local-first privacy mandates, and the 'AI as Mirror' philosophy.",
-    link: "https://drive.google.com/file/d/1N8mwY0Lc7AVkscWAQ2Y0HJIqo5F9K9-g/view?usp=drive_link",
+    link: "/assets/docs/Iron_Road_Codebase.pdf",
     tags: ["Codebase", "Rust", "AI Architecture"]
   },
   {
     title: "Iron Road Design Document",
     type: "Executive Summary",
     description: "The strategic blueprint. Defines the 'Edutainment Gap,' the 'Vertical Slice' MVP strategy, and the plan for institutionalizing the project.",
-    link: "https://drive.google.com/file/d/1quc1o168NXArNr8woAwUb-pCP9TL0oNj/view?usp=sharing",
+    link: "/assets/docs/Iron_Road_Design_Document.pdf",
     tags: ["Strategy", "MVP", "Proposal"]
   },
   {
     title: "Blog: From Mindmap to Model",
     type: "Reflection",
     description: "A reflective piece on the evolution of the instructional design process, exploring how AI can bridge the gap between abstract mindmaps and concrete models.",
-    link: "https://drive.google.com/file/d/1cLOjMxAeh8FmcRTKF3y_-pRPwfYR8Ns5/view?usp=sharing",
+    link: "/assets/docs/Blog_From_Mindmap_to_Model.pdf",
     tags: ["Reflection", "Process", "AI"]
   },
   {
     title: "Email Reflection Artifact",
     type: "Communication",
     description: "Evidence of professional communication and feedback integration. Demonstrates the pivot in project scope based on expert critique.",
-    link: "https://drive.google.com/file/d/1NHiexwwJNsEpS1uIhX-DKkDnWGUsvV-3/view?usp=sharing",
+    link: "/assets/docs/Daydream_Executive_Summary.pdf",
     tags: ["Feedback", "Pivot"]
   },
   {
@@ -67,7 +67,7 @@ export const evidenceData = [
     title: "CITI Program: Responsible Conduct of Research",
     type: "Certification",
     description: "Formal certification in the Responsible Conduct of Research (RCR) from CITI Program, required by Purdue University. This training forms the ethical bedrock for the 'Local-First' privacy architecture.",
-    link: "https://drive.google.com/file/d/1bzusqy8zvMaGDE_KspVCs_r8xw1M9_jI/view?usp=drive_link",
+    link: "/assets/docs/RCR_Certificate.pdf",
     tags: ["Ethics", "Compliance", "Certification"]
   },
   // NEW ENTRY ADDED
@@ -75,7 +75,7 @@ export const evidenceData = [
     title: "Website Development Technology Badge (Credential)",
     type: "Certification",
     description: "External credential for completing the EDCI 60001 LDT Technology Badge in Website Development.",
-    link: "https://bip.brightspace.com/f81993d1-f040-40db-88cd-dddba8664daf/d2l/awards/assertions/545190/view",
+    link: "/assets/docs/LDT_Tech_Badge.pdf",
     tags: ["Tech Skills", "Credential", "Website"]
   }
 ];

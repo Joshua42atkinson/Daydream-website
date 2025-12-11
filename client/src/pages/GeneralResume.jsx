@@ -261,13 +261,14 @@ const GeneralResume = () => {
 
                 {/* FOOTER ACTION */}
                 <div className="bg-slate-50 border-t border-slate-200 p-8 flex justify-center print:hidden">
-                    <button
-                        onClick={() => window.print()}
+                    <a
+                        href="/assets/docs/Resume.pdf"
+                        download="Joshua_Atkinson_Resume.pdf" // Optional: specifies the filename for the download
                         className="flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl font-bold tracking-wide"
                     >
                         <Download className="w-5 h-5" />
                         Download Executive Resume
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
