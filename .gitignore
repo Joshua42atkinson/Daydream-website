@@ -16,5 +16,5 @@ journey_of_water/
 review.html
 server.js
 generated_pdfs/
-docs/
+# docs/
 server.log
